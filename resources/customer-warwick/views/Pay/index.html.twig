@@ -1,0 +1,74 @@
+{% extends "CustomerAppBundle::layout.html.twig" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{title}}</h2>
+            {% if showPaymentForm %}
+                <p>
+                    Our records show the outstanding balance on your account is &pound;{{ confirmedAmount|number_format(2, '.', ',') }}. To see 
+                    how we have arrived at that figure please click on the Statement of Account tab above where you can view a statement of your account.
+                </p>
+                    
+                <p>
+                    To proceed to make a payment enter an amount in the box below and click continue to be taken to the next step.
+                </p>
+            {% else %}
+                <p>
+                    By continuing you are agreeing to pay &pound;{{ confirmedAmount|number_format(2, '.', ',') }}. This figure has been calculated 
+                    by adding a {{ percentageCharge }}% + {{ standingCharge }}p fee which is charged by Stripe, who provide this payment service. 
+                    If you are happy to continue please click pay with card where you will be asked to enter your card details. Once you have made 
+                    your payment it will take upto 48 hours to show on your statement of account.
+                </p>
+            {% endif %}
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+
+            {% if message is empty %}
+            {% else %}
+            <div class="alert alert-{{messageState}}">{{message}}</div>
+            {% endif %}
+
+            {% if showPaymentForm %}
+                <h3>Payment Details</h3>
+                <form action="/payments" method="post" id="payment-form">
+                    {% if message is empty %}
+                    {% else %}
+                    <div class="alert alert-{{messageState}}">{{message}}</div>
+                    {% endif %}
+
+                    {% form_theme paymentForm 'bootstrap_3_layout.html.twig' %}
+                    {{ form_widget(paymentForm) }}
+
+                    <input type="submit" value="Continue" class="btn btn-danger" />
+                </form>
+            {% endif %}
+
+            {% if showPaymentProviderForm %}
+
+                <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
+
+                <form action="/payments/confirmed" method="post" style="text-align:center;">
+                    <input type="hidden" name="paymentAmount" value="{{confirmedAmount}}" />
+                    <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="{{ publishableKey }}"
+                            data-name="Warwick Estates: Payment"
+                            data-currency="GBP"
+                            data-description="Your confirmed amount is £{{ confirmedAmount|number_format(2, '.', ',') }}"
+                            data-amount="{{ confirmedAmount|number_format(2, '', '') }}">
+                    </script>
+                </form>
+                <br>
+                <br>
+            {% endif %}
+        </div>
+    </div>
+    {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
+</div>
+{% endblock %}

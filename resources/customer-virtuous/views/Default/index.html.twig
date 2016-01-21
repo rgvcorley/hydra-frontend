@@ -1,0 +1,31 @@
+{% extends "CustomerAppBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{title}}</h2>
+                <p>From here you can view important information about your property, download your statement of account and make payments</p>
+            </div>
+        </div>
+
+        <div class="row"><div class="col-md-12">&nbsp;</div></div>
+
+        <hr />
+
+        {% for row in rows %}
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{ row.post_title }}</h4>
+                    {{ row.post_body|markdown }}
+
+                    <p class="text-right"><small>Posted By: <em>{{ row.created_by }}</em> &nbsp;&nbsp;On <em>{{ row.date_created|date('d/m/Y') }}</em></small></p>
+                </div>
+            </div>
+            <hr />
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

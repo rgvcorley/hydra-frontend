@@ -1,0 +1,23 @@
+{% extends "CustomerAppBundle::layout.html.twig" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Payment confirmation</h1>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+
+            {% if message is empty %}
+            {% else %}
+            <div class="alert alert-{{messageState}}">{{message}}</div>
+            {% endif %}
+        </div>
+    </div>
+    {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
+</div>
+{% endblock %}

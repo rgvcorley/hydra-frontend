@@ -1,0 +1,9 @@
+/* ====== Bank Statement Hacks ======= */
+.form-control[name=taxYear] {padding:5px;}
+.dataTables_length select {height:21px;padding:2px 0 0}
+
+/* ====== Button centering ======= */
+.btn {padding:6px 12px 3px !important;}
+
+/* ====== Boostrap Active Nav Item ===== */
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color:#EF4C3B !important;}

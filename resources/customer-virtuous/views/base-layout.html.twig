@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <title>{{title}} - Warwick Estates Property Management</title>
+    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/style-3.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/hacks.css" />
+
+    <script src="/bundles/customerapp/js/modernizr.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/bundles/customerapp/js/html5shiv.js"></script>
+    <script src="/bundles/customerapp/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/bundles/customerapp/js/jquery.min.js"></script>
+
+    <style>
+        ol.flex-control-nav {display:none;}
+        .alert-info{
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+            color: #8a6d3b;
+        }
+        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+            border-radius: 0 0 4px 4px;
+        }
+        /*.form-control textarea {100%;}*/
+    </style>
+
+</head>
+<body class="withAnimation">
+<div id="ct_preloader"></div>
+
+<div id="boxedWrapper">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#start" class="local" data-logo="/bundles/customerapp/image/content/logo.png"><img src="/bundles/customerapp/image/content/logo.png" alt="Warwick Estates"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://warwickestates.net/#start" class="local">Home</a></li>
+                    <li><a href="http://warwickestates.net/#about" class="local">About</a></li>
+                    <li><a href="http://warwickestates.net/#services" class="local">Services</a></li>
+                    <li><a href="http://warwickestates.net/#faq" class="local">FAQ/Guidance</a></li>
+                    <li><a href="http://warwickestates.net/#charity" class="local">Charity</a></li>
+                    <li><a href="http://warwickestates.net/#news" class="local">News</a></li>
+                    <li><a href="http://warwickestates.net/#contact" class="local">Contact</a></li>
+                    <li class="active"><a href="{{ path('customer_app_home') }}" target="_blank">Customer Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- / navbar -->
+
+    <div class="parallaxSection" data-bg="/bundles/customerapp/image/content/london.jpg" id="start" style="height:100px;min-height:100px;">
+
+        <section class="flexslider std-slider center-controls" data-height="100" data-loop="true" data-smooth="true" data-slideshow="true" data-speed="15000"  data-animspeed="550" data-controls="true" data-dircontrols="false">
+            <ul class="slides">
+                <li>
+                    <div class="container">
+                        <div class="inner">
+                        </div>
+                    </div>
+
+                </li>
+                <li data-bg="/bundles/customerapp/image/content/manchester.jpg">
+                    <div class="container">
+                        <div class="inner">
+                        </div>
+                    </div>
+                </li>
+                <li data-bg="/bundles/customerapp/image/content/cardiff.jpg">
+                    <div class="container">
+                        <div class="inner">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- / flexslider -->
+    </div>
+    <!-- / parallaxSection -->
+
+    {% block menu %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+<br />
+
+<footer>
+    <div class="container mainfooter">
+        <div class="row">
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">Other Offices</h1>
+
+                <p>London Office<br>
+                    Unit 3 Cochrane House<br>
+                    Admirals Way, London, E14 9UD<br>
+                    Phone: 0207 478 1626
+                </p>
+                <p>BV Office<br>
+                    Unit G13, Waterfront Studios<br>
+                    Dock Road, London, E16 1AG<br>
+                    Phone: 0208 712 2253
+                </p>
+            </aside>
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">Other Offices</h1>
+                <p>Wales Office<br>
+                    15 Schooner Way<br>
+                    Cardiff, South Glamorgan<br>
+                    CF10 4DZ<br>
+                    Phone: 02920 290376
+                </p>
+
+                <p>Grays Office<br>
+                    1-3 New Road, Grays<br>
+                    Essex, RM17 6NG<br>
+                    Phone: 01375 308177
+                </p>
+            </aside>
+
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">Other Offices</h1>
+
+                <p>Northern Office<br>
+                    423 Chadwick House, Birchwood Park<br>
+                    Warrington Road, Birchwood, Warrington, WA3 6AE<br>
+                    Phone: 01614 524850
+                </p>
+                <p>Southern Office<br>
+                    Unit B3, Second Floor<br>
+                    Cumberland Business Centre<br>
+                    Northumberland Road<br>
+                    Portsmouth, PO5 1DS<br>
+                    Phone: 02392 807311<br>
+                </p>
+            </aside>
+
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">Other Offices</h1>
+
+                <p>Cheltenham Office<br>
+                    Maxet House<br>
+                    22 Landsdown Ind. Estate<br>
+                    Gloucester Road<br>
+                    Cheltenham, GL51 8PL<br>
+                    Phone: 01242 649080
+                </p>
+            </aside>
+        </div>
+    </div>
+    <hr>
+    <div class="container postfooter">
+        <div class="row">
+            <aside class="col-md-6 widget">
+                <p>© 2014 Warwick Estates Property Management Ltd</p>
+            </aside>
+            <aside class="col-md-6 widget">
+                <ul class="socialIcons pull-right">
+                    <li><a href="http://www.facebook.com/warwickestates.net" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="http://twitter.com/Warwick_Estates" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fa fa-google-plus-square"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+
+
+            </aside>
+        </div>
+    </div>
+</footer>
+
+
+</div>
+<!-- / boxedWrapper -->
+
+<script src="/bundles/customerapp/js/jquery.min.js"></script>
+<script src="/bundles/customerapp/js/jquery.dataTables.min.js"></script>
+<script src="/bundles/customerapp/js/jquery.flexslider-min.js"></script>
+<script src="/bundles/customerapp/js/bootstrap.min.js"></script>
+
+
+<!--<script src="/bundles/customerapp/js/timeline/js/storyjs-embed.js"></script>-->
+<script src="/bundles/customerapp/js/detectmobilebrowser.js"></script>
+<!--<script src="/bundles/customerapp/js/gmap3.min.js"></script>-->
+<script src="/bundles/customerapp/js/jquery.appear.js"></script>
+<!--<script src="/bundles/customerapp/js/jquery.isotope.min.js"></script>-->
+<!--<script src="/bundles/customerapp/js/jquery.ba-bbq.min.js"></script>-->
+<script src="/bundles/customerapp/js/jquery.countTo.js"></script>
+<!--<script src="/bundles/customerapp/js/jquery.fitvids.js"></script>-->
+
+<!--<script src="/bundles/customerapp/js/jquery.magnific-popup.min.js"></script>-->
+<!--<script src="/bundles/customerapp/js/jquery.mb.YTPlayer.js"></script>-->
+<script src="/bundles/customerapp/js/jquery.placeholder.min.js"></script>
+<!-- <script src="/bundles/customerapp/js/retina-1.1.0.min.js"></script> -->
+<!--<script src="/bundles/customerapp/form/js/form.js"></script>-->
+
+<!-- one pager only -->
+<script src="/bundles/customerapp/js/main.js"></script>
+<!-- <script src="/bundles/customerapp/scripts/app/jquery.OptionCache.js"></script> -->
+
+<script src="/bundles/customerapp/js/accountConsentDialogue.js"></script>
+
+<script>
+    $(document).ready(function() {
+        if ($('table.data-table')) {
+            $('table.data-table').dataTable({
+                "pageLength": 50,
+                "ordering": true,
+                "info": false,
+                "searching": false
+            });
+        }
+    });
+</script>
+</body>
+</html>
