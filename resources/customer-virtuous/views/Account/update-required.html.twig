@@ -2,49 +2,23 @@
 
 {% block content %}
 
-<br>
+    <section class="content">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item lap--two-thirds">
+                    <h1>{{ title }}</h1>
+                    <p>In order that we can activate your account we need your email address. We also request that you provide us with a contact telephone number incase of an emergency relating to your property.</p>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-center">{{ title }}</h2>
-            <hr>
-            <p>In order that we can activate your account we need your email address.
-            We also request that you provide us with a contact telephone number in
-            case of an emergency relating to your property.</p>
-
-            <form action="/account/update-required" method="post">
-
-                {% form_theme accountUpdateForm 'bootstrap_3_layout.html.twig' %}
-                {{ form_widget(accountUpdateForm) }}
-
-                <p><small>Please note if you accept to receive correspondence by email we are not ready to go paperless just yet! We are just building up information on our data base for future use. Our paperless system will be ready soon and when it is we will contact you to confirm that your correspondence will be sent by email going forward. All correspondence will therefore still be sent to you by post at this time..</small></p>
-
-                <p><small>Your details will never be passed to a 3rd party.</small></p>
-
-                <input type="submit" value="Update" class="btn btn-danger" />
-            </form>
-
+                    <form action="/account/update-required" class="mtl" method="post">
+                        {% form_theme accountUpdateForm 'bootstrap_3_layout.html.twig' %}
+                        {{ form_widget(accountUpdateForm) }}
+                        <p class="mtm"><small>Please note if you accept to receive correspondence by email we are not ready to go paperless just yet! We are just building up information on our data base for future use. Our paperless system will be ready soon and when it is we will contact you to confirm that your correspondence will be sent by email going forward. All correspondence will therefore still be sent to you by post at this time.</small></p>
+                        <p class="mbm"><small>Your details will never be passed to a 3rd party.</small></p>
+                        <input class="btn" type="submit" value="Update">
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="modal fade" id="consentModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Are You Sure?</h4>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you don't want the convenience of electronic correspondence?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="sure">Yes I'm sure</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal" id="enable-consent">Please enable email correspondence</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </section>
 
 {% endblock %}

@@ -1,0 +1,21 @@
+// Button object
+
+$component-alpha: $site-epsilon;
+$component-beta: $site-beta;
+
+$component-breakpoint: $desktop;
+
+.button
+    border: 2px solid $component-alpha
+    color: $component-alpha
+    cursor: pointer
+    display: inline-block
+    font-size: 0.875rem
+    font-weight: 600
+    padding: 0.9375rem
+    transition: all .3s ease-in
+    .no-touch &:hover
+        border-color: $component-beta
+        color: $component-beta
+    @media (min-width: $component-breakpoint)
+        font-size: 1.125rem

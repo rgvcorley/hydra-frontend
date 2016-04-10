@@ -1,0 +1,57 @@
+// Tooltip object
+
+$component-alpha: $site-epsilon;
+$component-beta: #fff;
+$component-gamma: $site-beta;
+
+.tooltip
+    padding: 0
+    td &
+        position: absolute
+        right: 0
+        top: 0
+        z-index: 1
+
+.tooltip__icon
+    background: $component-beta
+    border-radius: 50%
+    color: $component-gamma
+    cursor: pointer
+    display: inline-block
+    line-height: 1
+    padding: 0.3125rem 0
+    text-align: center
+    width: 28px
+    table td &
+        position: absolute
+        right: 10px
+        top: 5px
+
+.tooltip__message
+    background: $component-alpha
+    box-sizing: border-box
+    color: $component-beta
+    display: none
+    font-size: 0.875rem
+    left: 0
+    padding: 0.9375rem
+    position: absolute
+    top: 0
+    width: 230px
+    p:last-child
+        margin: 0
+    &:after
+        border-left: 15px solid transparent
+        border-right: 15px solid transparent
+        border-top: 15px solid $component-alpha
+        bottom: -15px
+        content: ''
+        display: inline-block
+        height: 0
+        left: 50%
+        margin-left: -15px
+        position: absolute
+        width: 0
+
+.tooltip__message--is-visible
+    display: block

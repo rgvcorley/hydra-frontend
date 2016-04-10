@@ -1,0 +1,22 @@
+{
+    "name": "virtuous",
+    "description": "Virtuous front end build process",
+    "version": "1.0.0",
+    "dependencies": {
+        "browserify": "10.2.4",
+        "gulp": "3.9.0",
+        "gulp-sass": "2.0.3",
+        "gulp-uglify": "1.2.0",
+        "gulp-watch": "4.2.4",
+        "vinyl-source-stream": "1.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://darrenhuskie@bitbucket.org/project-hydra/customer-frontend.git"
+    },
+    "author": {
+        "name": "Darren Huskie",
+        "email" : "darren@darrenhuskie.com",
+        "url" : "http://darrenhuskie.com/"
+    }
+}

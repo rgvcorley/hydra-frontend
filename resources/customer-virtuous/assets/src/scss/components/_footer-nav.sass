@@ -1,0 +1,26 @@
+// Footer navigation component
+
+$component-alpha: #233a40;
+$component-beta: $sub-heading-font;
+
+.footer-nav
+    border-top: 2px solid $component-alpha
+    font-family: $component-beta
+    font-size: 0.875rem
+
+.footer-nav__list
+    margin: 0
+    padding: 0
+
+.footer-nav__list-item
+    display: inline-block
+    margin: 0 10px
+    + .footer-nav__list-item
+        &:before
+            content: '|'
+            display: inline-block
+            left: -10px
+            position: relative
+
+.footer-nav__link
+    transition: color .3s ease-in

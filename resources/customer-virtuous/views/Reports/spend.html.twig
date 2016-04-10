@@ -2,132 +2,116 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>{{title}}</h2>
-        </div>
-        <div class="col-md-6 text-right">
-            <form method="get" action="" class="form-inline">
-                <div class="form-group">
-                    <select class="form-control input-sm" name="taxYear">
-                        {% for year in taxYears %}
-                        <option value="{{ year.key }}" {% if year.active%}selected="selected"{% endif %}>{{ year.desc }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-default btn-sm">Update</button>
+    <section class="content">
+        <div class="container">
+            <h1>{{ title }}</h1>
+
+            <form action="" method="get">
+                <select name="taxYear">
+                    {% for year in taxYears %}
+                        <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
+                    {% endfor %}
+                </select>
+                <button class="button" type="submit">Update</button>
             </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped table-condensed table-bordered" id="spend-table" style="font-family: 'courier new', courier, monospace;">
+
+            <table>
                 <thead>
                     <tr>
-                        <th>Cost Centre</th>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Debit</th>
-                        <th>Credit</th>
+                        <th><span>Cost Centre</span></th>
+                        <th><span>Date</span></th>
+                        <th><span>Description</span></th>
+                        <th><span>Debit</span></th>
+                        <th><span>Credit</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for row in rows %}
-                    <tr>
-                        <td>{{ row.cost_centre }}</td>
-                        <td data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>
-                        <td>{{ row.description }}</td>
-                        <td data-type="currency" class="text-right">
-                            {% if row.debit is empty %}
-
-                            {% else %}
-                            <span style="float: left;">&pound;</span>{{ row.debit|number_format(2, '.', ',') }}
-                            {% endif %}
-                        </td>
-                        <td data-type="currency" class="text-right">
-
-                            {% if row.credit is empty %}
-
-                            {% else %}
-                            <span style="float: left;">&pound;</span>{{ row.credit|number_format(2, '.', ',') }}
-                            {% endif %}
-
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><span>{{ row.cost_centre }}</span></td>
+                            <td data-sort="{{ row.date|date("Ymd") }}"><span>{{ row.date|date("d-m-Y") }}</span></td>
+                            <td><span>{{ row.description }}</span></td>
+                            <td data-type="currency">
+                                {% if row.debit is not empty %}
+                                    <span>&pound;{{ row.debit|number_format(2, '.', ',') }}</span>
+                                {% endif %}
+                            </td>
+                            <td data-type="currency">
+                                {% if row.credit is not empty %}
+                                    <span>&pound;{{ row.credit|number_format(2, '.', ',') }}</span>
+                                {% endif %}
+                            </td>
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-    </div>
-</div>
+    </section>
 
-<script>
+    <script>
 
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-    Number.prototype.formatMoney = function(c, d, t){
-    var n = this,
-        c = isNaN(c = Math.abs(c)) ? 2 : c,
-        d = d == undefined ? "." : d,
-        t = t == undefined ? "," : t,
-        s = n < 0 ? "-" : "",
-        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
-        j = (j = i.length) > 3 ? j % 3 : 0;
-       return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-     };
+            Number.prototype.formatMoney = function(c, d, t){
+            var n = this,
+                c = isNaN(c = Math.abs(c)) ? 2 : c,
+                d = d == undefined ? "." : d,
+                t = t == undefined ? "," : t,
+                s = n < 0 ? "-" : "",
+                i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+                j = (j = i.length) > 3 ? j % 3 : 0;
+               return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+             };
 
-    var table = $('#spend-table').DataTable({
-        "columnDefs": [
-            { "visible": false, "targets": 0 }
-        ],
-        "order": [[ 0, 'asc' ]],
-        "paging" : false,
-        "displayLength": 25,
-        "drawCallback": function ( settings ) {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-            var total=0;
-            var row=0;
-            api.column(0, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    if (row) {
-                        $(rows).eq( i ).before(
-                            '<tr class="group"><td colspan="4" style="border-top: 5px double #ddd;border-spacing:5px"><span style="float: right;"><strong>Total:</strong> &nbsp;&pound;'+total.formatMoney()+'</span></td></tr>'
-                        );
-                    }
-                    $(rows).eq( i ).before(
-                        '<tr class="group"><td colspan="4"><strong>'+group+'</strong></td></tr>'
-                    );
+            var table = $('#spend-table').DataTable({
+                "columnDefs": [
+                    { "visible": false, "targets": 0 }
+                ],
+                "order": [[ 0, 'asc' ]],
+                "paging" : false,
+                "displayLength": 25,
+                "drawCallback": function ( settings ) {
+                    var api = this.api();
+                    var rows = api.rows( {page:'current'} ).nodes();
+                    var last=null;
+                    var total=0;
+                    var row=0;
+                    api.column(0, {page:'current'} ).data().each( function ( group, i ) {
+                        if ( last !== group ) {
+                            if (row) {
+                                $(rows).eq( i ).before(
+                                    '<tr class="group"><td colspan="4" style="border-top: 5px double #ddd;border-spacing:5px"><span style="float: right;"><strong>Total:</strong> &nbsp;&pound;'+total.formatMoney()+'</span></td></tr>'
+                                );
+                            }
+                            $(rows).eq( i ).before(
+                                '<tr class="group"><td colspan="4"><strong>'+group+'</strong></td></tr>'
+                            );
 
-                    total = 0;
+                            total = 0;
 
-                    last = group;
+                            last = group;
 
+                        }
+                        var credit = $(rows).eq( i ).children().eq( 3 ).text().replace(/£/, '').replace(/,/, '');
+                        var debit = $(rows).eq( i ).children().eq( 2 ).text().replace(/£/, '').replace(/,/, '');
+                        total += debit - credit;
+                        row++;
+                    } );
                 }
-                var credit = $(rows).eq( i ).children().eq( 3 ).text().replace(/£/, '').replace(/,/, '');
-                var debit = $(rows).eq( i ).children().eq( 2 ).text().replace(/£/, '').replace(/,/, '');
-                console.log(credit);
-                console.log(debit);
-                total += debit - credit;
-                row++;
             } );
-        }
-    } );
 
-    // Order by the grouping
-    $('#spend-table tbody').on( 'click', 'tr.group', function () {
-        var currentOrder = table.order()[0];
-        if ( currentOrder[0] === 0 && currentOrder[1] === 'asc' ) {
-            table.order( [ 0, 'desc' ] ).draw();
-        }
-        else {
-            table.order( [ 0, 'asc' ] ).draw();
-        }
-    } );
-} );
+            // Order by the grouping
+            $('#spend-table tbody').on( 'click', 'tr.group', function () {
+                var currentOrder = table.order()[0];
+                if ( currentOrder[0] === 0 && currentOrder[1] === 'asc' ) {
+                    table.order( [ 0, 'desc' ] ).draw();
+                }
+                else {
+                    table.order( [ 0, 'asc' ] ).draw();
+                }
+            } );
+        } );
+    </script>
 
-</script>
 {% endblock %}
 

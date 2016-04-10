@@ -1,0 +1,59 @@
+// Toggle object
+
+$component-alpha: $site-beta
+$secondary-colour: $site-delta
+$label-background-colour: #f5f6f8
+
+$component-breakpoint: $tablet
+
+.toggle
+    cursor: pointer
+
+.toggle__label
+    background: $component-gamma
+    color: $component-beta
+    display: block
+    margin-right: 0.5625rem
+    padding: 0.5625rem 1.125rem
+    vertical-align: top
+    @media (min-width: $component-breakpoint)
+        display: inline-block
+        width: 70%
+
+.toggle__input
+    background: $secondary-colour
+    border-radius: 5px
+    color: #fff
+    display: inline-block
+    margin: 1.125rem 0
+    overflow: hidden
+    @media (min-width: $component-breakpoint)
+        margin: 0
+
+.toggle__input-ui
+    overflow: hidden
+    position: relative
+
+.toggle__input-ui-primary
+    background: $component-alpha
+
+.toggle__input-ui-primary, .toggle__input-ui-secondary
+    display: inline-block
+    float: left
+    padding: 0.5rem 0.625rem
+
+.toggle__input-ui-cover
+    background: #fff
+    border: 1px solid $component-beta
+    border-radius: 5px
+    height: 96%
+    left: 0
+    position: absolute
+    top: 0
+    transition: left .3s ease-in
+    width: 50%
+    .toggle__input-ui--primary &
+        left: 47.5%
+
+.toggle__input-hidden
+    display: none

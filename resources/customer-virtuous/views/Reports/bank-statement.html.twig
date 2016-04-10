@@ -2,83 +2,78 @@
 
 {% block content %}
 
-<div class="container">
-    {% if reserves is not empty %}
-    <div class="row">
-        {% for reserve in reserves %}
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p><strong>{{ reserve.getName }} Balance: </strong> &pound;{{ reserve.getFormattedBalance }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    <div class="row">
-        <div class="col-md-6">
-            <h2>{{title}}</h2>
-        </div>
-        <div class="col-md-6 text-right">
-            <form method="get" action="" class="form-inline">
-                <div class="form-group">
-                    <select class="form-control input-sm" name="taxYear">
+    <section class="content">
+        <div class="container">
+            {% for reserve in reserves %}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p><strong>{{ reserve.getName }} Balance: </strong> &pound;{{ reserve.getFormattedBalance }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <h1>{{title}}</h1>
+
+            <form action="" class="mbl" method="get">
+                <div>
+                    <select name="taxYear">
                         {% for year in taxYears %}
-                        <option value="{{ year.key }}" {% if year.active%}selected="selected"{% endif %}>{{ year.desc }}</option>
+                            <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-default btn-sm">Update</button>
+                <button class="button" type="submit">Update</button>
             </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped table-condensed table-bordered">
+
+            {% if balances is not empty %}
+            <table>
                 <thead>
                     <tr>
-                        <th>Account</th>
-                        <th>Balance</th>
+                        <th><span>Account</span></th>
+                        <th><span>Balance</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for balance in balances %}
-                    <tr>
-                        <td>{{ balance.accountName }}</td>
-                        <td class="text-right"><span style="float: left;">&pound;</span>{{ balance.balance|number_format(2, '.', ',') }}</td>
-                    </tr>
+                        <tr>
+                            <td><span>{{ balance.accountName }}</span></td>
+                            <td><span>&pound;{{ balance.balance|number_format(2, '.', ',') }}</span></td>
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            {% endif %}
+
+
+            {% if rows is not empty %}
+                <h2 class="mtl">Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><span>Sort Code</span></th>
+                            <th><span>Account Number</span></th>
+                            <th><span>Date</span></th>
+                            <th><span>Label</span></th>
+                            <th><span>Amount</span></th>
+                            <th><span>Balance</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                            <tr>
+                                <td><span>{{ row.sort_code }}</span></td>
+                                <td><span>{{ row.account_number }}</span></td>
+                                <td data-sort="{{ row.date|date("Ymd") }}"><span>{{ row.date|date("d-m-Y") }}</span></td>
+                                <td><span>{{ row.label }}</span></td>
+                                <td data-type="currency"><span>&pound;{{ row.amount|number_format(2, '.', ',') }}</span></td>
+                                <td data-type="currency"><span>&pound;{{ row.balance|number_format(2, '.', ',') }}</span></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped table-condensed table-bordered data-table" style="font-family: 'courier new', courier, monospace;">
-                <thead>
-                    <tr>
-                        <th>Sort Code</th>
-                        <th>Account Number</th>
-                        <th>Date</th>
-                        <th>Label</th>
-                        <th>Amount</th>
-                        <th>Balance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for row in rows %}
-                    <tr>
-                        <td>{{ row.sort_code }}</td>
-                        <td>{{ row.account_number }}</td>
-                        <td data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>
-                        <td>{{ row.label }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.amount|number_format(2, '.', ',') }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.balance|number_format(2, '.', ',') }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+    </section>
 
 {% endblock %}

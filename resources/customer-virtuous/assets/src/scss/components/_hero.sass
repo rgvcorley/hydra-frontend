@@ -1,0 +1,67 @@
+// Hero component
+
+$component-alpha: $site-gamma;
+$component-beta: #fff;
+$component-gamma: $site-beta;
+
+$component-breakpoint: $tablet;
+
+.hero
+    background: $component-alpha
+    height: 460px
+    overflow: hidden
+    position: relative
+    input[type=email], input[type=password], input[type=text]
+        background: $component-beta
+    input[type=submit]
+        border-color: $component-beta
+        color: $component-beta
+
+.hero__image
+    max-width: 3000px
+    position: relative
+    z-index: 1
+
+.hero__content
+    color: $component-beta
+    left: 0
+    padding: 50px 0
+    position: absolute
+    top: 0
+    z-index: 2
+    a
+        color: $component-beta
+        text-decoration: underline
+        .no-touch &:hover
+            color: $component-beta
+    input[type=email], input[type=password], input[type=text]
+        max-width: 100%
+    @media (min-width: $component-breakpoint)
+        padding: 75px 0
+
+.hero__title
+    color: $component-gamma
+    font-family: gt-haptik
+    font-size: 2.125rem
+    font-weight: 700
+    letter-spacing: 1px
+    margin: 0 0 1em 0
+
+.hero__input
+    font-size: 1rem
+
+.hero__form-footer
+    margin-top: 1.5625rem
+    overflow: hidden
+
+.hero__submit
+    float: right
+    font-size: 1rem
+    transition: all .3s ease-in
+
+.hero__form-footer-link
+    clear: left
+    float: left
+    transition: color .3s ease-in
+    .no-touch &:hover
+        text-decoration: underline

@@ -1,0 +1,128 @@
+// Sub-navigation component
+
+$component-alpha: #f5f6f7
+$component-beta: $site-delta
+$component-gamma: #9aa5af
+$component-delta: #102b32
+
+$component-breakpoint: $desktop
+
+.sub-nav
+    background: $component-delta
+    height: 100%
+    left: 100%
+    position: absolute
+    top: 0
+    width: 80%
+    @media (min-width: $component-breakpoint)
+        background: $component-alpha
+        position: static
+        width: auto
+
+body
+    left: 0
+    overflow-x: hidden
+    position: relative
+    transition: left 0.3s linear
+
+body.sub-nav--is-visible
+    left: -80%
+
+.sub-nav__list
+    list-style: none
+    margin: 1rem 0 0 0
+    padding: 0
+    @media (min-width: $component-breakpoint)
+        margin-top: 0
+
+.sub-nav__list-item
+    border-bottom: 1px solid darken($component-gamma, 20%)
+    position: relative
+    &:last-child
+        border-bottom: 0
+    @media (min-width: $component-breakpoint)
+        border-bottom: 0
+        float: left
+
+.sub-nav__link
+    color: $component-gamma
+    cursor: pointer
+    display: block
+    padding: 1rem 0
+    transition: all .3s ease-in
+    .no-touch &:hover
+        color: #fff
+    @media (min-width: $component-breakpoint)
+        color: $component-beta
+        padding: 25px
+        .no-touch &:hover
+            background: $component-beta
+
+.sub-nav__link--is-active
+    background: $component-beta
+    color: #fff
+
+.sub-nav__sub-list
+    display: none
+    left: 0
+    list-style: none
+    margin: 0
+    padding: 0
+    position: absolute
+    width: 218px
+    z-index: 3
+    &.sub-nav__sub-list--is-visible
+        display: block
+
+.sub-nav__sub-list-item
+
+.sub-nav__sub-link
+    background: $component-beta
+    color: #fff
+    cursor: pointer
+    display: block
+    padding: 12px 25px
+    transition: all .3s ease-in
+    .no-touch &:hover
+        background: lighten($component-beta, 5%)
+        color: #fff
+
+.sub-nav-toggle
+    background: $component-alpha
+    overflow: hidden
+    padding: 1.5rem
+    @media (min-width: $component-breakpoint)
+        display: none
+
+.sub-nav-toggle__container
+    cursor: pointer
+    float: right
+    .no-touch &:hover .sub-nav-toggle__icon
+        background: #000
+        &:before, &:after
+            background: #000
+
+.sub-nav-toggle__icon
+    background: $component-beta
+    display: inline-block
+    height: 5px
+    position: relative
+    transition: background 0.3s linear
+    vertical-align: middle
+    width: 30px
+    &:before, &:after
+        background: $component-beta
+        content: ''
+        cursor: pointer
+        display: inline-block
+        height: 5px
+        position: absolute
+        transition: background 0.3s linear
+        width: 30px
+    &:before
+        top: -8px
+    &:after
+        top: 8px
+
+.sub-nav-toggle__label
+    display: none

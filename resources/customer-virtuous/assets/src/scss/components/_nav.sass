@@ -1,0 +1,60 @@
+// Navigation component
+
+$component-alpha: $site-beta
+
+$component-breakpoint: $desktop
+
+.nav
+    font-size: 0.875rem
+    margin-top: 1.25rem
+    padding-top: 0.4375rem
+    @media (min-width: $tablet)
+        margin-top: 0
+        text-align: right
+    @media (min-width: $component-breakpoint)
+        font-size: 1rem
+        padding-top: 0
+
+.nav__list
+    margin: 0
+    padding: 0
+
+.nav__list-item
+    display: inline-block
+    margin: 0 10px
+    [class^="icon-"], [class*=" icon-"]
+        display: none
+        font-size: 1.375rem
+        margin-right: 0.3125em
+        position: relative
+        top: 0.1875rem
+        @media (min-width: $desktop)
+            display: inline-block
+
+.nav__link
+    position: relative
+    &:after
+        background: $component-alpha
+        bottom: -0.5rem
+        content: ''
+        display: block
+        height: 2px
+        margin-top: 0.25rem
+        opacity: 0
+        position: absolute
+        transition: bottom 0.15s linear
+        width: 100%
+    .no-touch &:hover:after
+        opacity: 1
+        bottom: -0.7rem
+
+.nav__list-link
+    .icon
+        display: none
+        margin-right: 0.5rem
+        max-height: 34px
+        vertical-align: middle
+
+    @media (min-width: $component-breakpoint)
+        .icon
+            display: inline-block

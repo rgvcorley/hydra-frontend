@@ -1,0 +1,38 @@
+// Form object
+
+$component-alpha: #f5f6f8
+$component-beta: $site-epsilon
+$component-gamma: $body-font-color
+
+$component-breakpoint: $desktop
+
+input
+    border: 0
+    box-sizing: border-box
+    outline: 0
+
+input[type=email], input[type=password], input[type=text]
+    background: $component-alpha
+    color: $component-gamma
+    font-size: 1rem
+    margin: 0.3125rem 0
+    max-width: 400px
+    padding: 0.9375rem
+    width: 100%
+
+input[type=submit]
+    background: transparent
+    border: 2px solid $component-beta
+    color: $component-beta
+    cursor: pointer
+    font-size: 0.875rem
+    padding: 0.625rem 0.9375rem
+    @media (min-width: $component-breakpoint)
+        font-size: 1.125
+
+fieldset
+    border: 0
+    padding: 0
+
+.form-group
+    margin-top: 1rem

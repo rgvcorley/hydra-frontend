@@ -1,0 +1,34 @@
+// Icon list component
+
+$component-alpha: $site-delta
+
+$component-breakpoint: $desktop
+
+.list-icon
+
+.list-icon__title
+
+.list-icon__list
+    list-style: none
+    margin: 0
+    padding: 0
+
+.list-icon__list-item
+    align-items: center
+    display: flex
+    margin-bottom: 20px
+    [class^="icon-"], [class*=" icon-"]
+        font-size: 2.25rem
+        margin-right: 1.25rem
+
+.list-icon__label
+    strong
+        color: $component-alpha
+        display: block
+        font-size: 1.125rem
+        font-weight: 400
+        a
+            color: $component-alpha
+            transition: color .3s ease-in
+        @media (min-width: $component-breakpoint)
+            font-size: 1.375rem

@@ -1,0 +1,180 @@
+// Base layout styles (high-level)
+
+body
+    color: $body-font-color
+    font-family: $base-font-stack
+    line-height: 1.4
+    margin: 0
+    text-rendering: optimizeLegibility
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    @media (min-width: $desktop)
+        font-size: 18px
+
+a
+    color: $link-font-color
+    outline: 0
+    text-decoration: none
+    .no-touch &:hover, .no-touch &:focus
+        color: $link-font-color-hover
+        text-decoration: none
+
+img
+    display: block
+    max-width: 100%
+
+
+strong
+    font-family: gt-haptik
+    font-weight: 700
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+    color: $site-delta
+    font-weight: 400
+    line-height: 1.2
+    margin: 0 0 1.25em 0
+
+h1, h2, .h2, .h3
+    font-family: $heading-font
+
+h3, h4, h5, h6, .h3, .h4, .h5, .h6
+    font-family: $sub-heading-font
+
+h1, .h1
+    font-size: 30px
+
+h2, .h2
+    font-size: 26px
+
+h3, .h3
+    font-size: 22px
+
+h4, .h4
+    font-size: 20px
+
+h5, .h5
+    font-size: 18px
+
+h6, .h6
+    font-size: 16px
+
+strong
+    font-family: $heading-font
+
+p
+    margin: 0 0 1.25rem 0
+
+.container
+    margin: 0 auto
+    max-width: 1146px
+    position: relative
+    width: 85%
+
+.content
+    padding: 3rem 0
+
+.hidden
+    display: none
+
+.tac
+    text-align: center
+
+.tal
+    text-align: left
+
+.tar
+    text-align: right
+
+.fl-c
+    float: center
+
+.fl-l
+    float: left
+
+.fl-r
+    float: right
+
+.mbs
+    margin-bottom: 15px
+
+.mbm
+    margin-bottom: 25px
+
+.mbl
+    margin-bottom: 45px
+
+.mbh
+    margin-bottom: 100px
+
+.mts
+    margin-top: 15px
+
+.mtm
+    margin-top: 25px
+
+.mtl
+    margin-top: 45px
+
+.mth
+    margin-top: 100px
+
+.pbs
+    padding-bottom: 15px
+
+.pbm
+    padding-bottom: 25px
+
+.pbl
+    padding-bottom: 45px
+
+.pbh
+    padding-bottom: 100px
+
+.pts
+    padding-top: 15px
+
+.ptm
+    padding-top: 25px
+
+.ptl
+    padding-top: 45px
+
+.pth
+    padding-top: 100px
+
+.header
+    padding: 2.25rem 0
+
+.footer
+    background: #102b32
+
+.main-logo
+    display: block
+    width: 162px
+
+.sub__logo
+    border-top: 2px solid #233a40
+    display: block
+    img
+        width: 86px
+
+.group:after
+    clear: both
+    content: ''
+    display: table
+
+.icon
+    display: inline-block
+    max-width: 40px
+
+::selection
+    background: $site-delta
+    color: #fff
+
+::-moz-selection
+    background: $site-delta
+    color: #fff
+
+.hide-mobile
+    @media (max-width: $tablet)
+        display: none !important
