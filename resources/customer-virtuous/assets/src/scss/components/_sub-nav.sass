@@ -13,7 +13,7 @@ $component-breakpoint: $desktop
     left: 100%
     position: absolute
     top: 0
-    width: 80%
+    width: 75%
     @media (min-width: $component-breakpoint)
         background: $component-alpha
         position: static
@@ -26,7 +26,7 @@ body
     transition: left 0.3s linear
 
 body.sub-nav--is-visible
-    left: -80%
+    left: -75%
 
 .sub-nav__list
     list-style: none
@@ -45,47 +45,50 @@ body.sub-nav--is-visible
         float: left
 
 .sub-nav__link
-    color: $component-gamma
+    color: #fff
     cursor: pointer
     display: block
     padding: 1rem 0
     transition: all .3s ease-in
-    .no-touch &:hover
-        color: #fff
     @media (min-width: $component-breakpoint)
         color: $component-beta
         padding: 25px
         .no-touch &:hover
             background: $component-beta
+            color: #fff
 
 .sub-nav__link--is-active
-    background: $component-beta
-    color: #fff
+    @media (min-width: $component-breakpoint)
+        background: $component-beta
+        color: #fff
 
 .sub-nav__sub-list
-    display: none
-    left: 0
+    display: block
     list-style: none
     margin: 0
     padding: 0
-    position: absolute
-    width: 218px
-    z-index: 3
     &.sub-nav__sub-list--is-visible
         display: block
+    @media (min-width: $component-breakpoint)
+        display: none
+        left: 0
+        position: absolute
+        width: 218px
+        z-index: 3
 
 .sub-nav__sub-list-item
 
 .sub-nav__sub-link
-    background: $component-beta
     color: #fff
     cursor: pointer
     display: block
     padding: 12px 25px
     transition: all .3s ease-in
-    .no-touch &:hover
-        background: lighten($component-beta, 5%)
-        color: #fff
+    @media (min-width: $component-breakpoint)
+        background: $component-beta
+        .no-touch &:hover
+            background: lighten($component-beta, 5%)
+            color: #fff
 
 .sub-nav-toggle
     background: $component-alpha
@@ -117,12 +120,20 @@ body.sub-nav--is-visible
         display: inline-block
         height: 5px
         position: absolute
-        transition: background 0.3s linear
+        transition: all 0.3s linear
         width: 30px
     &:before
         top: -8px
+        .sub-nav--is-visible &
+            transform: rotate(45deg)
+            top: 0
     &:after
         top: 8px
+        .sub-nav--is-visible &
+            transform: rotate(135deg)
+            top: 0
+    .sub-nav--is-visible &
+            height: 0
 
 .sub-nav-toggle__label
     display: none

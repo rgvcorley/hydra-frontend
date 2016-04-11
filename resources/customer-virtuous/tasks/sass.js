@@ -6,7 +6,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 module.exports = function () {
-    return gulp.src('./assets/src/scss/**/*.scss')
+    return gulp.src('./assets/src/scss/**/*.sass')
         .pipe(sass({
             outputStyle: 'compressed'
         }))

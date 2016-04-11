@@ -15,14 +15,12 @@
             <h1>{{title}}</h1>
 
             <form action="" class="mbl" method="get">
-                <div>
-                    <select name="taxYear">
-                        {% for year in taxYears %}
-                            <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <button class="button" type="submit">Update</button>
+                <select name="taxYear">
+                    {% for year in taxYears %}
+                        <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
+                    {% endfor %}
+                </select>
+                <button class="button mtm" type="submit">Update</button>
             </form>
 
             {% if balances is not empty %}

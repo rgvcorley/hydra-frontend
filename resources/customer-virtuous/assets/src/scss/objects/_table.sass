@@ -2,18 +2,32 @@
 
 $component-alpha: #eee
 $component-beta: $site-delta
-$component-gamma: $site-delta
-$component-delta: #fff
-$component-epsilon: $site-beta
+$component-gamma: #fff
+$component-delta: $site-beta
 
 table
     width: 100%
     a
-        color: $component-epsilon
+        color: $component-delta
         transition: all .3s ease-in
         .no-touch &:hover
-            background: $component-epsilon
+            background: $component-delta
             color: #fff
+    @media (max-width: 768px)
+        display: block
+        overflow-x: auto
+        width: auto
+
+table::-webkit-scrollbar
+    -webkit-appearance: none
+    width: 5px
+
+table::-webkit-scrollbar-thumb
+    border-radius: 0
+    background-color: $component-beta
+
+table::-webkit-scrollbar-track
+    background: $component-alpha
 
 thead
 
@@ -22,8 +36,8 @@ tbody
 tr
 
 th
-    background: $component-gamma
-    color: $component-delta
+    background: $component-beta
+    color: $component-gamma
     font-weight: 400
     position: relative
     text-align: left
