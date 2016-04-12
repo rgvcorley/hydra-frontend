@@ -1,62 +1,69 @@
-    <div class="container">
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <div class="row">
-            <ul class="nav nav-pills">
-                <li class="{% if activePage == "home" %}active{% endif %}"><a target="_self" href="/" title="Home">Home</a></li>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div class="sub-nav-toggle">
+        <div class="sub-nav-toggle__container" data-js="menu-toggle" data-body-class="sub-nav--is-visible">
+            <span class="sub-nav-toggle__icon">
+                <span class="sub-nav-toggle__label">Menu</span>
+            </span>
+        </div>
+    </div>
+
+    <nav class="sub-nav">
+        <div class="container">
+            <ul class="sub-nav__list group">
+                <li class="sub-nav__list-item{#% if activePage == "home" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__link" href="/" title="Home">Home</a></li>
 
                 {% if is_granted('ROLE_CUSTOMER|PAY') %}
-                <li class="{% if activePage == "payments" %}active{% endif %}"><a target="_self" href="/payments" title="Make Payment">Make Payment</a></li>
+                <li class="sub-nav__list-item{#% if activePage == "payments" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__link" href="/payments" title="Make Payment">Make Payment</a></li>
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|REPORTS') %}
-                <li>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li class="sub-nav__list-item sub-nav__list-item--parent" data-js="sub-nav-parent" data-active-class="sub-nav__link--is-active" data-dropdown-active-class="sub-nav__sub-list--is-visible">
+                        <a class="sub-nav__link" href="#" title="Reports">Reports</a>
+                        <ul class="sub-nav__sub-list">
 
-                        {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
-                        <li class="{% if activePage == "statement" %}active{% endif %}" role="presentation"><a href="/statement" title="Statement of Account">Statement of Account</a></li>
-                        {% endif %}
+                            {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
+                            <li class="sub-nav__sub-list-item{#% if activePage == "statement" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__sub-link" href="/statement" title="Statement of Account">Statement of Account</a></li>
+                            {% endif %}
 
-                        {% if is_granted('ROLE_CUSTOMER|REPORTS|BANK') %}
-                        <li class="{% if activePage == "bank" %}active{% endif %}" role="presentation"><a href="/reports/bank-statement" title="Bank Statement" class="action ">Bank Statement</a></li>
-                        {% endif %}
+                            {% if is_granted('ROLE_CUSTOMER|REPORTS|BANK') %}
+                            <li class="sub-nav__sub-list-item{#% if activePage == "bank" %} sub-nav__list-item--is-active{% endif %#}"><a class="action sub-nav__sub-link" href="/reports/bank-statement" title="Bank Statement">Bank Statement</a></li>
+                            {% endif %}
 
-                        {% if is_granted('ROLE_CUSTOMER|REPORTS|DEBTORS') %}
-                        <li class="{% if activePage == "debtors" %}active{% endif %}" role="presentation"><a href="/reports/debtors" title="Debtors Report" class="action ">Debtors Report</a></li>
-                        {% endif %}
+                            {% if is_granted('ROLE_CUSTOMER|REPORTS|DEBTORS') %}
+                            <li class="sub-nav__sub-list-item{#% if activePage == "debtors" %} sub-nav__list-item--is-active{% endif %#}"><a class="action sub-nav__sub-link" href="/reports/debtors" title="Debtors Report">Debtors Report</a></li>
+                            {% endif %}
 
-                        {% if is_granted('ROLE_CUSTOMER|REPORTS|SPEND') %}
-                        <li class="{% if activePage == "spend" %}active{% endif %}" role="presentation"><a href="/reports/spend" title="Spend Report" class="action ">Spend Report</a></li>
-                        {% endif %}
+                            {% if is_granted('ROLE_CUSTOMER|REPORTS|SPEND') %}
+                            <li class="sub-nav__sub-list-item{#% if activePage == "spend" %} sub-nav__list-item--is-active{% endif %#}"><a class="action sub-nav__sub-link" href="/reports/spend" title="Spend Report">Spend Report</a></li>
+                            {% endif %}
 
-                        {% if is_granted('ROLE_CUSTOMER|REPORTS|BUDGETSPEND') %}
-                        <li class="{% if activePage == "budgetspend" %}active{% endif %}" role="presentation"><a href="/reports/budget-versus-spend" title="Budget vs Spend" class="action ">Budget vs Spend</a></li>
-                        {% endif %}
-                    </ul>
-                </li>
+                            {% if is_granted('ROLE_CUSTOMER|REPORTS|BUDGETSPEND') %}
+                            <li class="sub-nav__sub-list-item{#% if activePage == "budgetspend" %} sub-nav__list-item--is-active{% endif %#}"><a class="action sub-nav__sub-link" href="/reports/budget-versus-spend" title="Budget vs Spend">Budget vs Spend</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
                 {% else %}
-                
+
                     {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
-                    <li class="{% if activePage == "statement" %}active{% endif %}"><a target="_self" href="/statement" title="Statement of Account">Statement of Account</a></li>
+                        <li class="sub-nav__list-item{#% if activePage == "statement" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__link" href="/statement" title="Statement of Account">Statement of Account</a></li>
                     {% endif %}
-                
+
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|DOCUMENTS') %}
-                <li class="{% if activePage == "documents" %}active{% endif %}"><a target="_self" href="/documents" title="Downloads">Documents</a></li>
+                    <li class="sub-nav__list-item{#% if activePage == "documents" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__link" href="/documents" title="Downloads">Documents</a></li>
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|ISSUES') %}
-                <li class="{% if activePage == "issues" %}active{% endif %}"><a target="_self" href="/issues" title="Issues">Issues</a></li>
+                    <li class="sub-nav__list-item{#% if activePage == "issues" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__link" href="/issues" title="Issues">Issues</a></li>
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|ACCOUNT') %}
-                <li class="{% if activePage == "account" %}active{% endif %}"><a target="_self" href="/account" title="Account Details">Account Details</a></li>
+                    <li class="sub-nav__list-item{#% if activePage == "account" %} sub-nav__list-item--is-active{% endif %#}"><a class="sub-nav__link" href="/account" title="Account Details">Account Details</a></li>
                 {% endif %}
 
-                <li><a href="/logout">Logout</a></li>
+                <li class="sub-nav__list-item"><a class="sub-nav__link" href="/logout">Logout</a></li>
             </ul>
         </div>
-        <hr>
-        {% endif %}
-    </div>
+    </nav>
+{% endif %}

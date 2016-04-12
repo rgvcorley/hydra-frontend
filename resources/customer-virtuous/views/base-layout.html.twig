@@ -1,241 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if IE 8]>
 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content=" ">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Virtuous customer web application">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{title}} - Warwick Estates Property Management</title>
-    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/style-3.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/jquery.dataTables.css" />
-    <link rel="stylesheet" type="text/css" href="/bundles/customerapp/css/hacks.css" />
+        <title>{{ title }} &mdash; Virtuous Customer Web Application</title>
 
-    <script src="/bundles/customerapp/js/modernizr.js"></script>
+        <link rel="stylesheet" href="/bundles/customerapp/build/css/app.css">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/bundles/customerapp/js/html5shiv.js"></script>
-    <script src="/bundles/customerapp/js/respond.min.js"></script>
-    <![endif]-->
+        <link rel="apple-touch-icon" sizes="57x57" href="/bundles/customerapp/build/img/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/bundles/customerapp/build/img/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bundles/customerapp/build/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/bundles/customerapp/build/img/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/bundles/customerapp/build/img/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/bundles/customerapp/build/img/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/bundles/customerapp/build/img/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/bundles/customerapp/build/img/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/bundles/customerapp/build/img/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/bundles/customerapp/build/img/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/bundles/customerapp/build/img/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/bundles/customerapp/build/img/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/bundles/customerapp/build/img/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/bundles/customerapp/build/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/bundles/customerapp/build/img/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
 
-    <script src="/bundles/customerapp/js/jquery.min.js"></script>
+        <script src="/bundles/customerapp/build/js/custom-modernizr.js"></script>
+        <script src="/bundles/customerapp/js/jquery.min.js"></script>
+    </head>
 
-    <style>
-        ol.flex-control-nav {display:none;}
-        .alert-info{
-            background-color: #fcf8e3;
-            border-color: #faebcc;
-            color: #8a6d3b;
-        }
-        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-            border-radius: 0 0 4px 4px;
-        }
-        /*.form-control textarea {100%;}*/
-    </style>
+    <body>
 
-</head>
-<body class="withAnimation">
-<div id="ct_preloader"></div>
-
-<div id="boxedWrapper">
-
-    <!-- navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#start" class="local" data-logo="/bundles/customerapp/image/content/logo.png"><img src="/bundles/customerapp/image/content/logo.png" alt="Warwick Estates"></a>
+        <header class="header">
+            <div class="container">
+                <div class="grid">
+                    <div class="grid__item lap--one-quarter">
+                        <a class="main-logo" href="/" title="Virtuous"><img alt="Virtuous" src="/bundles/customerapp/build/img/virtuous-logo.png"></a>
+                    </div>
+                    <div class="grid__item lap--three-quarters">
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li class="nav__list-item"><a class="nav__link" href="/" title="Why choose us?">Why choose us?</a></li>
+                                <li class="nav__list-item"><a class="nav__link" href="/" title="Our services">Our services</a></li>
+                                <li class="nav__list-item"><a class="nav__link" href="/" title="Contact">Contact</a></li>
+                                <li class="nav__list-item">
+                                    <a class="nav__list-link" href="tel:01916030033" title="Telephone Virtuous">
+                                        <img class="icon" src="/bundles/customerapp/build/img/icon-phone-green.png">
+                                        <span>0191 603 0033</span>
+                                    </a>
+                                </li>
+                                <li class="nav__list-item">
+                                    <a class="nav__list-link" href="/login" title="Login to Virtuous">
+                                        <img alt="Virtuous customer login" class="icon" src="/bundles/customerapp/build/img/icon-person.png">
+                                        <span>Login</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://warwickestates.net/#start" class="local">Home</a></li>
-                    <li><a href="http://warwickestates.net/#about" class="local">About</a></li>
-                    <li><a href="http://warwickestates.net/#services" class="local">Services</a></li>
-                    <li><a href="http://warwickestates.net/#faq" class="local">FAQ/Guidance</a></li>
-                    <li><a href="http://warwickestates.net/#charity" class="local">Charity</a></li>
-                    <li><a href="http://warwickestates.net/#news" class="local">News</a></li>
-                    <li><a href="http://warwickestates.net/#contact" class="local">Contact</a></li>
-                    <li class="active"><a href="{{ path('customer_app_home') }}" target="_blank">Customer Login</a></li>
-                </ul>
+        </header>
+
+        {% block menu %}{% endblock %}
+        {% block content %}{% endblock %}
+
+        {% include 'CustomerAppBundle:components:call-to-action.html.twig' %}
+
+        <footer class="footer pbl ptl">
+            <div class="container">
+                <div class="grid grid--full">
+
+                    <div class="grid__item lap--one-half mbm hide-mobile">
+                        <ul class="list list--two-column lap--three-quarters">
+                            <li class="list__item"><a class="list__link" href="#" title="Home">Home</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Register interest">Register interest</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Why choose us?">Why choose us?</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Terms &amp; conditions">Terms &amp; conditions</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Our services">Our services</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Privacy policy">Privacy policy</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Contact us">Contact us</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Cookie policy">Cookie policy</a></li>
+                            <li class="list__item"><a class="list__link" href="#" title="Login">Login</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="grid__item lap--one-half">
+                        <div class="image-list">
+                            <h3 class="image-list__title">Our accreditations</h3>
+                            <ul class="image-list__list">
+                                <li class="image-list__list-item">
+                                    <a class="image-list__link" href="http://arma.org.uk/" target="_blank"  title="Arma website">
+                                        <img alt="Arma accreditation logo" class="image-list__image" src="/bundles/customerapp/build/img/arma-logo.png">
+                                    </a>
+                                </li>
+                                <li class="image-list__list-item">
+                                    <a class="image-list__link" href="https://www.ombudsman-services.org/" target="_blank" title="Ombudsman Services website">
+                                        <img alt="Ombudsman Services accreditation logo" class="image-list__image" src="/bundles/customerapp/build/img/ombudsman-services-logo.png">
+                                    </a>
+                                </li>
+                                <li class="image-list__list-item">
+                                    <a class="image-list__link" href="http://www.rics.org/uk/" target="_blank" title="RICS website">
+                                        <img alt="RICS accreditation logo" class="image-list__image" src="/bundles/customerapp/build/img/rics-logo.png">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid__item one-quarter mtm">
+                        <a class="sub__logo ptm" href="/" title="Virtuous"><img alt="Virtuous" src="/bundles/customerapp/build/img/virtuous-logo-text.png"></a>
+                    </div>
+
+                    <div class="grid__item three-quarters mtm tar">
+                        <nav class="footer-nav ptm">
+                            <ul class="footer-nav__list">
+                                <li class="footer-nav__list-item">&copy; 2016 Virtuous Property Management</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- / navbar -->
+        </footer>
 
-    <div class="parallaxSection" data-bg="/bundles/customerapp/image/content/london.jpg" id="start" style="height:100px;min-height:100px;">
+        <script src="/bundles/customerapp/build/js/app.js"></script>
 
-        <section class="flexslider std-slider center-controls" data-height="100" data-loop="true" data-smooth="true" data-slideshow="true" data-speed="15000"  data-animspeed="550" data-controls="true" data-dircontrols="false">
-            <ul class="slides">
-                <li>
-                    <div class="container">
-                        <div class="inner">
-                        </div>
-                    </div>
-
-                </li>
-                <li data-bg="/bundles/customerapp/image/content/manchester.jpg">
-                    <div class="container">
-                        <div class="inner">
-                        </div>
-                    </div>
-                </li>
-                <li data-bg="/bundles/customerapp/image/content/cardiff.jpg">
-                    <div class="container">
-                        <div class="inner">
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <!-- / flexslider -->
-    </div>
-    <!-- / parallaxSection -->
-
-    {% block menu %}{% endblock %}
-
-    {% block content %}{% endblock %}
-
-<br />
-
-<footer>
-    <div class="container mainfooter">
-        <div class="row">
-            <aside class="col-md-3 widget">
-                <h1 class="widget-title">Other Offices</h1>
-
-                <p>London Office<br>
-                    Unit 3 Cochrane House<br>
-                    Admirals Way, London, E14 9UD<br>
-                    Phone: 0207 478 1626
-                </p>
-                <p>BV Office<br>
-                    Unit G13, Waterfront Studios<br>
-                    Dock Road, London, E16 1AG<br>
-                    Phone: 0208 712 2253
-                </p>
-            </aside>
-            <aside class="col-md-3 widget">
-                <h1 class="widget-title">Other Offices</h1>
-                <p>Wales Office<br>
-                    15 Schooner Way<br>
-                    Cardiff, South Glamorgan<br>
-                    CF10 4DZ<br>
-                    Phone: 02920 290376
-                </p>
-
-                <p>Grays Office<br>
-                    1-3 New Road, Grays<br>
-                    Essex, RM17 6NG<br>
-                    Phone: 01375 308177
-                </p>
-            </aside>
-
-            <aside class="col-md-3 widget">
-                <h1 class="widget-title">Other Offices</h1>
-
-                <p>Northern Office<br>
-                    423 Chadwick House, Birchwood Park<br>
-                    Warrington Road, Birchwood, Warrington, WA3 6AE<br>
-                    Phone: 01614 524850
-                </p>
-                <p>Southern Office<br>
-                    Unit B3, Second Floor<br>
-                    Cumberland Business Centre<br>
-                    Northumberland Road<br>
-                    Portsmouth, PO5 1DS<br>
-                    Phone: 02392 807311<br>
-                </p>
-            </aside>
-
-            <aside class="col-md-3 widget">
-                <h1 class="widget-title">Other Offices</h1>
-
-                <p>Cheltenham Office<br>
-                    Maxet House<br>
-                    22 Landsdown Ind. Estate<br>
-                    Gloucester Road<br>
-                    Cheltenham, GL51 8PL<br>
-                    Phone: 01242 649080
-                </p>
-            </aside>
-        </div>
-    </div>
-    <hr>
-    <div class="container postfooter">
-        <div class="row">
-            <aside class="col-md-6 widget">
-                <p>© 2014 Warwick Estates Property Management Ltd</p>
-            </aside>
-            <aside class="col-md-6 widget">
-                <ul class="socialIcons pull-right">
-                    <li><a href="http://www.facebook.com/warwickestates.net" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="http://twitter.com/Warwick_Estates" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fa fa-google-plus-square"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-                </ul>
-
-
-            </aside>
-        </div>
-    </div>
-</footer>
-
-
-</div>
-<!-- / boxedWrapper -->
-
-<script src="/bundles/customerapp/js/jquery.min.js"></script>
-<script src="/bundles/customerapp/js/jquery.dataTables.min.js"></script>
-<script src="/bundles/customerapp/js/jquery.flexslider-min.js"></script>
-<script src="/bundles/customerapp/js/bootstrap.min.js"></script>
-
-
-<!--<script src="/bundles/customerapp/js/timeline/js/storyjs-embed.js"></script>-->
-<script src="/bundles/customerapp/js/detectmobilebrowser.js"></script>
-<!--<script src="/bundles/customerapp/js/gmap3.min.js"></script>-->
-<script src="/bundles/customerapp/js/jquery.appear.js"></script>
-<!--<script src="/bundles/customerapp/js/jquery.isotope.min.js"></script>-->
-<!--<script src="/bundles/customerapp/js/jquery.ba-bbq.min.js"></script>-->
-<script src="/bundles/customerapp/js/jquery.countTo.js"></script>
-<!--<script src="/bundles/customerapp/js/jquery.fitvids.js"></script>-->
-
-<!--<script src="/bundles/customerapp/js/jquery.magnific-popup.min.js"></script>-->
-<!--<script src="/bundles/customerapp/js/jquery.mb.YTPlayer.js"></script>-->
-<script src="/bundles/customerapp/js/jquery.placeholder.min.js"></script>
-<!-- <script src="/bundles/customerapp/js/retina-1.1.0.min.js"></script> -->
-<!--<script src="/bundles/customerapp/form/js/form.js"></script>-->
-
-<!-- one pager only -->
-<script src="/bundles/customerapp/js/main.js"></script>
-<!-- <script src="/bundles/customerapp/scripts/app/jquery.OptionCache.js"></script> -->
-
-<script src="/bundles/customerapp/js/accountConsentDialogue.js"></script>
-
-<script>
-    $(document).ready(function() {
-        if ($('table.data-table')) {
-            $('table.data-table').dataTable({
-                "pageLength": 50,
-                "ordering": true,
-                "info": false,
-                "searching": false
-            });
-        }
-    });
-</script>
-</body>
+    </body>
 </html>

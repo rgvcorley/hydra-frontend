@@ -1,0 +1,47 @@
+// Block panel component
+
+$component-alpha: $site-zeta
+
+$component-breakpoint: $desktop
+
+.c-block-panel
+    background: $component-alpha
+    .container
+        padding: 3rem 0
+    @media (min-width: $component-breakpoint)
+        .container
+            padding: 6rem 0
+
+.c-block-panel--border-bottom
+    .container
+        border-bottom: 3px solid #bbb
+
+.c-block-panel--border-top
+    .container
+        border-top: 3px solid #bbb
+
+.c-block-panel--white
+    background: #fff
+    .container
+        border-color: $component-alpha
+
+.c-block-panel--centered
+    text-align: center
+
+.c-block-panel__title
+    font-size: 1.875rem
+    margin-bottom: 1rem
+    .c-block-panel--large-text &
+        @media (min-width: $component-breakpoint)
+            font-size: 2.875rem
+            margin-bottom: 2rem
+
+.c-block-panel__content
+    font-size: 1.2rem
+    line-height: 1.8rem
+    p:last-child
+        margin: 0
+    .c-block-panel--large-text &
+        @media (min-width: $component-breakpoint)
+            font-size: 1.875rem
+            line-height: 2.5rem

@@ -1,0 +1,56 @@
+// Table object
+
+$component-alpha: #eee
+$component-beta: $site-delta
+$component-gamma: #fff
+$component-delta: $site-beta
+
+table
+    width: 100%
+    a
+        color: $component-delta
+        transition: all .3s ease-in
+        .no-touch &:hover
+            background: $component-delta
+            color: #fff
+    @media (max-width: 768px)
+        display: block
+        overflow-x: auto
+        width: auto
+
+table::-webkit-scrollbar
+    -webkit-appearance: none
+    width: 5px
+
+table::-webkit-scrollbar-thumb
+    border-radius: 0
+    background-color: $component-beta
+
+table::-webkit-scrollbar-track
+    background: $component-alpha
+
+thead
+
+tbody
+
+tr
+
+th
+    background: $component-beta
+    color: $component-gamma
+    font-weight: 400
+    position: relative
+    text-align: left
+    vertical-align: top
+    > *
+        display: block
+        padding: 0.4375rem 0.9375rem
+
+td
+    background: $component-alpha
+    color: $component-beta
+    position: relative
+    vertical-align: top
+    > *
+        display: block
+        padding: 0.4375rem 0.9375rem

@@ -1,0 +1,30 @@
+// List component
+
+$component-alpha: $site-alpha
+
+.list
+    font-size: 0.9375rem
+    font-weight: 600
+    line-height: 1.5
+    list-style: none
+    margin: 0
+    overflow: hidden
+    padding: 0
+
+.list__item
+    float: left
+    width: 100%
+    .list--two-column &
+        width: 50%
+    .list--three-column &
+        width: 33.33333%
+    .list--four-column &
+        width: 25%
+    .list--four-column &
+        width: 20%
+
+.list__link
+    transition: color .3s ease-in
+    .no-touch .footer &:hover
+        color: $component-alpha
+        text-decoration: underline

@@ -2,55 +2,40 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
+    <section class="content">
+        <div class="container">
             <h1>{{title}}</h1>
-        </div>
-        <div class="col-md-4 text-right">
-            <form method="get" action="" class="form-inline">
-                <div class="form-group">
-                    <select class="form-control" name="taxYear">
-                        {% for year in taxYears %}
-                        <option value="{{ year.key }}" {% if year.active%}selected="selected"{% endif %}>{{ year.desc }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-default btn-sm">Update</button>
-            </form>
-        </div>
-    </div>
-    <div class="row">
 
-        <div class="cl-md-8 text-right">
-            <a href="/reports/budget-versus-spend/csv" class="btn btn-default btn-sm">Download as CSV</a>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="col-md-12">
-            <table class="table table-striped table-condensed table-bordered data-table" style="font-family: 'courier new', courier, monospace;">
+            <form action="" method="get">
+                <select class="form-control" name="taxYear">
+                    {% for year in taxYears %}
+                        <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
+                    {% endfor %}
+                </select>
+                <button class="button" type="submit">Update</button>
+            </form>
+
+            <a class="button mtm" href="/reports/budget-versus-spend/csv" title="Download Budget vs Spend Report as a CSV document">Download as CSV</a>
+
+            <table>
                 <thead>
                     <tr>
                         {% for row in headings %}
-                        <th>{{ row }}</th>
+                            <th><span>{{ row }}</span></th>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
                     {% for row, columns in rows %}
-                    <tr>
-                        {% for col in columns %}
-                            <td>
-                                {{col}}
-                            </td>
-                        {% endfor %}
-                    </tr>
+                        <tr>
+                            {% for col in columns %}
+                                <td><span>{{ col }}</span></td>
+                            {% endfor %}
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-    </div>
-</div>
+    </section>
+
 {% endblock %}
