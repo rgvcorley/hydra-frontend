@@ -4,6 +4,7 @@ $component-alpha: #f5f6f8
 $component-beta: $site-epsilon
 $component-gamma: $body-font-color
 $component-delta: $site-delta
+$component-epsilon: $site-beta
 
 $component-breakpoint: $desktop
 
@@ -42,8 +43,46 @@ fieldset
         display: block
 
 select
-    color: $component-delta
+    background: transparent
+    border-radius: 0
+    border: 2px solid $component-beta
+    color: $component-beta
     cursor: pointer
-    font-size: 1rem
-    padding: 1rem 3rem 1rem 1rem
+    font-size: 0.875rem
+    font-weight: 600
+    line-height: 1.4
+    padding: 0.9375rem 3rem 0.9375rem 0.9375rem
+    transition: all 0.3s ease-in
+    -moz-appearance: none
     -webkit-appearance: none
+    .no-touch &:hover
+        border-color: $component-epsilon
+        color: $component-epsilon
+    @media (min-width: $component-breakpoint)
+        font-size: 1.125rem
+
+.select-wrapper
+    display: inline-block
+    position: relative
+    select
+        position: relative
+        z-index: 1
+    &:after
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $component-beta;
+        content: ''
+        display: block
+        height: 0
+        margin-top: -5px
+        position: absolute
+        right: 1rem
+        top: 50%
+        transition: border 0.3s ease-in
+        width: 0
+        z-index: 2
+    .no-touch &:hover
+        &:after
+            border-top-color: $component-epsilon
+
+
