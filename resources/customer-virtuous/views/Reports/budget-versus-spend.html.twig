@@ -6,16 +6,18 @@
         <div class="container">
             <h1>{{title}}</h1>
 
-            <form action="" method="get">
-                <select class="form-control" name="taxYear">
-                    {% for year in taxYears %}
-                        <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
-                    {% endfor %}
-                </select>
+            <a class="button fl-r mbm" href="/reports/budget-versus-spend/csv" title="Download Budget vs Spend Report as a CSV document">Download as CSV</a>
+
+            <form action="" class="mbl pbm" method="get">
+                <div class="mbs select-wrapper">
+                    <select name="taxYear">
+                        {% for year in taxYears %}
+                            <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <button class="button" type="submit">Update</button>
             </form>
-
-            <a class="button mtm" href="/reports/budget-versus-spend/csv" title="Download Budget vs Spend Report as a CSV document">Download as CSV</a>
 
             <table>
                 <thead>

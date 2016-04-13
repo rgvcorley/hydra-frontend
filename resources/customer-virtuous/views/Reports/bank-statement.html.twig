@@ -14,12 +14,14 @@
 
             <h1>{{title}}</h1>
 
-            <form action="" class="mbl" method="get">
-                <select name="taxYear">
-                    {% for year in taxYears %}
-                        <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
-                    {% endfor %}
-                </select>
+            <form action="" class="mbl pbm" method="get">
+                <div class="select-wrapper">
+                    <select name="taxYear">
+                        {% for year in taxYears %}
+                            <option value="{{ year.key }}"{% if year.active%} selected="selected"{% endif %}>{{ year.desc }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <button class="button mtm" type="submit">Update</button>
             </form>
 

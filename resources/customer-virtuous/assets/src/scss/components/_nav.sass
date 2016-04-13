@@ -30,6 +30,15 @@ $component-breakpoint: $desktop
         top: 0.1875rem
         @media (min-width: $desktop)
             display: inline-block
+    &:first-child
+        display: none
+    @media (min-width: $desktop)
+        margin: 0 8px
+        &:first-child
+            display: inline-block
+    @media (min-width: 1100px)
+        margin: 0 10px
+
 
 .nav__link
     position: relative
@@ -51,7 +60,7 @@ $component-breakpoint: $desktop
 .nav__list-link
     .icon
         display: none
-        margin-right: 0.5rem
+        margin-right: 0.25rem
         max-height: 34px
         vertical-align: middle
 
