@@ -446,7 +446,9 @@ form {
     text-transform: uppercase;
     border: 0px solid #454348;
     font-weight: 300;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    -webkit-appearance: none;
+    border-radius: 0; }
     form input[type="submit"]:focus,
     form button:focus {
       outline: none;

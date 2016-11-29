@@ -52,6 +52,8 @@ form {
 		border: 0px solid $secondary;
 		font-weight: 300;
 		letter-spacing: 1px;
+		-webkit-appearance: none;
+		border-radius:0;
 		&:focus {
 			outline: none;
 			opacity: 0.5;
