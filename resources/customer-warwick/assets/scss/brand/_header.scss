@@ -274,6 +274,7 @@ nav.menu-container {
 	border-radius:0;
 	-webkit-appearance: none;
 	outline:0;
+	font-size: 16px;
 	background: white url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSI5NyAxMDQgMTIgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgIDxwb2x5Z29uIGlkPSJSZWN0YW5nbGUiIHN0cm9rZT0ibm9uZSIgZmlsbD0iI0Q4RDhEOCIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDMuMDAwMDAwLCAxMTAuMDAwMDAwKSByb3RhdGUoLTMxNS4wMDAwMDApIHRyYW5zbGF0ZSgtMTAzLjAwMDAwMCwgLTExMC4wMDAwMDApICIgcG9pbnRzPSIxMDcgMTA2IDEwNyAxMTQgOTkgMTE0Ij48L3BvbHlnb24+PC9zdmc+) no-repeat right 10px top 11px;
 	
 	@include mq(m){
