@@ -23,6 +23,8 @@ form {
 		background: #efefef;
 		transition: all .5s;
 		margin-bottom: 15px;
+		-webkit-appearance: none;
+		border-radius:0;
 		&:focus {
 			outline: none;
 			background:white;
