@@ -2,30 +2,35 @@
 
 {% block content %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>{{title}}</h2>
-                <p>From here you can view important information about your property, download your statement of account and make payments</p>
-            </div>
-        </div>
+	<section id="masthead">
+		<div class="container">
+				<article>
+					<h1><strong>{{title}}</strong></h1>
+					<div>
+						<p>From here you can view important information about your property, download your statement of account and make payments.</p>
+					</div>
+				</article>
+				<div>
+					<img src="/bundles/customerapp/img/superhero-home.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="house-our-service">
+				</div>
+			</div>
+	</section>
 
-        <div class="row"><div class="col-md-12">&nbsp;</div></div>
 
-        <hr />
-
-        {% for row in rows %}
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>{{ row.post_title }}</h4>
-                    {{ row.post_body|markdown }}
-
-                    <p class="text-right"><small>Posted By: <em>{{ row.created_by }}</em> &nbsp;&nbsp;On <em>{{ row.date_created|date('d/m/Y') }}</em></small></p>
-                </div>
-            </div>
-            <hr />
-        {% endfor %}
-
-    </div>
-
+	<div class="background-white">
+	    <div class="container news-posts">
+	
+	        {% for row in rows %}
+	            <div class="row news-post">
+	                <div class="col span_12">
+	                    <h4>{{ row.post_title }}</h4>
+	                    {{ row.post_body|markdown }}
+	
+	                    <p class="text-right"><small>Posted By: <em>{{ row.created_by }}</em> &nbsp;&nbsp;On <em>{{ row.date_created|date('d/m/Y') }}</em></small></p>
+	                </div>
+	            </div>
+	        {% endfor %}
+	
+	    </div>
+	</div>
 {% endblock %}

@@ -2,11 +2,12 @@
 
 {% block content %}
 
-    <br>
-
+<div class="background-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            
+            <div class="col span_3">&nbsp;</div>
+            <div class="col span_6">
                 <h2>Sign In</h2>
 
                 {% if error %}
@@ -16,7 +17,6 @@
                 {% endif %}
 
                 <form action="{{ path('customer_app_login_check') }}" method="post">
-
 
                     <div class="form-group">
                         <label for="username">Tenant Reference</label>
@@ -32,7 +32,11 @@
                     <button type="submit" class="btn btn-danger">Login</button>
                 </form>
             </div>
-            <div class="col-md-6">
+            
+        </div>
+        <div class="row">
+            <div class="col span_3">&nbsp;</div>
+            <div class="col span_6">
                 <h3>Tenant Login</h3>
 
                 <p>From your tenant login you can manage every aspect of your account, including:</p>
@@ -46,5 +50,6 @@
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

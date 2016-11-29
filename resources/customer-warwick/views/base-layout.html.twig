@@ -72,14 +72,14 @@
 					</div>
 				</a>
 				<ul id="main-menu" class="nav">
-					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="http://preview.warwickestates.net/about/">About</a><span class="underline"></span></li>
-					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://preview.warwickestates.net/our-service/">Our Service</a><span class="underline"></span></li>
-					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="http://preview.warwickestates.net/our-offices/">Our Offices</a><span class="underline"></span></li>
-					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="http://preview.warwickestates.net/premier/">Premier</a><span class="underline"></span></li>
-					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="http://preview.warwickestates.net/lite/">Lite</a><span class="underline"></span></li>
-					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="http://preview.warwickestates.net/contact/">Contact</a><span class="underline"></span></li>
-<!-- 					<li iclass="login menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="https://login.warwickestates.net/">Customer Login</a><span class="underline"></span></li> -->
-					<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-46"><a href="http://preview.warwickestates.net/contact#contact">Enquire Now</a><span class="underline"></span></li>
+					<li><a href="http://preview.warwickestates.net/about/">About</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/our-service/">Our Service</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/our-offices/">Our Offices</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/premier/">Premier</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/lite/">Lite</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/contact/">Contact</a><span></span></li>
+					<li><a class="text-red" href="https://login.warwickestates.net/">Customer Login</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/contact#contact">Enquire Now</a><span></span></li>
 				</ul>
 			</nav>
 			
@@ -87,54 +87,52 @@
 
 	</header>
 
-
+	
     {% block menu %}{% endblock %}
 
     {% block content %}{% endblock %}
 
-
-
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col span_4">
-				<h3>Our Offices</h3>
-				<p class="address"><strong>HEAD OFFICE<br>
-					Warwick Estates Property Management</strong><br>
-					Unit 9 Astra Centre, Harlow<br>
-					Essex, CM20 2BN
-				</p>
-				<p>
-				<a href="http://preview.warwickestates.net/our-offices" class="btn">Other Offices</a>
-				</p>
-				
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col span_4">
+					<h3>Our Offices</h3>
+					<p class="address"><strong>HEAD OFFICE<br>
+						Warwick Estates Property Management</strong><br>
+						Unit 9 Astra Centre, Harlow<br>
+						Essex, CM20 2BN
+					</p>
+					<p>
+					<a href="http://preview.warwickestates.net/our-offices" class="btn">Other Offices</a>
+					</p>
+					
+				</div>
+				<div class="col span_4">
+					<h3>Get in Touch</h3>
+					<p>T: 0844 991 9968<br>
+					E: info@warwickestates.net
+					</p>
+					<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+				</div>
+				<div class="col span_4">
+					<h3>Get the Newsletter</h3>
+					
+					<form>
+						<!-- not wired up to anything -->
+						<input type="text" placeholder="Your email"><button type="submit"><i class="fa fa-chevron-right"></i></button>
+					</form>
+					
+					<p class="credit">&copy; {{ "now"|date("Y") }} Warwick Estates. All rights reserved.<br>
+					Designed by <a href="http://www.theagencycreative.co.uk/" target="_blank">The Agency Creative</a></p>
+	
+				</div>
 			</div>
-			<div class="col span_4">
-				<h3>Get in Touch</h3>
-				<p>T: 0844 991 9968<br>
-				E: info@warwickestates.net
-				</p>
-				<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-				<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-				<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-			</div>
-			<div class="col span_4">
-				<h3>Get the Newsletter</h3>
-				
-				<form>
-					<!-- not wired up to anything -->
-					<input type="text" placeholder="Your email"><button type="submit"><i class="fa fa-chevron-right"></i></button>
-				</form>
-				
-				<p class="credit">&copy; {{ "now"|date("Y") }} Warwick Estates. All rights reserved.<br>
-				Designed by <a href="http://www.theagencycreative.co.uk/" target="_blank">The Agency Creative</a></p>
-
-			</div>
+	
 		</div>
-
-	</div>
-
-</footer>
+	
+	</footer>
 
 
 <!-- VendoJS -->

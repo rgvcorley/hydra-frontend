@@ -15,6 +15,9 @@ jQuery(document).ready(function($) {
 	    }
 	]);
 	
+	$('.mobile-sub-nav').change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
 	
 	// register enter and exit functions for a single breakpoint
 	

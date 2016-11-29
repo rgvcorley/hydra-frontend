@@ -1,7 +1,8 @@
-    <div class="container">
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="background-white">
+	<div class="container sub-nav-container">
         <div class="row">
-            <ul class="nav nav-pills">
+            <ul class="nav desktop-sub-nav">
                 <li class="{% if activePage == "home" %}active{% endif %}"><a target="_self" href="/" title="Home">Home</a></li>
 
                 {% if is_granted('ROLE_CUSTOMER|PAY') %}
@@ -9,9 +10,9 @@
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|REPORTS') %}
-                <li>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li class="dropdown-toggle">
+                    <span>Reports <i class="caret"></i></span>
+                    <ul class="dropdown-menu">
 
                         {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
                         <li class="{% if activePage == "statement" %}active{% endif %}" role="presentation"><a href="/statement" title="Statement of Account">Statement of Account</a></li>
@@ -56,7 +57,61 @@
 
                 <li><a href="/logout">Logout</a></li>
             </ul>
+            
+			<select class="mobile-sub-nav"> 
+                <option {% if activePage == "home" %}selected{% endif %} value="/">Home</option>
+
+                {% if is_granted('ROLE_CUSTOMER|PAY') %}
+                <option {% if activePage == "payments" %}selected{% endif %} value="/payments">Make Payment</option>
+                {% endif %}
+
+                {% if is_granted('ROLE_CUSTOMER|REPORTS') %}
+                <option>Reports</option>
+                    {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
+                    <option {% if activePage == "statement" %}selected{% endif %} value="/statement">- Statement of Account</option>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_CUSTOMER|REPORTS|BANK') %}
+                    <option {% if activePage == "bank" %}selected{% endif %} value="/reports/bank-statement">- Bank Statement</option>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_CUSTOMER|REPORTS|DEBTORS') %}
+                    <option {% if activePage == "debtors" %}selected{% endif %} value="/reports/debtors">- Debtors Report</option>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_CUSTOMER|REPORTS|SPEND') %}
+                    <option {% if activePage == "spend" %}selected{% endif %} value="/reports/spend">- Spend Report</option>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_CUSTOMER|REPORTS|BUDGETSPEND') %}
+                    <option {% if activePage == "budgetspend" %}selected{% endif %} value="/reports/budget-versus-spend">- Budget vs Spend</option>
+                    {% endif %}
+                {% else %}
+                
+	                {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
+	                <option {% if activePage == "statement" %}selected{% endif %} value="/statement" title="Statement of Account">- Statement of Account</option>
+	                {% endif %}
+                
+                {% endif %}
+
+                {% if is_granted('ROLE_CUSTOMER|DOCUMENTS') %}
+                <option {% if activePage == "documents" %}selected{% endif %} value="/documents" title="Downloads">Documents</option>
+                {% endif %}
+
+                {% if is_granted('ROLE_CUSTOMER|ISSUES') %}
+                <option {% if activePage == "issues" %}selected{% endif %} value="/issues" title="Issues">Issues</option>
+                {% endif %}
+
+                {% if is_granted('ROLE_CUSTOMER|ACCOUNT') %}
+                	<option {% if activePage == "account" %}selected{% endif %} value="/account">Account Details</option>
+                {% endif %}
+
+                <option value="/logout">Logout</option>
+			</select>
+            
+			
+            
         </div>
-        <hr>
-        {% endif %}
     </div>
+</div>
+{% endif %}

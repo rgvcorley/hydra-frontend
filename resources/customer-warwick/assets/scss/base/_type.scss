@@ -1,0 +1,64 @@
+body,p,ul,li,input,textarea  {
+	font-family: $body;
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	color: #454348;
+}
+
+body {
+	background-color: #e1e1e1;
+}
+
+
+a,a:visited {
+	transition: all .5s;
+	color: $primary;
+	text-decoration: none;
+}
+a:active,a:hover {
+	text-decoration: none;
+}
+a:focus {
+	outline: none;
+}
+
+
+h1,h2,h3,h4,h5 {
+	font-family: $heading;
+	color: $primary;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
+h1 {
+	font-size: 46px;
+	color: $secondary;
+	font-weight: 300;
+	line-height: normal;
+	strong {
+		color: $primary;
+	}
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+article {
+	ul {
+		padding-left: 20px; margin-left: 0;
+		li {
+			margin-bottom: 1em;
+		}
+	}
+}

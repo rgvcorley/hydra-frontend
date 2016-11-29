@@ -34,8 +34,7 @@
 
 // 	DEFAULT ROW STYLES 
 // Set bottom padding according to preference 
-.row { padding-bottom: 0em;
-}
+.row { padding-bottom: 0em;}
 			
 								  
 // DEFAULT COLUMN STYLES
@@ -83,4 +82,22 @@
 	.gutters .span_10 { width: 83.0%; }
 	.gutters .span_11 { width: 91.5%; }
 	.gutters .span_12 { width: 100%; }
+}
+
+
+.wrapper {
+	text-align: center;
+	&.grey {
+		background: #f2f2f2;
+	}
+}
+
+.container {
+	max-width: 1000px;
+	padding: 30px;
+	position: relative;
+}
+@media ( min-width : 768px ) {
+	.col-left {padding-right:15px;}
+	.col-right {padding-left:15px;}
 }
