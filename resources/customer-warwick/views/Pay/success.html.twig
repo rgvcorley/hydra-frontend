@@ -4,11 +4,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Payment successful!</h1>
+        <div class="col span_12 intro-box">
+            <h1><strong>Payment successful!</strong></h1>
             <p>Your payment has been accepted and once confirmed will be visible in your statement.</p>
+            {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
         </div>
     </div>
-    {% include 'pay/cards-image.html' %}
 </div>
 {% endblock %}

@@ -4,8 +4,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col span_12">
-            <h2>{{title}}</h2>
+        <div class="col span_12 intro-box">
+            <h1><strong>{{title}}</strong></h1>
             {% if showPaymentForm %}
                 <p>
                     Our records show the outstanding balance on your account is &pound;{{ confirmedAmount|number_format(2, '.', ',') }}. To see 
@@ -26,7 +26,7 @@
         </div>
 
         <div class="col span_12">
-
+        
             {% if message is empty %}
             {% else %}
             <div class="alert alert-{{messageState}}">{{message}}</div>

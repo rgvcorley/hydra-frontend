@@ -259,6 +259,7 @@ nav.menu-container {
 		a {line-height: 24px;
 			&:hover {color: rgba(white,0.8);}
 		}
+		.active a {color: white;}
 	}
 	@include mq(m){
 		display: block;	

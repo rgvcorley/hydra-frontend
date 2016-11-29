@@ -21,6 +21,11 @@
 		display: none;
 	}
 }
+.hide-mobile {display:none!important;
+	@include mq(m){
+		display: block!important;	
+	}
+}
 
 .alignleft {
 	float: left;
@@ -36,4 +41,9 @@
 
 .alignCenter{
 	text-align: center;
+}
+
+.margin-bottom {
+	margin-bottom: 20px!important;
+	display: block;
 }
