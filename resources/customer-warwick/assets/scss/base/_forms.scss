@@ -1,0 +1,59 @@
+form {
+	box-sizing: border-box;
+	label {
+		display: block;
+		width: 45%;
+		float: left;
+		margin-right: 2%;
+		font-size: 14px;
+		color: #333;
+		font-weight: bold;
+		padding-top: 10px;
+		
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	textarea {
+		width: 100%;
+		@include mq(m){
+			width: 95%;
+		}
+		padding: 10px;
+		border: 1px solid #efefef;
+		font-size: 14px;
+		background: #efefef;
+		transition: all .5s;
+		&:focus {
+			outline: none;
+			box-shadow: inset 0px 0px 3px rgba(0,0,0,.3);
+		}
+		&::placeholder {
+			text-transform: uppercase;
+			color: $secondary;
+		}
+	}
+	p {
+		width: 100%;
+		overflow: visible;
+		clear: both;
+		padding: 10px 0;
+		margin: 0;
+	}
+	input[type="submit"],
+	button{
+		color: white;
+		background: $primary;
+		border: none;
+		padding: 10px 20px;
+		font-size: 14px;
+		text-transform: uppercase;
+		border: 0px solid $secondary;
+		font-weight: 300;
+		letter-spacing: 1px;
+		&:focus {
+			outline: none;
+			opacity: 0.5;
+		}
+	}
+}
