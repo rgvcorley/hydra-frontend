@@ -4,18 +4,6 @@
 
 <div class="container">
 
-    {% if reserves is not empty %}
-    <div class="row">
-        {% for reserve in reserves %}
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p><strong>{{ reserve.getName }} Balance: </strong> &pound;{{ reserve.getFormattedBalance }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    
     <div class="row">
         <div class="col span_12 intro-box">
             <h1><strong>{{title}}</strong></h1>
