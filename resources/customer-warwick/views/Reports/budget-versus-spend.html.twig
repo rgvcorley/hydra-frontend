@@ -6,15 +6,12 @@
 
     <div class="row">
         <div class="col span_12 intro-box">
-            <h1><strong>{{title}}</strong></h1>
+            <h1 class="margin-bottom"><strong>{{title}}</strong></h1>
         </div>
     </div>
- 
-</div>
-<div class="container table-container">  
     <div class="row">
-        <div class="col span_12 text-right">
-	        <form method="get" action="" class="form-inline">
+        <div class="col span_12">
+	        <form method="get" action="" class="form-inline form-filter">
                 <div class="form-group">
                     <select class="form-control select-form float-left" name="taxYear">
                         {% for year in taxYears %}
@@ -24,6 +21,14 @@
                 </div>
                 <button type="submit" class="btn btn-default btn-sm">Update</button>
             </form>
+        </div>
+    </div>
+ 
+</div>
+<div class="container table-container">  
+    <div class="row">
+        <div class="col span_12">
+	        
             <table class="display dataTable">
 	            <thead>
 	                <tr>

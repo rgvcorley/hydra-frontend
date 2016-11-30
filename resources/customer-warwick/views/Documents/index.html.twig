@@ -15,16 +15,19 @@
                 <div class="alert alert-warning">{{ message }}</div>
             {% endif %}
             {% for row in rows %}
-            <div class="panel panel-danger" style="border-color:#DDD;">
-              <div class="panel-body">
-                  <a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}" class="btn btn-danger btn-large pull-right">Download</a>
-                  <strong>{{ row.filename }}</strong><br>
-                  <small>{{ row.description }}</small>
-              </div>
-              <div class="panel-footer" style="padding:5px 15px">
+            
+            <div class="document background-white">
+                  <h3>{{ row.filename }}</h3>
+                  <p>{{ row.description }}</p>
                   <small><strong>Size:</strong> {{ row.size }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Date Uploaded:</strong> {{ row.date_uploaded|date("d/m/Y") }}</small>
-              </div>
-          </div>
+				  <a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}" class="btn red btn-download">Download</a>
+            </div>
+            <div class="document background-white">
+                  <h3>{{ row.filename }}</h3>
+                  <p>{{ row.description }}</p>
+                  <small><strong>Size:</strong> {{ row.size }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Date Uploaded:</strong> {{ row.date_uploaded|date("d/m/Y") }}</small>
+				  <a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}" class="btn red btn-download">Download</a>
+            </div>
             {% endfor %}
         </div>
     </div>

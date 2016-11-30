@@ -145,3 +145,42 @@ article {
 }
 
 .center-align {text-align: center;}
+
+
+
+.bank-statements {
+	margin-bottom:30px;
+	.container {padding-bottom:5px!important;}
+	.account {background:#57555A;text-align: center;padding:20px 15px 25px 15px;margin-bottom: 25px;}
+	span {display: block;}
+	.name {
+	    font-size: 12px;
+	    line-height: 12px;
+	    text-align: center;
+	    color: #9E9E9E;
+	    font-weight: bold;
+	    margin-bottom:6px;
+    }
+	.balence {
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;}
+}
+
+
+
+.document {
+	margin-top:30px;
+	padding:20px;
+	position: relative;
+	h3, p, small {padding:0;margin:0;display: block;}
+	h4 {}
+	p {}
+	small {padding-top:3px;color: #999;}
+	@include mq(m){
+		padding:20px 180px 20px 20px;
+		.btn {position: absolute;top:0;right:20px;}
+	}
+}

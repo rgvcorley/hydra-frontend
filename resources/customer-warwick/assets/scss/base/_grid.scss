@@ -95,6 +95,7 @@
 	margin: 0 auto; 
 	&.table-container {
 		padding: 0 0 30px 0;
+		overflow: scroll;
 	}
 }
 @media ( min-width : 768px ) {
