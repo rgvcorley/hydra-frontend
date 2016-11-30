@@ -16,10 +16,6 @@
 
 //MAIN CONTAINER 
 // Set the width to whatever you want the width of your site to be.
-.container { 
-	max-width: 800px;
-	margin: 0 auto; 
-}
 
 //	SELF CLEARING FLOATS - CLEARFIX METHOD
 .container:after,
@@ -96,8 +92,17 @@
 	max-width: 1000px;
 	padding: 30px;
 	position: relative;
+	margin: 0 auto; 
+	&.table-container {
+		padding: 30px 0;
+	}
 }
 @media ( min-width : 768px ) {
+	.container {
+		&.table-container {
+			padding: 30px;
+		}
+	}
 	.col-left {padding-right:15px;}
 	.col-right {padding-left:15px;}
 }

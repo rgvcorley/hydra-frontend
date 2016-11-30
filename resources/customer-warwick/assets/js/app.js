@@ -44,13 +44,36 @@ jQuery(document).ready(function($) {
 	
 	// 	$('#blocks .row').equalize();
 
-    if ($('table.data-table')) {
-		$('table.data-table').dataTable({
+    if ($('table.dataTable')) {
+		$('table.dataTable').dataTable({
 		    "pageLength": 50,
 		    "ordering": true,
 		    "info": false,
 		    "searching": false
 		});
     }
+    
+    // Enable email comms
+	$('form[action="/account/update"] input[type="submit"]').on('click', function(e) {
+		if($('input[name="form[consent]"]:checked').val() == 0) {
+			e.preventDefault();
+			$('#consentModal').addClass('active');
+		}
+	});
+	$('#consentModal #sure').on('click', function(e) {
+		e.preventDefault();
+		$('form[action="/account/update"]').submit();
+	});
+	$('#consentModal #enable-consent').on('click', function(e) {
+		e.preventDefault();
+		$('#form_consent_1').prop('checked', false);
+		$('#form_consent_0').prop('checked', true);
+		$('#consentModal').removeClass('active');
+		$('form[action="/account/update"]').submit();
+	});
+	$('#consentModal #close').on('click', function(e) {
+		e.preventDefault();
+		$('#consentModal').removeClass('active');
+	});
 
 });
