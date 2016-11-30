@@ -1,0 +1,9 @@
+/* ====== Bank Statement Hacks ======= */
+.form-control[name=taxYear] {padding:5px;}
+.dataTables_length select {height:21px;padding:2px 0 0}
+
+/* ====== Button centering ======= */
+.btn {padding:6px 12px 3px !important;}
+
+/* ====== CSS for the FAQ page ======= */
+/*.panel-heading > .panel-title > a.collapsed{color: #0b0b0b;}*/

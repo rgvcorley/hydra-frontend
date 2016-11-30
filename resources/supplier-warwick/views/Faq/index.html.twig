@@ -1,0 +1,163 @@
+{% extends 'SupplierAppBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <header class="page-header text-center">
+            <h1 class="page-title">FAQ/Guidance</h1>
+
+            <h2>Here to Help</h2>
+        </header>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+
+                <div class="panel-group" id="accordion">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#panel8">
+                                    What is my username & Password?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="panel8" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Please contact <a href="mailto:cas@warwickestates.net"> cas@warwickestates.net</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#panel9">
+                                    My invoice has been rejected, why?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="panel9" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Reasons for rejection:
+                                <ul>
+                                    <li>
+                                        Invoice address - All invoices must be addressed to our client. The Works order instruction will advise
+                                        the billing address when issued. When the invoice isre-addressed, please up-load your
+                                        again.
+                                    </li>
+                                    <li>
+                                        Invoice amount - Total entered does not match invoice.
+                                    </li>
+                                    <li>
+                                        Works order number missing on invoice.
+                                    </li>
+                                </ul>
+                                An email notification with copy invoice and Works order will be issued. The reason will be detailed and a
+                                notification will appear on the homepage. Click the notification to re-upload invoice, the reason will appear on notes on my invoice tab
+                                alongside the Works order.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#panel10">
+                                    I do not have a valid Works order number.
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="panel10" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                An email notification is issued to the service email on instruction, if this has not been
+                                received, please contact the relevant Property Manager/Assistant who instructed the
+                                works.
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- / panel-group -->
+
+
+            </div>
+            <div class="col-md-6 col-sm-6">
+
+                <div class="panel-group" id="accordion2">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#panel11">
+                                    When will my invoice be paid?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="panel11" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Our payment runs are every Monday, the 'My Invoices' tab details the status of the Works order.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#panel12">
+                                    What does my Works order status mean?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="panel12" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul>
+                                    <li>
+                                        Supplier invoice awaiting approval - Invoice to be checked by Client Finance team – Invoice uploaded to correct Works order,
+                                        Invoice address is correct, Works order quoted and invoice details uploaded match
+                                        invoice.
+                                    </li>
+                                    <li>
+                                        Awaiting approval - The invoice has been checked by Client Finance and awaiting approval by the Property
+                                        Manager. If invoice awaiting approval has been over 21 days from date uploaded, please contact the
+                                        relevant Property Manager.
+                                    </li>
+                                    <li>
+                                        Approved for payment - The invoice has been approved for payment, your invoice will be paid on the following
+                                        Monday.
+                                    </li>
+                                    <li>
+                                        Supplier Invoice Rejected - The invoice has not met approval requirements.
+                                    </li>
+                                    <li>
+                                        Invoice Rejected - Invoice rejected by Property Manager, notification will be issued, if not received please contact
+                                        Property Manager listed next to Works order.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#panel13">
+                                    How do I update my bank details?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="panel13" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Please provide in writing to <a href="mailto:cas@warwickestates.net">cas@warwickestates.net</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- / panel-group -->
+
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

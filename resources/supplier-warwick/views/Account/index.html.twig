@@ -1,0 +1,51 @@
+{% extends 'SupplierAppBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{title}}</h2>
+                {% if message is empty %}
+                {% else %}
+                    <div class="alert alert-{{ messageType }}">
+                        {{ message }}
+                    </div>
+                {% endif %}
+
+                {% for flash_message in app.session.flashBag.get('success') %}
+                    <div class="alert alert-success">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_start(detailsForm) }}
+                {% form_theme detailsForm 'bootstrap_3_layout.html.twig' %}
+                {{ form_errors(detailsForm) }}
+
+                {{ form_row(detailsForm.name) }}
+                {{ form_row(detailsForm.email) }}
+                {{ form_row(detailsForm.accountsEmail) }}
+                {{ form_row(detailsForm.mobile) }}
+                {{ form_row(detailsForm.telephone) }}
+                {{ form_end(detailsForm) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_start(addressForm) }}
+                {% form_theme addressForm 'bootstrap_3_layout.html.twig' %}
+                {{ form_errors(addressForm) }}
+
+                {{ form_row(addressForm.address) }}
+                {{ form_row(addressForm.town) }}
+                {{ form_row(addressForm.city) }}
+                {{ form_row(addressForm.county) }}
+                {{ form_row(addressForm.postcode) }}
+                {{ form_end(addressForm) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

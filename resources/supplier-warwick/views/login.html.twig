@@ -1,0 +1,46 @@
+{% extends "SupplierAppBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>{{ title }}</h2>
+
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
+                <form action="{{ path('supplier_app_login_check') }}" method="post">
+
+
+                    <div class="form-group">
+                        <label for="username">Supplier Username</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Enter Username" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="_password" placeholder="Password" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">Login</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Supplier Login</h3>
+
+                <p>From your supplier login you can manage your account, including:</p>
+                <ul>
+                    <li><span>View outstanding works orders</span></li>
+                    <li><span>Upload invoices against works orders</span></li>
+                    <li><span>View the payment status of any outstanding invoices</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

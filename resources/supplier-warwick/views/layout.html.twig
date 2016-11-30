@@ -1,0 +1,20 @@
+{% extends "SupplierAppBundle::base-layout.html.twig" %}
+
+{% block menu %}
+    <div class="container">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <div class="row">
+                <ul class="nav nav-pills">
+                    <li class="{% if app.request.attributes.get('_route') == "supplier_homepage" %}active{% endif %}"><a target="_self" href="{{ path('supplier_homepage') }}" title="Home">Home</a></li>
+                    <li class="{% if app.request.attributes.get('_route') == "supplier_account" %}active{% endif %}"><a target="_self" href="{{ path('supplier_account') }}" title="Account">Account</a></li>
+                    <li class="{% if app.request.attributes.get('_route') == "supplier_invoice_upload" %}active{% endif %}"><a target="_self" href="{{ path('supplier_invoice_upload') }}" title="Upload Invoice">Upload Invoice</a></li>
+                    <li class="{% if app.request.attributes.get('_route') == "supplier_my_invoices" %}active{% endif %}"><a target="_self" href="{{ path('supplier_my_invoices') }}" title="My Invoices">My Invoices</a></li>
+                    <!-- <li class="{% if app.request.attributes.get('_route') == "supplier_certificate_upload" %}active{% endif %}"><a target="_self" href="{{ path('supplier_certificate_upload') }}" title="Upload Certificate">Upload Certificate</a></li>-->
+                    <li><a href="/faq">Help/FAQ</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+            <hr>
+        {% endif %}
+    </div>
+{% endblock %}
