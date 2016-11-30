@@ -9,10 +9,12 @@
             <h1><strong>{{title}}</strong></h1>
         </div>
     </div>
+</div>
     
+<div class="container table-container">
     <div class="row">
-        <div class="col span_12">
-            <table class="table table-striped table-condensed table-bordered data-table">
+        <div class="col span_12">            
+            <table class="display dataTable">
                 <thead>
                     <tr>
                         <th>Tenant</th>
@@ -31,14 +33,14 @@
                         <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.current_balance|number_format(2, '.', ',') }}</td>
                         <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.one_month_balance|number_format(2, '.', ',') }}</td>
                         <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.three_month_balance|number_format(2, '.', ',') }}</td>
-                        <td><a href="{{ path('customer_app_debtors_pdf', {residentNumber: row.resident_number}) }}" target="_blank" class="btn btn-danger">PDF Statement</a></td>
+                        <td><a href="{{ path('customer_app_debtors_pdf', {residentNumber: row.resident_number}) }}" target="_blank" class="btn red">PDF</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
-    
 </div>
+
 
 {% endblock %}

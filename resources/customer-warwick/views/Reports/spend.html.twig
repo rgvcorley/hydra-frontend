@@ -3,18 +3,19 @@
 {% block content %}
 
 <div class="container">
-    
     <div class="row">
         <div class="col span_12 intro-box">
             <h1><strong>{{title}}</strong></h1>
         </div>
     </div>
+</div>
     
+<div class="container table-container">
     <div class="row">
-        <div class="col span_12 text-right">
+        <div class="col span_12">            
             <form method="get" action="" class="form-inline">
                 <div class="form-group">
-                    <select class="form-control input-sm" name="taxYear">
+                    <select class="form-control input-sm select-form float-left" name="taxYear">
                         {% for year in taxYears %}
                         <option value="{{ year.key }}" {% if year.active%}selected="selected"{% endif %}>{{ year.desc }}</option>
                         {% endfor %}
@@ -22,12 +23,7 @@
                 </div>
                 <button type="submit" class="btn btn-default btn-sm">Update</button>
             </form>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col span_12">
-            <table class="table table-condensed table-bordered table-striped data-table" id="spend-table">
+            <table class="display dataTable" id="spend-table">
                 <thead>
                     <tr>
                         <th>Cost Centre</th>

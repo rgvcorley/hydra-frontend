@@ -18,29 +18,35 @@
     <div class="row">
         <div class="col-md-12 intro-box">
                 <h1><strong>{{title}}</strong></h1>
+        </div>
+    </div>
+</div>
+<div class="container table-container">
+    <div class="row">
+        <div class="col span_12">             
             {% if rows is empty %}
             <p>There are currently no active issues for your site.</p>
             {% else %}
-                <table class="table table-condensed table-bordered table-striped data-table">
-                    <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Status</th>
-                            <th>Date Created</th>
-                            <th>Date Modified</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for row in rows %}
-                        <tr data-row-id="{{row.id}}">
-                            <td>{{ row.description|nl2br }}</td>
-                            <td>{{ row.status }}</td>
-                            <td class="text-right">{{ row.date_created|date('d/m/Y') }}</td>
-                            <td class="text-right">{{ row.date_modified|date('d/m/Y') }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <table class="display dataTable" id="spend-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Date Created</th>
+                        <th>Date Modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr data-row-id="{{row.id}}">
+                        <td>{{ row.description|nl2br }}</td>
+                        <td>{{ row.status }}</td>
+                        <td class="text-right">{{ row.date_created|date('d/m/Y') }}</td>
+                        <td class="text-right">{{ row.date_modified|date('d/m/Y') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
             {% endif %}
         </div>
     </div>
