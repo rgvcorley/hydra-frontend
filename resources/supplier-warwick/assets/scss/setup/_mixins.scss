@@ -1,0 +1,11 @@
+@mixin mq($point) {
+	@if $point == l {
+		@media (min-width: 980px) { @content; }
+	}
+	@else if $point == m {
+		@media (min-width: 768px)  { @content; }
+	}
+	@else if $point == s {
+		@media (min-width: 450px)  { @content; }
+	}
+}
