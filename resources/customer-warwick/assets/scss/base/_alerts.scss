@@ -1,0 +1,26 @@
+// Generate all alert styles
+@mixin alert-variant($background, $border, $body-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $body-color;
+}
+
+// CSS Notifications Styles
+.alert {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+// Alternate styles
+.alert-success {
+	@include alert-variant(#dff0d8, darken(#dff0d8, 5%), #3c763d);
+}
+.alert-info {
+  @include alert-variant(#d9edf7, darken(#d9edf7, 7%), #31708f);
+}
+.alert-warning {
+  @include alert-variant(#fcf8e3, darken(#fcf8e3, 5%), #8a6d3b);
+}
+.alert-danger {
+  @include alert-variant(#f2dede, darken(#f2dede, 5%), #a94442);
+}
