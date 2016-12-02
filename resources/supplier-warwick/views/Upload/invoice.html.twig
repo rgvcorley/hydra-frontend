@@ -1,18 +1,6 @@
 {% extends 'SupplierAppBundle::layout.html.twig' %}
 
-{% block head %}
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
-    <style>
-        .bs-searchbox {background:#fff;}
-        .dropdown-toggle {line-height: 2.1;border:2px solid #ccc;border-radius:3px;}
-        .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background: #ef4c3b}
-    </style>
+{% block head %}  
 
 {% endblock %}
 
@@ -35,7 +23,7 @@
                 <form action="{{ path('supplier_invoice_upload', {id: invoice.woNumber}) }}" style="padding-left: 0;" class="col-md-6" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="wo_number">WO Number</label>
-                        {{ form_widget(form.woNumber, { 'attr': {'class': 'form-control selectpicker', 'data-live-search': 'true'} }) }}
+                        {{ form_widget(form.woNumber, { 'attr': {'class': 'form-control selectpicker select-form select-full', 'data-live-search': 'true'} }) }}
                     </div>
 
                     <div class="form-group">
@@ -45,7 +33,8 @@
 
                     <div class="form-group">
                         <label for="invoice_date">Invoice Date</label>
-                        {{ form_widget(form.invoiceDate, { 'attr': {'class': 'form-control datepicker', 'data-date-start-date': '01/01/2015', 'data-date-format': 'dd/mm/yyyy'} }) }}
+{#                         {{ form_widget(form.invoiceDate, { 'attr': {'class': 'form-control datepicker', 'data-date-start-date': '01/01/2015', 'data-date-format': 'dd/mm/yyyy'} }) }} #}
+                        {{ form_widget(form.invoiceDate, { 'attr': {'class': 'form-control datepicker'} }) }}
                     </div>
 
                     <div class="form-group">
