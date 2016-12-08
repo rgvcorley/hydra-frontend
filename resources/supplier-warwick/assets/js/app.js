@@ -49,7 +49,12 @@ jQuery(document).ready(function($) {
 		    "pageLength": 50,
 		    "ordering": true,
 		    "info": false,
-		    "searching": false
+		    "searching": false,
+		    "order": [],
+			"columnDefs": [ {
+				"targets"  : 'no-sort',
+				"orderable": false,
+    		}]
 		});
     }
     

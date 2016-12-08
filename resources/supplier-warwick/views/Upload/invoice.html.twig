@@ -9,8 +9,17 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <h2>{{ title }}</h2>
+        
+            <div class="col span_8 intro-box">
+                
+                <h1><strong>{{ title }}</strong></h1>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row gutters">
+            <div class="col span_8">
 
                 {% if errors %}
                     <div class="alert alert-danger">
@@ -20,7 +29,7 @@
                     </div>
                 {% endif %}
 
-                <form action="{{ path('supplier_invoice_upload', {id: invoice.woNumber}) }}" style="padding-left: 0;" class="col-md-6" method="post" enctype="multipart/form-data">
+                <form action="{{ path('supplier_invoice_upload', {id: invoice.woNumber}) }}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="wo_number">WO Number</label>
                         {{ form_widget(form.woNumber, { 'attr': {'class': 'form-control selectpicker select-form select-full', 'data-live-search': 'true'} }) }}
@@ -51,28 +60,20 @@
                     <button type="submit" class="btn btn-danger">Upload</button>
                 </form>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col span_4">
                 <h3>Invoices</h3>
                 <p>This service will allow you to provide your latest invoices quickly, easily and without having to print and post a paper copy.</p>
                 <p>Please make sure you enter all the information accurately.</p>
 
                 <h3>Allowed Files</h3>
-                <dl>
-                    <dt>PDF</dt>
-                    <dd>PDF files no larger than 3MB are allowed.</dd>
-
-                    <dt>PNG</dt>
-                    <dd>PNG files no larger than 1MB are allowed.</dd>
-
-                    <dt>JPG</dt>
-                    <dd>JPG/JPEG files no larger than 1MB are allowed.</dd>
-
-                    <dt>Word Document</dt>
-                    <dd>DOC/DOCX files no larger than 3MB are allowed.</dd>
-
-                    <dt>Rich Text Format</dt>
-                    <dd>RTF files no larger than 3MB are allowed.</dd>
-                </dl>
+                <ul class="no-style">
+                	<li><strong>PDF</strong> - PDF files no larger than 3MB are allowed.</li>
+                    <li><strong>PNG</strong> - PNG files no larger than 1MB are allowed.</li>
+                    <li><strong>JPG</strong> - JPG/JPEG files no larger than 1MB are allowed.</li>
+                    <li><strong>Word Document</strong> - DOC/DOCX files no larger than 3MB are allowed.</li>
+                    <li><strong>Rich Text Format</strong> - RTF files no larger than 3MB are allowed.</li>
+                </ul>
             </div>
         </div>
     </div>

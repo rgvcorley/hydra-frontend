@@ -1,146 +1,149 @@
 {% extends 'SupplierAppBundle::layout.html.twig' %}
 
 {% block content %}
-
-    <div class="container">
-        <div class="row">
-            {% if success_message %}
-                <div class="alert alert-success">
-                    {{ success_message }}
-                </div>
-            {% endif %}
-            {% if error_message %}
-                <div class="alert alert-danger">
-                    {{ error_message }}
-                </div>
-            {% endif %}
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>{{title}}</h2>
-                {% if message is empty %}
-                    <p>Welcome to your supplier login. From here you can view current works orders, upload invoices for completed works and view previously uploaded invoices.</p>
-                {% else %}
-                    <p>{{ message }}</p>
-                {% endif %}
+<div class="container">
+    <div class="row">
+    	{% if success_message %}
+            <div class="alert alert-success">
+                {{ success_message }}
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-
-                <table class="table table-striped table-bordered text-center">
-                    <thead>
-                    <tr>
-                        <th class="text-center">Outstanding Works Orders</th>
-                        <th class="text-center">Invoices Awaiting Approval</th>
-                        <th class="text-center">Invoices Pending Payment</th>
-                        <th class="text-center">Invoices Paid</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td style="vertical-align:middle">
-                            <h4>{{ outstanding_works_orders }}</h4>
-                            works order{% if outstanding_works_orders != 1 %}s{% endif %}
-                        </td>
-                        <td style="vertical-align:middle">
-                            <h4><a href="/my-invoices">{{ awaiting_approval.count }} invoice{% if awaiting_approval.count != 1 %}s{% endif %}</a></h4>
-                            {% if awaiting_approval.count != 0 %}totalling &pound;{{ awaiting_approval.total|number_format(2) }}{% endif %}
-                        </td>
-                        <td style="vertical-align:middle">
-                            <h4><a href="/my-invoices">{{ pending_payment.count }} invoice{% if pending_payment.count != 1 %}s{% endif %}</a></h4>
-                            {% if pending_payment.count != 0 %}totalling &pound;{{ pending_payment.total|number_format(2) }}{% endif %}
-                        </td>
-                        <td style="vertical-align:middle">
-                            <h4><a href="/my-invoices">{{ invoices_paid.count }} invoice{% if invoices_paid.count != 1 %}s{% endif %}</a></h4>
-                            {% if invoices_paid.count != 0 %}totalling &pound;{{ invoices_paid.total|number_format(2) }}{% endif %}
-                        </td>
-
-                    </tr>
-                    {% for row in orders %}
-                    {% endfor %}
-                    </tbody>
-                </table>
-
-                <h2>Outstanding Works Orders</h2>
-
-                {% if rejected == true %}
-                <div class="alert alert-danger">You have rejected invoices, please  <strong><a href="{{ path('supplier_my_invoices') }}" style="text-decoration: underline">view your invoices</a></strong> to get more information and re-submit.</div>
-                {% endif %}
-
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>WO Number</th>
-                            <th>Site</th>
-                            <th>Property Manager</th>
-                            <th>Cost Centre</th>
-                            <th>Description</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for row in rejected_orders %}
-                            <tr class="table-danger">
-                                <td class="table-danger">{{ row.wo_num_display }}</td>
-                                <td>{{ row.site }}</td>
-                                <td>{{ row.property_manager_email }}<br><br>Assistant: {{ row.assistant_email }}</td>
-                                <td nowrap="nowrap">
-                                    {% if row.cost_centre_type is defined %}
-                                        {{ row.cost_centre_type }}
-                                    {% else %}
-                                        N/A
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <em>Rejected with reason: '{{ row.invoice_note|nl2br }}'</em>
-                                    {% if row.short_description is empty %}
-                                        <br><br> {{ row.description|nl2br }}
-                                    {% else %}
-                                        <br><br> {{ row.short_description|nl2br }}
-                                    {% endif %}
-                                </td>
-                                <td nowrap="nowrap">
-                                    <a href="{{ path('supplier_app_works_order_pdf', {id: row.id}) }}" class="btn btn-xs btn-danger" target="_blank">Download Works Order</a>
-                                    <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn btn-xs btn-danger">Upload Invoice</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-
-                        {% for row in orders %}
-                            <tr>
-                                <td>{{ row.wo_num_display }}</td>
-                                <td>{{ row.site }}</td>
-                                <td>{{ row.property_manager_email }}
-                                    {% if row.assistant_email is defined %}
-                                        <br><br>Assistant: {{ row.assistant_email }}
-                                    {% endif %}
-                                </td>
-                                <td nowrap="nowrap">
-                                    {% if row.cost_centre_type is defined %}
-                                        {{ row.cost_centre_type }}
-                                    {% else %}
-                                        N/A
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if row.short_description is empty %}
-                                        {{ row.description|nl2br }}
-                                    {% else %}
-                                        {{ row.short_description|nl2br }}
-                                    {% endif %}
-                                </td>
-                                <td nowrap="nowrap">
-                                    <a href="{{ path('supplier_app_works_order_pdf', {id: row.id}) }}" class="btn btn-xs btn-danger" target="_blank">Download Works Order</a>
-                                    <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn btn-xs btn-danger">Upload Invoice</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        {% endif %}
+        {% if error_message %}
+            <div class="alert alert-danger">
+                {{ error_message }}
             </div>
+        {% endif %}
+        <div class="col span_12 intro-box">
+            <h1 class="margin-bottom"><strong>{{title}}</strong></h1>
+            {% if message is empty %}
+                <p>Welcome to your supplier login. From here you can view current works orders, upload invoices for completed works and view previously uploaded invoices.</p>
+            {% else %}
+                <p>{{ message }}</p>
+            {% endif %}
         </div>
     </div>
+</div>
+
+<div class="background-darkestgrey bank-statements">
+	 <div class="container">          
+        <div class="row gutters">
+            
+            <div class="col span_3 account">
+            	<a href="#worksorders">
+	                <span class="balence">{{ outstanding_works_orders }}</span>
+	                <span class="name">Outstanding Works Order{% if outstanding_works_orders != 1 %}s{% endif %}</span>
+            	</a>
+            </div>
+            
+            <div class="col span_3 account">
+            	<a href="/my-invoices">
+	                <span class="balence">{{ awaiting_approval.count }}</span>
+	                <span class="name">Invoice{% if awaiting_approval.count != 1 %}s{% endif %} Awaiting Approval, Totalling &pound;1123,00{% if awaiting_approval.count != 0 %}, Totalling &pound;{{ awaiting_approval.total|number_format(2) }}{% endif %}</span>
+            	</a>
+            </div>
+            
+            <div class="col span_3 account">
+            	<a href="/my-invoices">
+	                <span class="balence">{{ pending_payment.count }}</span>
+	                <span class="name">Invoice{% if pending_payment.count != 1 %}s{% endif %} Pending Payment{% if pending_payment.count != 0 %}, totalling &pound;{{ pending_payment.total|number_format(2) }}{% endif %}</span>
+            	</a>
+            </div>
+            
+            <div class="col span_3 account">
+            	<a href="/my-invoices">
+	                <span class="balence">{{ invoices_paid.count }}</span>
+	                <span class="name">Invoice{% if invoices_paid.count != 1 %}s{% endif %} Paid{% if invoices_paid.count != 0 %}, Totalling &pound;{{ invoices_paid.total|number_format(2) }}{% endif %}</span>
+            	</a>
+            </div>
+            
+        </div>
+	</div>
+</div>
+                
+                
+<div class="container">
+    <div class="row">                
+    	<div class="col span_12" id="worksorders">            
+
+            <h2>Outstanding Works Orders</h2>
+
+            {% if rejected == true %}
+            <div class="alert alert-danger">You have rejected invoices, please  <strong><a href="{{ path('supplier_my_invoices') }}" style="text-decoration: underline">view your invoices</a></strong> to get more information and re-submit.</div>
+            {% endif %}
+
+            <table class="display dataTable">
+                <thead>
+                    <tr>
+                        <th>WO Number</th>
+                        <th>Site</th>
+                        <th>Property Manager</th>
+                        <th>Cost Centre</th>
+                        <th class="no-sort">Description</th>
+                        <th class="no-sort">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rejected_orders %}
+                        <tr class="table-danger">
+                            <td class="table-danger">{{ row.wo_num_display }}</td>
+                            <td>{{ row.site }}</td>
+                            <td>{{ row.property_manager_email }}<br><br>Assistant: {{ row.assistant_email }}</td>
+                            <td nowrap="nowrap">
+                                {% if row.cost_centre_type is defined %}
+                                    {{ row.cost_centre_type }}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </td>
+                            <td>
+                                <em>Rejected with reason: '{{ row.invoice_note|nl2br }}'</em>
+                                {% if row.short_description is empty %}
+                                    <br><br> {{ row.description|nl2br }}
+                                {% else %}
+                                    <br><br> {{ row.short_description|nl2br }}
+                                {% endif %}
+                            </td>
+                            <td nowrap="nowrap">
+                                <a href="{{ path('supplier_app_works_order_pdf', {id: row.id}) }}" class="btn red" title="Download" target="_blank"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn red" title="Upload Invoice"><i class="fa fa-upload" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                    {% for row in orders %}
+                        <tr>
+                            <td>{{ row.wo_num_display }}</td>
+                            <td>{{ row.site }}</td>
+                            <td>{{ row.property_manager_email }}
+                                {% if row.assistant_email is defined %}
+                                    <br><br>Assistant: {{ row.assistant_email }}
+                                {% endif %}
+                            </td>
+                            <td nowrap="nowrap">
+                                {% if row.cost_centre_type is defined %}
+                                    {{ row.cost_centre_type }}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if row.short_description is empty %}
+                                    {{ row.description|nl2br }}
+                                {% else %}
+                                    {{ row.short_description|nl2br }}
+                                {% endif %}
+                            </td>
+                            <td nowrap="nowrap">
+                                <a href="{{ path('supplier_app_works_order_pdf', {id: row.id}) }}" class="btn red" title="Download" target="_blank"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn red" title="Upload Invoice"><i class="fa fa-upload" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
 
 {% endblock %}
