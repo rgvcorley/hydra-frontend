@@ -2,11 +2,13 @@
 
 {% block content %}
 
-    <br>
+<div class="background-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h2>{{ title }}</h2>
+            
+            <div class="col span_3 hide-mobile">&nbsp;</div>
+            <div class="col span_6 intro-box">
+                <h1 class="margin-bottom"><strong>{{ title }}</strong></h1>
 
                 {% if error %}
                     <div class="alert alert-danger">
@@ -30,7 +32,11 @@
                     <button type="submit" class="btn btn-danger">Login</button>
                 </form>
             </div>
-            <div class="col-md-6">
+            
+        </div>
+        <div class="row">
+            <div class="col span_3 hide-mobile">&nbsp;</div>
+            <div class="col span_6">
                 <h3>Supplier Login</h3>
 
                 <p>From your supplier login you can manage your account, including:</p>
@@ -42,5 +48,6 @@
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

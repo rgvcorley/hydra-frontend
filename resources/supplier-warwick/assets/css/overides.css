@@ -1,0 +1,46 @@
+.faq-list .faq-question {
+  padding: 10px 20px;
+  background: #5e5c62; }
+
+.faq-list .faq-answer {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background: white; }
+
+.faq-list h4, .faq-list p, .faq-list ul, .faq-list li {
+  margin: 0; }
+
+.faq-list h4 {
+  color: white; }
+
+.bank-statements {
+  margin-bottom: 0px; }
+  .bank-statements .name {
+    margin-bottom: 0px;
+    height: 20px; }
+  .bank-statements .balence {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 6px; }
+
+#worksorders .dataTables_length, #invoices .dataTables_length {
+  display: none; }
+
+ul.no-style {
+  padding-left: 0; }
+  ul.no-style li {
+    list-style: none; }
+
+.select-full {
+  width: 100%;
+  margin-bottom: 15px;
+  height: 46px;
+  background-position: right 10px top 14px; }
+
+#form_file {
+  margin-bottom: 15px; }
+
+button.grey,
+a.btn.grey {
+  background: #454348;
+  color: white; }

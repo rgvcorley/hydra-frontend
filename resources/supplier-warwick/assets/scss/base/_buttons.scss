@@ -1,0 +1,24 @@
+button,
+a.btn {
+	display: inline-block;
+	background: rgba(255,255,255,.1);
+	color: white;
+	padding: 10px 20px;
+	font-size: 16px;
+	text-transform: uppercase;
+	&.ghost {
+		background: none;
+		border-color: white;
+		color: white;
+	}
+	&.red {
+		background: $primary;
+		color: white;
+	}
+	&.btn-center {
+		margin:0 auto!important;
+	}
+	&.btn-download {
+		margin-top:20px!important;
+	}
+}

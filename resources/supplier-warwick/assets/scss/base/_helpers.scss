@@ -1,0 +1,49 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+* {
+	outline: none;
+}
+
+.mobile-only {
+	@include mq(m){
+		display: none;
+	}
+}
+.hide-mobile {display:none!important;
+	@include mq(m){
+		display: block!important;	
+	}
+}
+
+.alignleft {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.alignright {
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.alignCenter{
+	text-align: center;
+}
+
+.margin-bottom {
+	margin-bottom: 20px!important;
+	display: block;
+}

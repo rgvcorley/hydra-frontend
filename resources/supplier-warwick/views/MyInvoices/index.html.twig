@@ -2,12 +2,20 @@
 
 {% block content %}
 
-        {% if invoices %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>My Invoices</h2>
-                <table class="table table-striped table-bordered">
+	{% if invoices %}
+	<div class="container">
+	    <div class="row">
+	        <div class="col span_12 intro-box">
+	            <h1 class="margin-bottom"><strong>My Invoices</strong></h1>
+	        </div>
+	    </div>
+	</div>
+	   
+	<div class="container table-container">
+	    <div class="row">                
+	    	<div class="col span_12" id="invoices">
+	
+	            <table class="display dataTable">
                     <thead>
                         <tr>
                             <th>WO Number</th>
@@ -17,8 +25,8 @@
                             <th>Paid Date</th>
                             <th>Invoice Amount</th>
                             <th>Works Order Status</th>
-                            <th>Notes</th>
-                            <th>Actions</th>
+                            <th class="no-sort">Notes</th>
+                            <th class="no-sort">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,33 +59,36 @@
                                 <td nowrap="nowrap">
 
                                     {% if row.reuploadable == true %}
-                                        <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn btn-xs btn-danger">Re-upload Invoice</a>
+                                        <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn red" title="Re-Upload Invoice"><i class="fa fa-upload" aria-hidden="true"></i></a>
                                     {% endif %}
 
                                     {% if row.rejected == true %}
-                                        <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn btn-xs btn-danger">Upload Invoice</a>
+                                        <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" title="Upload Invoice"><i class="fa fa-upload" aria-hidden="true"></i></a>
                                     {% else %}
-                                        <a href="{{ path('supplier_app_invoice_pdf', {id: row.id}) }}" target="_blank" class="btn btn-xs btn-danger">Download</a>
+                                        <a href="{{ path('supplier_app_invoice_pdf', {id: row.id}) }}" target="_blank" class="btn red" title="Download Invoice" target="_blank"><i class="fa fa-download" aria-hidden="true"></i></a>
                                     {% endif %}
 
-                                    <a href="{{ path('supplier_app_works_order_pdf', {id: row.id}) }}" target="_blank" class="btn btn-xs btn-danger">Download WO</a>
+                                    <a href="{{ path('supplier_app_works_order_pdf', {id: row.id}) }}" target="_blank" class="btn grey" title="Download Work Order" target="_blank"><i class="fa fa-download" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-            </div>
-        </div>
+                
+	    	</div>
+	    </div>
+	</div>
 
     {% else %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>My Invoices</h2>
-                <p>There's currently no invoices here for you to view.</p>
-            </div>
-        </div>
-    </div>
+    
+	<div class="container">
+	    <div class="row">
+	        <div class="col span_12 intro-box">
+	            <h1 class="margin-bottom"><strong>My Invoices</strong></h1>
+	            <p>There's currently no invoices here for you to view.<br/><br/><br/><br/><br/><br/><br/><br/></p>
+	        </div>
+	    </div>
+	</div>
 
     {% endif %}
 

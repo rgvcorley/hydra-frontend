@@ -8,242 +8,164 @@
     <meta charset="utf-8">
     <meta name="description" content=" ">
 
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     <title>{{ title }} - Warwick Estates Property Management</title>
+    
+    
+{#
     <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/animate.css">
     <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/style-3.css">
     <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/jquery.dataTables.css" />
     <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/hacks.css" />
     <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/bootstrap-datepicker.standalone.min.css" />
-
-    <script src="/bundles/supplierapp/js/modernizr.js"></script>
+#}
+	
+    <script src="https://use.typekit.net/dkw5rsm.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/app.css" />
+	<link rel="stylesheet" type="text/css" href="/bundles/supplierapp/css/overides.css" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="/bundles/supplierapp/js/html5shiv.js"></script>
-    <script src="/bundles/supplierapp/js/respond.min.js"></script>
+    <script src="/bundles/customerapp/js/fallback/html5shiv.js"></script>
+    <script src="/bundles/customerapp/js/fallback/respond.min.js"></script>
     <![endif]-->
 
-    <script src="/bundles/supplierapp/js/jquery.min.js"></script>
 
-    <style>
-        ol.flex-control-nav {display:none;}
-        .alert-info{
-            background-color: #fcf8e3;
-            border-color: #faebcc;
-            color: #8a6d3b;
-        }
-        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-            border-radius: 0 0 4px 4px;
-        }
-        /*.form-control textarea {100%;}*/
-    </style>
 
     {% block head %}{% endblock %}
 
 </head>
-<body class="withAnimation">
-<div id="ct_preloader"></div>
+<body class="">
+	
+	<header>
+		<div class="container">
+			<div class="logo">
+				<a href="/">
+					<img src="/bundles/supplierapp/img/logo.svg" alt="Warwick Estates" />
+				</a>
+			</div>
 
-<div id="boxedWrapper">
+			<nav class="menu-container hamburger">
+				<a class="burger" href="#">
+					<div class="bun">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+				<ul id="main-menu" class="nav">
+					<li><a href="http://preview.warwickestates.net/about/">About</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/our-service/">Our Service</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/our-offices/">Our Offices</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/premier/">Premier</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/lite/">Lite</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/contact/">Contact</a><span></span></li>
+					<li><a class="text-red" href="https://login.warwickestates.net/">Customer Login</a><span></span></li>
+					<li><a href="http://preview.warwickestates.net/contact#contact">Enquire Now</a><span></span></li>
+				</ul>
+			</nav>
+			
+		</div>
 
-    <!-- navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#start" class="local" data-logo="/bundles/supplierapp/image/content/logo.png"><img src="/bundles/supplierapp/image/content/logo.png" alt="Warwick Estates"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://warwickestates.net/#start" class="local">Home</a></li>
-                    <li><a href="http://warwickestates.net/#about" class="local">About</a></li>
-                    <li><a href="http://warwickestates.net/#services" class="local">Services</a></li>
-                    <li><a href="http://warwickestates.net/#faq" class="local">FAQ/Guidance</a></li>
-                    <li><a href="http://warwickestates.net/#charity" class="local">Charity</a></li>
-                    <li><a href="http://warwickestates.net/#news" class="local">News</a></li>
-                    <li><a href="http://warwickestates.net/#contact" class="local">Contact</a></li>
-                    <li class="active"><a href="{{ path('supplier_homepage') }}" target="_blank">Customer Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- / navbar -->
-
-    <div class="parallaxSection" data-bg="/bundles/supplierapp/image/content/london.jpg" id="start" style="height:100px;min-height:100px;">
-
-        <section class="flexslider std-slider center-controls" data-height="100" data-loop="true" data-smooth="true" data-slideshow="true" data-speed="15000"  data-animspeed="550" data-controls="true" data-dircontrols="false">
-            <ul class="slides">
-                <li>
-                    <div class="container">
-                        <div class="inner">
-                        </div>
-                    </div>
-
-                </li>
-                <li data-bg="/bundles/supplierapp/image/content/manchester.jpg">
-                    <div class="container">
-                        <div class="inner">
-                        </div>
-                    </div>
-                </li>
-                <li data-bg="/bundles/supplierapp/image/content/cardiff.jpg">
-                    <div class="container">
-                        <div class="inner">
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <!-- / flexslider -->
-    </div>
-    <!-- / parallaxSection -->
+	</header>
 
     {% block menu %}{% endblock %}
 
     {% block content %}{% endblock %}
 
-    <br />
-
     <footer>
-        <div class="container mainfooter">
-            <div class="row">
-                <aside class="col-md-3 widget">
-                    <h1 class="widget-title">Contact Us - Head Office</h1>
-
-                    <a href="mailto:info@warwickestates.net" class="larger">info@warwickestates.net</a>
-
-                    <p>
-                        Unit 9 Astra Centre, Harlow<br>
-                        Essex, CM20 2BN
-                    </p>
-                    <p>Phone: 0844 991 9968
-                    </p>
-                </aside>
-                <aside class="col-md-3 widget">
-                    <h1 class="widget-title">Other Offices</h1>
-
-                    <p>London Office<br>
-                        Unit 3 Cochrane House,<br>
-                        Admirals Way, London, E14 9UD<br>
-                    </p>
-                    <p>Grays Office<br>
-                        1-3 New Road, Grays<br>
-                        Essex, RM17 6NG
-                    </p>
-                    <p>Surrey Office<br>
-                        Quattro House, Frimley Road<br>
-                        Camberley, Surrey, GU16 7ER
-                    </p>
-                </aside>
-
-                <aside class="col-md-3 widget">
-                    <h1 class="widget-title">Other Offices</h1>
-
-                    <p>Northern Office<br>
-                        423 Chadwick House, Birchwood Park<br>
-                        Warrington Road, Birchwood, Warrington, WA3 6AE<br>
-                    </p>
-                    <p>Cheltenham Office<br>
-                        Maxet House,<br>
-                        22 Landsdown Ind. Estate<br>
-                        Gloucester Road, Cheltenham,<br>
-                        GL51 8PL
-                    </p>
-                </aside>
-
-                <aside class="col-md-3 widget">
-                    <h1 class="widget-title">Other Offices</h1>
-
-                    <p>Wales Office<br>
-                        Cardiff Executive Centre, Temple Court<br>
-                        13A Cathedral Road, Cardiff, CF11 9HA<br>
-                    </p>
-                    <p>Southern Office<br>
-                        Room F2, St Johns House<br>
-                        St Johns Street, Chichester, PO19 1UH
-                    </p>
-                    <p>Midlands Office<br>
-                        Prudent House, 50 Yardley Road<br>
-                        Acocks Green, Birmingham, B27 6LG
-                    </p>
-                </aside>
-            </div>
-        </div>
-        <hr>
-        <div class="container postfooter">
-            <div class="row">
-                <aside class="col-md-6 widget">
-                    <p>© 2014 Warwick Estates Property Management Ltd</p>
-                </aside>
-                <aside class="col-md-6 widget">
-                    <ul class="socialIcons pull-right">
-                        <li><a href="http://www.facebook.com/warwickestates.net" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
-                        <li><a href="http://twitter.com/Warwick_Estates" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fa fa-google-plus-square"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-                    </ul>
+		<div class="container">
+			<div class="row">
+				<div class="col span_4">
+					<h3>Our Offices</h3>
+					<p class="address"><strong>HEAD OFFICE<br>
+						Warwick Estates Property Management</strong><br>
+						Unit 9 Astra Centre, Harlow<br>
+						Essex, CM20 2BN
+					</p>
+					<p>
+					<a href="http://preview.warwickestates.net/our-offices" class="btn">Other Offices</a>
+					</p>
+					
+				</div>
+				<div class="col span_4">
+					<h3>Get in Touch</h3>
+					<p>T: 0844 991 9968<br>
+					E: info@warwickestates.net
+					</p>
+					<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+				</div>
+				<div class="col span_4">
+					<h3>Get the Newsletter</h3>
+					
+					<form>
+						<!-- not wired up to anything -->
+						<input type="text" placeholder="Your email"><button type="submit"><i class="fa fa-chevron-right"></i></button>
+					</form>
+					
+					<p class="credit">&copy; {{ "now"|date("Y") }} Warwick Estates. All rights reserved.<br>
+					Designed by <a href="http://www.theagencycreative.co.uk/" target="_blank">The Agency Creative</a></p>
+	
+				</div>
+			</div>
+	
+		</div>
+	
+	</footer>
 
 
-                </aside>
-            </div>
-        </div>
-    </footer>
+<!-- VendorJS -->
+<script src="/bundles/supplierapp/js/vendor/jquery.min.js"></script>
+<script src="/bundles/supplierapp/js/vendor/jquery.dataTables.min.js"></script>
+<script src="/bundles/supplierapp/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="/bundles/supplierapp/js/vendor/jquery.hamburger.js"></script>
+<script src="/bundles/supplierapp/js/vendor/jRespond.js"></script>
+
+<!-- OurJS -->
+<script src="/bundles/supplierapp/js/app.js"></script>
+<script src="/bundles/supplierapp/js/overide.js"></script>
+{# <script src="/bundles/customerapp/js/main.js"></script> #}
 
 
-</div>
-<!-- / boxedWrapper -->
-
-<script src="/bundles/supplierapp/js/jquery.min.js"></script>
-<script src="/bundles/supplierapp/js/jquery.dataTables.min.js"></script>
+{# <!-- USED? not sure -->
 <script src="/bundles/supplierapp/js/jquery.flexslider-min.js"></script>
 <script src="/bundles/supplierapp/js/bootstrap.min.js"></script>
-
-
-<!--<script src="/bundles/supplierapp/js/timeline/js/storyjs-embed.js"></script>-->
 <script src="/bundles/supplierapp/js/detectmobilebrowser.js"></script>
-<!--<script src="/bundles/supplierapp/js/gmap3.min.js"></script>-->
 <script src="/bundles/supplierapp/js/jquery.appear.js"></script>
-<!--<script src="/bundles/supplierapp/js/jquery.isotope.min.js"></script>-->
-<!--<script src="/bundles/supplierapp/js/jquery.ba-bbq.min.js"></script>-->
 <script src="/bundles/supplierapp/js/jquery.countTo.js"></script>
-<!--<script src="/bundles/supplierapp/js/jquery.fitvids.js"></script>-->
-
-<!--<script src="/bundles/supplierapp/js/jquery.magnific-popup.min.js"></script>-->
-<!--<script src="/bundles/supplierapp/js/jquery.mb.YTPlayer.js"></script>-->
 <script src="/bundles/supplierapp/js/jquery.placeholder.min.js"></script>
-<!-- <script src="/bundles/supplierapp/js/retina-1.1.0.min.js"></script> -->
-<!--<script src="/bundles/supplierapp/form/js/form.js"></script>-->
 <script src="/bundles/supplierapp/js/bootstrap-datepicker.min.js"></script>
-<!-- one pager only -->
-<script src="/bundles/supplierapp/js/main.js"></script>
-<!-- <script src="/bundles/supplierapp/scripts/app/jquery.OptionCache.js"></script> -->
+<script src="/bundles/supplierapp/js/accountConsentDialogue.js"></script
+#}
 
-<script src="/bundles/supplierapp/js/accountConsentDialogue.js"></script>
 
-<script>
-    $(document).ready(function() {
-        if ($('table.data-table')) {
-            $('table.data-table').dataTable({
-                "pageLength": 50,
-                "ordering": true,
-                "info": false,
-                "searching": false
-            });
-        }
-    });
-</script>
+{# <!-- Already commentend out -->
+<script src="/bundles/supplierapp/js/vendor/bootstrap-select.min.js"></script>
+<script src="/bundles/supplierapp/js/timeline/js/storyjs-embed.js"></script>
+<script src="/bundles/supplierapp/js/gmap3.min.js"></script>
+<script src="/bundles/supplierapp/js/jquery.isotope.min.js"></script>
+<script src="/bundles/supplierapp/js/jquery.ba-bbq.min.js"></script>
+<script src="/bundles/supplierapp/js/jquery.fitvids.js"></script>
+<script src="/bundles/supplierapp/js/jquery.magnific-popup.min.js"></script>
+<script src="/bundles/supplierapp/js/jquery.mb.YTPlayer.js"></script>
+<script src="/bundles/supplierapp/js/retina-1.1.0.min.js"></script>
+<script src="/bundles/supplierapp/form/js/form.js"></script>
+<script src="/bundles/supplierapp/scripts/app/jquery.OptionCache.js"></script>
+#}
+
+<!-- Start of warwickestates Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","warwickestates.zendesk.com");
+/*]]>*/</script>
+<!-- End of warwickestates Zendesk Widget script -->
 
 {% block javascripts %}{% endblock %}
 </body>

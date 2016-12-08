@@ -1,0 +1,44 @@
+// Overides for Supplier App
+.faq-list {
+	.faq-question {padding:10px 20px;background: #5e5c62;}
+	.faq-answer {padding:10px 20px;margin-bottom:20px;background:white;}
+	h4, p, ul, li {margin:0;}
+	h4 {color: white;}
+}
+
+// Intro boxs
+.bank-statements {
+	margin-bottom:0px;
+	.name {
+	    margin-bottom:0px;
+	    height:20px;
+    }
+	.balence {
+	    font-size: 40px;
+	    line-height: 50px;
+	    margin-bottom:6px;
+    }
+}
+
+#worksorders, #invoices {
+	.dataTables_length {display: none;}
+}
+
+ul.no-style {
+	padding-left:0;
+	li {list-style: none;}
+}
+
+.select-full {width:100%;margin-bottom:15px;height:46px;background-position:right 10px top 14px}
+
+#form_file {margin-bottom:15px;}
+
+
+button,
+a.btn {
+	&.grey {
+		background: #454348;
+		color: white;
+	}
+	
+}

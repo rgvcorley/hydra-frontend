@@ -1,0 +1,15 @@
+{
+  "author": "Roy Barber",
+  "name": "Warwick",
+  "description": "Warwick css",
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-watch": "^4.3.11"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  }
+}

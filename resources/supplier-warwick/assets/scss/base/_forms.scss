@@ -1,0 +1,96 @@
+form {
+	box-sizing: border-box;
+	label {
+		display: block;
+		width: 100%;
+		font-size: 14px;
+		color: #333;
+		font-weight: bold;	
+		margin-bottom:5px;	
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="password"],
+	textarea {
+		width: 100%;
+		@include mq(m){
+			width: 100%;
+		}
+		padding: 10px;
+		border: 1px solid #efefef;
+		font-size: 16px;
+		background: #efefef;
+		transition: all .5s;
+		margin-bottom: 15px;
+		-webkit-appearance: none;
+		border-radius:0;
+		&:focus {
+			outline: none;
+			background:white;
+		}
+		&::placeholder {
+			text-transform: uppercase;
+			color: $secondary;
+		}
+	}
+	p {
+		width: 100%;
+		overflow: visible;
+		clear: both;
+		padding: 10px 0;
+		margin: 0;
+	}
+	input[type="submit"],
+	button{
+		color: white;
+		background: $primary;
+		border: none;
+		padding: 10px 20px;
+		font-size: 14px;
+		text-transform: uppercase;
+		border: 0px solid $secondary;
+		font-weight: 300;
+		letter-spacing: 1px;
+		-webkit-appearance: none;
+		border-radius:0;
+		&:focus {
+			outline: none;
+			opacity: 0.5;
+		}
+	}
+}
+
+
+.input-group {
+	position: relative;
+	.input-group-addon {position: absolute;top:0px;left:15px;line-height:46px;font-size: 16px;opacity: 1;}
+	#form_amount {padding-left:28px;}
+}
+
+
+.select-form {
+
+	display: block;
+	border:0px solid #e5e5e5;
+	//margin-left:30px;
+	height:36px;
+	padding:0 30px 0 10px;
+	border-radius:0;
+	-webkit-appearance: none;
+	outline:0;
+	font-size: 16px;
+	background: white url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSI5NyAxMDQgMTIgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgIDxwb2x5Z29uIGlkPSJSZWN0YW5nbGUiIHN0cm9rZT0ibm9uZSIgZmlsbD0iI0Q4RDhEOCIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDMuMDAwMDAwLCAxMTAuMDAwMDAwKSByb3RhdGUoLTMxNS4wMDAwMDApIHRyYW5zbGF0ZSgtMTAzLjAwMDAwMCwgLTExMC4wMDAwMDApICIgcG9pbnRzPSIxMDcgMTA2IDEwNyAxMTQgOTkgMTE0Ij48L3BvbHlnb24+PC9zdmc+) no-repeat right 10px top 9px;
+	&.float-left {float: left}
+	@include mq(m){
+		margin-left:0;	
+	}
+
+}
+
+.form-filter {
+	select, .btn {width:100%;}
+	@include mq(m){
+		select, .btn {width:auto;}	
+	}
+}
