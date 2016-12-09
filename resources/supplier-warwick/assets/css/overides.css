@@ -44,3 +44,7 @@ button.grey,
 a.btn.grey {
   background: #454348;
   color: white; }
+
+table.dataTable tbody th, table.dataTable tbody td {
+  padding: 5px;
+  font-size: 13px !important; }
