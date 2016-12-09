@@ -38,7 +38,7 @@
             <div class="col span_3 account">
             	<a href="/my-invoices">
 	                <span class="balence">{{ awaiting_approval.count }}</span>
-	                <span class="name">Invoice{% if awaiting_approval.count != 1 %}s{% endif %} Awaiting Approval, Totalling &pound;1123,00{% if awaiting_approval.count != 0 %}, Totalling &pound;{{ awaiting_approval.total|number_format(2) }}{% endif %}</span>
+	                <span class="name">Invoice{% if awaiting_approval.count != 1 %}s{% endif %} awaiting approval{% if awaiting_approval.count != 0 %}, Totalling &pound;{{ awaiting_approval.total|number_format(2) }}{% endif %}</span>
             	</a>
             </div>
             
