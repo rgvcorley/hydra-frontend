@@ -63,7 +63,7 @@
                                     {% endif %}
 
                                     {% if row.rejected == true %}
-                                        <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" title="Upload Invoice"><i class="fa fa-upload" aria-hidden="true"></i></a>
+                                        <a href="{{ path('supplier_invoice_upload', {id: row.id}) }}" class="btn red" title="Upload Invoice"><i class="fa fa-upload" aria-hidden="true"></i></a>
                                     {% else %}
                                         <a href="{{ path('supplier_app_invoice_pdf', {id: row.id}) }}" target="_blank" class="btn red" title="Download Invoice" target="_blank"><i class="fa fa-download" aria-hidden="true"></i></a>
                                     {% endif %}
