@@ -15,12 +15,15 @@
                 <p>
                     To proceed to make a payment enter an amount in the box below and click continue to be taken to the next step.
                 </p>
+                <p>
+                    Please note that payments made via here may take 7 working days to show on your account statement.
+                </p>
             {% else %}
                 <p>
                     By continuing you are agreeing to pay &pound;{{ confirmedAmount|number_format(2, '.', ',') }}. This figure has been calculated 
                     by adding a {{ percentageCharge }}% + {{ standingCharge }}p fee which is charged by Stripe, who provide this payment service. 
                     If you are happy to continue please click pay with card where you will be asked to enter your card details. Once you have made 
-                    your payment it will take upto 48 hours to show on your statement of account.
+                    your payment it may take upto 7 working days to show on your account statement.
                 </p>
             {% endif %}
         </div>
