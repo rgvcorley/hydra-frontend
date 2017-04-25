@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
     if ($('table.dataTable')) {
 		$('table.dataTable').dataTable({
 		    "pageLength": 50,
-		    "ordering": true,
+		    "ordering": $('table.dataTable.statement').length ? false : true,
 		    "info": false,
 		    "searching": false
 		});
