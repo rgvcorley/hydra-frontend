@@ -56,11 +56,11 @@
                     {% for row in rows %}
                     <tr>
                         <td>{{ row.account_number }}</td>
-                        <td data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>
-                        <td>{{ row.label }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.amount|number_format(2, '.', ',') }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.original_amount|number_format(2, '.', ',') }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.balance|number_format(2, '.', ',') }}</td>
+                        <td style="width: 80px;" data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>
+                        <td>{{ row.label }}{% if row.works_order_description %} - {{ row.works_order_description }}{% endif %}</td>
+                        <td style="width: 80px; data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.amount|number_format(2, '.', ',') }}</td>
+                        <td style="width: 80px; data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.original_amount|number_format(2, '.', ',') }}</td>
+                        <td style="width: 80px;" data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.balance|number_format(2, '.', ',') }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
