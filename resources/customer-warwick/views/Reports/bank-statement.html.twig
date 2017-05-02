@@ -44,7 +44,6 @@
             <table class="display dataTable statement">
                 <thead>
                     <tr>
-                        <th>Sort Code</th>
                         <th>Account Number</th>
                         <th>Date</th>
                         <th>Label</th>
@@ -56,7 +55,6 @@
                 <tbody>
                     {% for row in rows %}
                     <tr>
-                        <td>{{ row.sort_code }}</td>
                         <td>{{ row.account_number }}</td>
                         <td data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>
                         <td>{{ row.label }}</td>
