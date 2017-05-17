@@ -14,7 +14,11 @@
                 <form action="/account/update" method="post">
                     {% if accountMessage is empty %}
                     {% else %}
-                        <div class="alert alert-success">{{accountMessage}}</div>
+                        <div class="alert alert-success">{{ accountMessage|raw }}</div>
+                    {% endif %}
+                    {% if verifyMessage is empty %}
+                    {% else %}
+                        <div class="alert alert-danger">{{ verifyMessage|raw }}</div>
                     {% endif %}
 
                     {% form_theme accountUpdateForm 'bootstrap_3_layout.html.twig' %}
