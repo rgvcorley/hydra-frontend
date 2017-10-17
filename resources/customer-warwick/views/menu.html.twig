@@ -36,11 +36,11 @@
                     </ul>
                 </li>
                 {% else %}
-                
+
                     {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
                     <li class="{% if activePage == "statement" %}active{% endif %}"><a target="_self" href="/statement" title="Statement of Account">Statement of Account</a></li>
                     {% endif %}
-                
+
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|DOCUMENTS') %}
@@ -57,8 +57,8 @@
 
                 <li><a href="/logout">Logout</a></li>
             </ul>
-            
-			<select class="mobile-sub-nav"> 
+
+			<select class="mobile-sub-nav">
                 <option {% if activePage == "home" %}selected{% endif %} value="/">Home</option>
 
                 {% if is_granted('ROLE_CUSTOMER|PAY') %}
@@ -87,11 +87,11 @@
                     <option {% if activePage == "budgetspend" %}selected{% endif %} value="/reports/budget-versus-spend">- Budget vs Spend</option>
                     {% endif %}
                 {% else %}
-                
+
 	                {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
 	                <option {% if activePage == "statement" %}selected{% endif %} value="/statement" title="Statement of Account">- Statement of Account</option>
 	                {% endif %}
-                
+
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|DOCUMENTS') %}
@@ -108,9 +108,9 @@
 
                 <option value="/logout">Logout</option>
 			</select>
-            
-			
-            
+
+
+
         </div>
     </div>
 </div>

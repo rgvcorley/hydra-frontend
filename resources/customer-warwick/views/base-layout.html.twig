@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]--> 
-<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]--> 
-<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]--> 
-<!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]--> 
+<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
@@ -35,7 +35,7 @@
     <script src="/bundles/customerapp/js/fallback/respond.min.js"></script>
     <![endif]-->
 
-    
+
 
 <!--
     <style>
@@ -54,7 +54,7 @@
 
 </head>
 <body class="">
-	
+
 	<header>
 		<div class="container">
 			<div class="logo">
@@ -82,12 +82,12 @@
 					<li><a href="http://www.warwickestates.net/contact">Contact Us</a><span></span></li>
 				</ul>
 			</nav>
-			
+
 		</div>
 
 	</header>
 
-	
+
     {% block menu %}{% endblock %}
 
     {% block content %}{% endblock %}
@@ -105,7 +105,7 @@
 					<p>
 					<a href="http://www.warwickestates.net/our-offices" class="btn">Other Offices</a>
 					</p>
-					
+
 				</div>
 				<div class="col span_4">
 					<h3>Get in Touch</h3>
@@ -115,20 +115,20 @@
 				</div>
 				<div class="col span_4">
 					<h3>Get the Newsletter</h3>
-					
+
 					<form>
 						<!-- not wired up to anything -->
 						<input type="text" placeholder="Your email"><button type="submit"><i class="fa fa-chevron-right"></i></button>
 					</form>
-					
+
 					<p class="credit">&copy; {{ "now"|date("Y") }} Warwick Estates. All rights reserved.<br>
 					Designed by <a href="http://www.theagencycreative.co.uk/" target="_blank">The Agency Creative</a></p>
-	
+
 				</div>
 			</div>
-	
+
 		</div>
-	
+
 	</footer>
 
 
@@ -171,6 +171,21 @@
 <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","warwickestates.zendesk.com");
 /*]]>*/</script>
 <!-- End of warwickestates Zendesk Widget script -->
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+	<script>
+
+        zE(function() {
+            $zopim(function() {
+                $zopim.livechat.setName('{{ app.user.name }}');
+                $zopim.livechat.setEmail('{{ app.user.email }}');
+            });
+        });
+	</script>
+
+{% endif %}
+
 
 </body>
 </html>
