@@ -76,15 +76,4 @@ jQuery(document).ready(function($) {
 		$('#consentModal').removeClass('active');
 	});
 
-	// Open Zend Chat window after 10 seconds
-    window.setTimeout(function() {
-
-        $zopim.livechat.button.show();
-
-        $zopim.livechat.window.show();
-
-        $zopim.livechat.bubble.show();
-
-    }, 10000); //time’s in milliseconds - 30 seconds = 30000
-
 });
