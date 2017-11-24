@@ -1,0 +1,118 @@
+.account-details {
+  padding: 20px 20px 35px;
+  label{
+    font-weight: normal;
+  }
+  input::placeholder {
+    text-align: center;
+  }
+  @media screen and (min-width: $tabletmq) {
+    padding: 50px 60px 60px;
+    input::placeholder {
+      text-align: inherit;
+    }
+  }
+
+  @media screen and (min-width: $desktopmq) {
+    padding: 60px 60px 70px;
+  }
+
+  .btn {
+    margin-left: auto;
+  }
+
+  .file-input {
+    background: #F6F7FB;
+    height: 44px;
+    padding: 12px 20px 14px;
+
+    .helper-message {
+      margin: 0;
+      color: $grey-3;
+      font-size: 15px;
+    }
+
+    .icon {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  select {
+    color: $grey-3;
+    font-size: 15px;
+  }
+}
+
+.radio-option-table {
+  padding: 0 20px;
+  text-align: left;
+
+  .col-12 {
+    border: solid 1px $line;
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .col-6 {
+    border-left: solid 1px $line;
+    border-bottom: solid 1px $line;
+
+    .radio-wrapper {
+      margin-bottom: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    &:nth-child(3) {
+      border-right: solid 1px $line;
+    }
+
+    &:nth-child(2) {
+      @media screen and (min-width: $desktopmq) {
+        border-left: none;
+      }
+    }
+  }
+
+  .row {
+    &:nth-child(1) {
+      border-top: solid 1px $line;
+    }
+  }
+}
+
+.linked-properties {
+  margin-right: 15px;
+  margin-left: 15px;
+
+  .row {
+    &:nth-child(1) {
+      border-top: solid 1px $line;
+    }
+
+    .col-12 {
+      border: solid 1px $line;
+      border-top: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .id {
+        white-space: nowrap;
+        padding-right: 10px;
+      }
+
+      .address {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+.reference-number {
+  background-color: transparentize($primary, 0.9);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: solid 1px $primary;
+}

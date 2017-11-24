@@ -1,0 +1,11 @@
+.ticket-status.border {
+    border: 2px solid #D9DDEB;
+    border-radius: 100px;
+    padding: 5px 20px;
+    display: inline-block;
+    height: 44px;
+
+    @media screen and (min-width: $desktopmq) {
+        float: right;
+    }
+}

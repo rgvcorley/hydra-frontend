@@ -1,0 +1,76 @@
+.default-box {
+    background: $white;
+    box-shadow: 0 2px 8px 0 #D9DDEB;
+
+    &.primary-border {
+        border-top: solid 2px $primary;
+    }
+
+    &.small-ticket {
+        padding: 20px;
+
+        @media screen and (min-width: $tabletmq) {
+            padding: 30px;
+        }
+
+        @media screen and (min-width: $desktopmq) {
+            padding: 35px;
+        }
+    }
+
+    .large-text {
+        font-size: 50px;
+        line-height: 1;
+        padding-right: 20px;
+
+        @media screen and (min-width: $tabletmq) {
+            font-size: 60px;
+        }
+
+        @media screen and (min-width: $desktopmq) {
+            font-size: 80px;
+        }
+    }
+
+    &.medium-ticket {
+        .detail {
+            border-bottom: solid 1px $line;
+        }
+
+        .text-button {
+            padding: 15px;
+
+            @media screen and (min-width: $desktopmq) {
+                padding: 20px;
+            }
+        }
+    }
+
+    .medium-text {
+        font-size: 30px;
+
+        @media screen and (min-width: $desktopmq) {
+            font-size: 40px;
+        }
+    }
+
+    &.info-ticket {
+        padding: 20px 10px;
+
+        @media screen and (min-width: $tabletmq) {
+            padding: 25px;
+
+            p {
+                padding-right: 10px;
+            }
+        }
+
+        @media screen and (min-width: $desktopmq) {
+            padding: 20px;
+
+            p {
+                padding-right: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.notification-card {
+    .notification-content {
+        padding: 15px 20px;
+        border-bottom: solid 1px $line;
+
+        @media screen and (min-width: $tabletmq) {
+            padding: 20px;
+        }
+
+        @media screen and (min-width: $desktopmq) {
+            padding: 30px;
+        }
+    }
+
+    .notification-actions {
+        padding: 15px 20px;
+
+        @media screen and (min-width: $desktopmq) {
+            padding: 30px;
+            margin-left: auto;
+        }
+
+        .action {
+            margin-left: 10px;
+
+            &:nth-child(1) {
+                margin-left: 0;
+            }
+
+            @media screen and (min-width: $tabletmq) {
+                margin-left: 20px;
+            }
+
+            .icon {
+                margin-left: 5px;
+            }
+            .icon-14 {
+                width:26px;
+            }
+        }
+    }
+}

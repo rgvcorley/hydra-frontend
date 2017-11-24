@@ -1,0 +1,142 @@
+.budget-card {
+  .title {
+    border-bottom: solid 1px $line;
+
+    @media screen and (min-width: $desktopmq) {
+      max-width: 270px;
+      width: 100%;
+      border-bottom: 0;
+    }
+  }
+
+  h2 {
+    padding: 15px 20px;
+    border-right: solid 1px $line;
+    flex-grow: 2;
+  }
+
+  .expand-icon {
+    height: 44px;
+    width: 44px;
+    border: solid 2px $cyan;
+    border-radius: 50%;
+    margin: 6px;
+    margin-left: 7px;
+
+    @media screen and (min-width: $tabletmq) {
+      margin: 10px;
+    }
+  }
+
+  .overview,
+  .detail-figures {
+    @media screen and (min-width: $desktopmq) {
+      width: 100%;
+    }
+
+    & > * {
+      padding: 10px 0;
+      text-align: center;
+      border-left: solid 1px $line;
+      width: 20%;
+
+      @media screen and (min-width: $desktopmq) {
+        height: 100%;
+      }
+
+      small {
+        font-size: 8px;
+
+        @media screen and (min-width: $tabletmq) {
+          font-size: 12px;
+        }
+      }
+
+      p {
+        font-size: 11px;
+
+        @media screen and (min-width: $tabletmq) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .budget {
+      border-left: none;
+    }
+
+    .expand-icon {
+      @media screen and (min-width: $desktopmq) {
+        width: 50px;
+        height: 45px;
+        padding: 0;
+        border: solid 2px $cyan;
+      }
+    }
+
+    .ytd-difference {
+      @media screen and (min-width: $desktopmq) {
+        border-right: solid 1px $line;
+      }
+    }
+  }
+
+  .details {
+    @media screen and (min-width: $desktopmq) {
+      border-top: solid 1px $line;
+    }
+
+    & > p {
+      padding: 15px 20px;
+      border-top: solid 1px $line;
+      border-bottom: solid 1px $line;
+
+      @media screen and (min-width: $desktopmq) {
+        max-width: 270px;
+        width: 100%;
+        border-right: solid 1px $line;
+        border-bottom: none;
+        border-top: none;
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $grey-6;
+    }
+
+    .expand-icon {
+      @media screen and (min-width: $desktopmq) {
+        visibility: hidden;
+      }
+    }
+
+    .detail-figures {
+      & > * {
+        @media screen and (min-width: $desktopmq) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  /*
+  Hide show for maintenance details
+   */
+
+  .icon {
+    @include rotate(90deg);
+
+    @include transition(transform 0.3s linear);
+
+    &.open {
+      @include rotate(270deg);
+    }
+  }
+
+  .repair-costs {
+
+    display: none;
+  }
+}

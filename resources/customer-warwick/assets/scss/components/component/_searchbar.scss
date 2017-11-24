@@ -1,0 +1,42 @@
+.searchbar {
+    padding: 20px 8px 20px 20px;
+    position: relative;
+    @include center-placeholder(center);
+    @media screen and (min-width: $desktopmq){
+        @include center-placeholder(inherit);
+    }
+    @include media-breakpoint-down(md){
+        padding-right: 32px;
+    }
+
+    p {
+        white-space: nowrap;
+        padding-right: 10px;
+    }
+
+    .search-wrapper {
+        width: 100%;
+        .search-btn{
+            @media screen and(min-width:$lgdesktopmq){
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+        }
+    }
+
+    .btn {
+        font-weight:normal;
+        @media screen and (min-width: $tabletmq) {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    input[type="text"] {
+      font-weight: 500;
+        @include media-breakpoint-up(xl){
+            margin-right: 20px;
+
+        }
+    }
+}

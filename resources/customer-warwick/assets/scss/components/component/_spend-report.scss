@@ -1,0 +1,97 @@
+.spend-report {
+  .expand-icon {
+    height: 44px;
+    width: 44px;
+    border: solid 2px $cyan;
+    border-radius: 50%;
+  }
+  table {
+    th {
+      padding-left: 20px !important;
+      padding-right: 20px;
+    }
+  }
+
+}
+
+.spend-report-card {
+  margin-top: 20px;
+  .row.sub-content {
+    .col-md-6:first-of-type {
+      @include media-breakpoint-up(md) {
+        padding-right: 0;
+        border-right: 1px solid $grey-5;
+      }
+
+    }
+    .col-md-6:last-of-type {
+      padding-left: 0;
+    }
+  }
+}
+
+.budget-card.report-finance {
+  .overview {
+    .expand-icon{
+      width:44px;
+    }
+    h2 {
+      text-align: left;
+      padding-left: 20px;
+      border: none;
+    }
+  }
+  .details {
+    background-color: $white;
+    border-top:1px solid $grey-5;
+    > p {
+      width: 65.7%;
+      padding-top: 10px;
+      padding-bottom:10px;
+      border-right:1px solid $grey-5;
+      border-top: none;
+      border-bottom: none;
+      @include media-breakpoint-up(md){
+
+        flex-grow: 2;
+        width: 68.4%;
+        max-width: inherit;
+        padding-right: 0;
+      }
+
+      @include media-breakpoint-up(lg){
+        width: 73.4%;
+      }
+    }
+    .ytd-difference{
+      width:19.9%;
+      border-right:1px solid $grey-5;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        //border-bottom: 1px solid $grey-5;
+      }
+    }
+    .expand-icon{
+      visibility: visible;
+      border: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      margin: 0;
+      @include media-breakpoint-up(md){
+        width:7.2%;
+      }
+      .icon-view{
+        display: inline-block;
+      }
+    }
+  }
+}
+.spend-report-card .overview{
+  padding-top:20px;
+}

@@ -1,0 +1,26 @@
+.per-page-filter select {
+  width: auto;
+  background-color: white;
+  margin: 0;
+  margin-left: auto;
+  max-width: 35%;
+
+  @media screen and (min-width: $tabletmq) {
+    margin-left: 10px;
+    max-width: 11%;
+  }
+
+}
+
+.per-page-filter.budget-filter select {
+  &.money {
+
+    max-width: 50%;
+  }
+&.transactions {
+  max-width: 26%;
+}
+
+
+}
+

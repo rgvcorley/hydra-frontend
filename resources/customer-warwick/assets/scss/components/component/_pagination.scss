@@ -1,0 +1,44 @@
+.pagination {
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        line-height: 1;
+        border: solid 2px $primary;
+        border-radius: 50%;
+        margin: 0 2px;
+        color: $primary;
+        font-size: 15px;
+        line-height: 15px;
+
+        &.active {
+            border: solid 4px $primary;
+        }
+
+        &:first-of-type {
+            margin-right: auto;
+        }
+
+        &:last-of-type {
+            margin-left: auto;
+        }
+
+        a {
+            width: 100%;
+            text-align: center;
+        }
+
+        .icon {
+            width: 8px;
+            height: 12px;
+            margin-left: 2px;
+
+            &.icon-rotate-180 {
+                margin-left: 0;
+                margin-right: 2px;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.chart {
+    .expenditure-chart {
+        .ct-series-a path {
+            fill: $dark-blue;
+        }
+
+        .ct-series-b path {
+            fill: $blue;
+        }
+
+        .ct-series-c path {
+            fill: $cyan;
+        }
+
+        .ct-series-d path {
+            fill: $yellow;
+        }
+
+        .ct-series-e path {
+            fill: $red;
+        }
+
+        .ct-series-f path {
+            fill: $dark-purple;
+        }
+    }
+
+    &.debtors-chart {
+        p{
+            text-align: center;
+            @media screen and (min-width: $tabletmq){
+                text-align: left;
+            }
+        }
+        .labels{
+            display: inline-block;
+            @media screen and(min-width: $tabletmq){
+                display: inherit;
+                column-count: 1;
+            }
+        }
+    }
+
+    .budget-year-chart {
+        .ct-series-a path {
+            fill: $cyan;
+        }
+        &.blue{
+            .ct-series-a path{
+                fill: $blue;
+            }
+        }
+
+        .ct-series-b path {
+            fill: $grey-5;
+        }
+    }
+
+    .labels {
+        display: inline-block;
+
+        @media screen and (min-width: $tabletmq) {
+            column-count: 2;
+        }
+
+        .label {
+            text-align: left;
+        }
+
+        .circle {
+            height: 16px;
+            width: 16px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+}
+
+

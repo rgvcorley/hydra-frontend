@@ -1,0 +1,128 @@
+.ticket-card,
+.project-card,
+.invoice-card,
+.statement-card,
+.spend-report-card {
+  .overview {
+    padding: 15px 20px;
+
+    @media screen and (min-width: $tabletmq) {
+      padding: 10px 20px;
+    }
+
+    .btn {
+      @media screen and (min-width: $tabletmq) {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  .col-md-4,
+  .col-md-3 {
+    padding: 0;
+    padding-right: 15px;
+    border-right: solid 1px $line;
+
+    @include media-breakpoint-up(md) {
+      padding-right: 0;
+    }
+
+    &:first-of-type {
+      padding-left: 15px;
+      padding-right: 0;
+    }
+
+    &:last-of-type {
+      padding-left: 15px;
+      padding-right: 15px;
+      border-right: none;
+
+      @include media-breakpoint-up(md) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .ticket-details {
+    padding: 8px 15px;
+    border-top: solid 1px $line;
+    height: 100%;
+    .vertical-line {
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+
+  .search-text {
+    padding: 0 20px 15px;
+
+    @media screen and (min-width: $tabletmq) {
+      padding: 0 20px 20px 20px;
+    }
+  }
+
+  .project-buttons {
+    margin-left: auto;
+    &.search-card {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      @include media-breakpoint-up(sm){
+        display: none!important;
+      }
+    }
+    .like-btn {
+      height: 44px;
+      width: 44px;
+      border: solid 2px $line;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+    }
+    a{
+      font-weight:normal;
+    }
+  }
+}
+
+.ticket-tabs {
+  a {
+    text-align: center;
+
+    @media screen and (min-width: $tabletmq) {
+      padding: $tab-padding;
+    }
+  }
+
+  li {
+    @media screen and (min-width: $tabletmq) {
+      width: auto;
+    }
+  }
+}
+
+.ticket-search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding-bottom: 20px;
+  @media screen and(min-width: $tabletmq) {
+    padding-bottom: 0;
+  }
+  span {
+    margin-right: 20px;
+  }
+  .input-group {
+    margin-bottom: 0;
+    width: 65%;
+    select {
+      background-color: white;
+      color: $grey-3;
+
+    }
+  }
+}
+

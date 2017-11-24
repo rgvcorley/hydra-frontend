@@ -1,0 +1,180 @@
+.ticket-activity,
+.ticket-details,
+.ticket-documents,
+.voting-card,
+.record-actions {
+  a{
+    font-weight:normal;
+  }
+  h2 {
+    padding: 15px 20px;
+    border-bottom: solid 1px $line;
+
+    @media screen and (min-width: $desktopmq) {
+      padding: 20px;
+    }
+
+    span {
+      margin-left: auto;
+    }
+  }
+
+  .input-group {
+    padding: 20px 20px 30px;
+    border-bottom: solid 1px $line;
+
+    @media screen and (min-width: $tabletmq) {
+      padding: 25px 20px 20px;
+    }
+
+    @media screen and (min-width: $desktopmq) {
+      padding: 25px 25px 30px;
+    }
+
+    input[type=submit] {
+      margin: 0;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+  }
+
+  .ticket-updates {
+    margin: 25px 20px 0;
+    padding-left: 20px;
+    border-left: solid 4px $line;
+    .col-lg-8 p {
+      line-height: 24px;
+    }
+
+    @media screen and (min-width: $tabletmq) {
+      margin: 35px 20px 0;
+    }
+
+    @media screen and (min-width: $desktopmq) {
+      margin: 25px 20px 0 40px;
+    }
+
+    .ticket-update {
+
+      &:after {
+        content: "";
+        border-bottom: 1px solid $grey-4;
+        height: 1px;
+        display: block;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+      }
+      &:last-of-type:after {
+        content: "";
+        border-bottom: 0;
+      }
+    }
+    .update-details {
+
+      p {
+        span{
+          display: inline-block;
+          padding-top: 5px;
+          @media screen and (min-width: $desktopmq){
+            display: inherit;
+            padding-top: 0;
+          }
+        }
+        &.fc-primary {
+          line-height: 1;
+
+          &::before {
+            content: "";
+            background-color: $white;
+            height: 14px;
+            width: 14px;
+            display: block;
+            position: absolute;
+            left: -14px;
+            border: solid 4px $primary;
+            border-radius: 50%;
+          }
+
+        }
+      }
+    }
+
+    .update {
+      //border-bottom: solid 1px $line;
+      //margin-bottom: 15px;
+
+      //@media screen and (min-width: $tabletmq) {
+      //  margin-bottom: 20px;
+      //}
+
+      .icon {
+        margin-right: 20px;
+        transform: rotate(0deg);
+
+      }
+    }
+
+    .ticket-update:last-of-type {
+      .update {
+        border-bottom: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  li {
+    padding: 15px 20px;
+    border-bottom: solid 1px $line;
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    span.icon {
+      margin-left: auto;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.ticket-activity, .ticket-details, .ticket-documents, .record-actions, .toggle-record-activity ,.voting-card{
+  .icon-divider {
+    @include rotate(90deg);
+
+    @include transition(transform 0.3s linear);
+
+    &.open {
+      @include rotate(270deg);
+    }
+  }
+
+  .ticket-content,.ticket-updates, #toggle-voting{
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block!important;
+    }
+  }
+}
+
+
+.ticket-activity textarea {
+  resize: none;
+}
+.ticket-activity .ticket-updates{
+  @include media-breakpoint-up(sm) {
+    display: block !important;
+  }
+}
+
+.record-actions{
+  .record-action-items{
+    display: none;
+    @include media-breakpoint-up(sm){
+      display: block!important;
+    }
+  }
+}
+

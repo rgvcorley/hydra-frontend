@@ -1,0 +1,11 @@
+.default-box.aged-debtors {
+  height: 102px;
+  @media screen and (min-width: $lgdesktopmq) {
+    height: 262px;
+  }
+  .detail {
+    border-bottom: none;
+  }
+
+
+}

@@ -1,0 +1,28 @@
+.property-card {
+  padding: 20px 20px 30px;
+  h3 {
+    text-align: center;
+  }
+  .btn {
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    max-width: 82px;
+    margin-top: 20px;
+  }
+  @media screen and (min-width: $tabletmq) {
+    padding: 20px 20px;
+    .btn {
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (min-width: $desktopmq) {
+    padding: 20px 30px;
+  }
+  @media screen and (min-width: $lgdesktopmq) {
+    padding: 30px 30px;
+  }
+
+}

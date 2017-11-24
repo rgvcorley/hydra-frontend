@@ -1,0 +1,43 @@
+.default-box.login-wrapper, .default-box.login-register {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.forgot-pass,
+.default-box.login-wrapper,
+.default-box.login-register
+{
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    text-align: center;
+
+  }
+}
+
+.log-in {
+  border-bottom: solid 1px $line;
+  padding: 0 40px 35px;
+
+  @media screen and (min-width: $tabletmq) {
+    padding: 0 60px 40px;
+  }
+
+  @media screen and (min-width: $desktopmq) {
+    padding: 0 80px 40px;
+  }
+}
+
+.forgot-pass {
+  border-bottom: solid 1px $line;
+  padding: 30px 20px 35px;
+
+  @media screen and (min-width: $tabletmq) {
+    padding: 40px 60px;
+  }
+
+  @media screen and (min-width: $desktopmq) {
+    padding: 40px 80px;
+  }
+}

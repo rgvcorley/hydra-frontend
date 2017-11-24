@@ -1,0 +1,35 @@
+.voting-card {
+  p {
+    padding: 20px 20px 15px;
+  }
+
+
+  .voting {
+    padding-left: 13px;
+    padding-right: 10px;
+
+    .radio-wrapper {
+      margin-bottom: 15px;
+      @media screen and (min-width: $lgdesktopmq) {
+        margin: 0 5px;
+      }
+    }
+
+    @media screen and (min-width: $tabletmq) {
+      columns: 2;
+    }
+  }
+
+  .btn {
+    margin: 10px 0 30px 20px;
+
+    @media screen and (min-width: $tabletmq) {
+      margin: 25px 20px 35px auto;
+    }
+
+    @media screen and (min-width: $desktopmq) {
+      margin: 15px 20px 20px auto;
+    }
+
+  }
+}

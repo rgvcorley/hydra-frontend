@@ -1,0 +1,31 @@
+.ct-chart {
+  height: 180px;
+}
+
+.default-box.dashboard-height{
+  @media screen and (min-width:$desktopmq){
+    height :187px;
+    padding-top:42px;
+    margin-bottom: 140px;
+  }
+  @media screen and (min-width:$lgdesktopmq){
+    padding-top:54px;
+    margin-bottom: 45px;
+  }
+}
+
+.icon-12 {
+  width: 24px;
+}
+
+.detail-large {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.dashboard-director{
+  .text-button{
+    border-top: 1px solid $grey-5;
+
+  }
+}

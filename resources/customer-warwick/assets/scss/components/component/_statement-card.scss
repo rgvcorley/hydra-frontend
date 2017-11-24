@@ -1,0 +1,108 @@
+.statement-card,
+.spend-report-card {
+    .icon {
+        margin-left: auto;
+    }
+
+    .statement-details {
+        border-top: solid 1px $line;
+        height: 100%;
+        border-left: solid 1px $line;
+
+        @media screen and (min-width: $tabletmq) {
+            border-left: solid 1px $line;
+        }
+    }
+
+    .col-6 {
+        &:nth-child(2) {
+            padding-right: 0;
+
+            @media screen and (min-width: $tabletmq) {
+                padding-right: 15px;
+            }
+
+            .statement-details {
+                border-left: none;
+
+                @media screen and (min-width: $tabletmq) {
+
+                    border-left: solid 1px $line;
+                    border-top: none;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            padding-left: 0;
+
+            @media screen and (min-width: $tabletmq) {
+                padding-left: 15px;
+            }
+
+            .statement-details {
+                @media screen and (min-width: $tabletmq) {
+                    margin-left: -15px;
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .col-lg-4 {
+        &:nth-child(1) {
+            border-right: solid 1px $line;
+
+            @media screen and (min-width: $tabletmq) {
+                padding-right: 0;
+            }
+        }
+
+        &:nth-child(2) {
+            border-right: solid 1px $line;
+
+            @media screen and (min-width: $tabletmq) {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
+        &:nth-child(3) {
+            padding-left: 15px;
+
+            @media screen and (min-width: $tabletmq) {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.spend-report-filter {
+    .per-page-filter {
+        margin-left: auto;
+    }
+}
+
+.spend-report-card {
+    .row {
+        .col-lg-6 {
+            @include media-breakpoint-up(md) {
+                padding-left: 0;
+
+                &:nth-child(1) {
+                    padding-left: 15px;
+                    padding-right: 0;
+                    border-right: solid 1px $line;
+                }
+            }
+        }
+    }
+}
+
+.account-statement{
+    .statement-card{
+       .overview{
+           padding-top: 20px;
+       }
+    }
+}

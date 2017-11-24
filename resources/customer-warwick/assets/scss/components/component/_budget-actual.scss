@@ -1,0 +1,84 @@
+.budget-actual {
+  .date-filter {
+    p {
+      margin-left: 0;
+      &.year {
+        margin-right: 20px;
+      }
+    }
+
+    select {
+      @media screen and (min-width: $tabletmq) {
+        margin-left: 0;
+
+      }
+    }
+
+  }
+  label {
+    &.transactions {
+      margin-top: 20px;
+      @media screen and (min-width: $desktopmq) {
+        flex-grow: 1;
+        margin-top: 0;
+      }
+      + select {
+        margin-top: 20px;
+        margin-left: 0;
+        @media screen and (min-width: $desktopmq) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.difference {
+
+      @media screen and (min-width: $desktopmq) {
+        flex-grow: 2;
+        text-align: right;
+        padding-right: 5px;
+
+      }
+
+    }
+  }
+
+  .difference {
+    + select {
+      width: 11%;
+    }
+  }
+}
+
+.group-overview {
+  p {
+
+    float: left;
+  }
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  label {
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+
+  }
+  select {
+    background-color: $white;
+    margin-right: 0;
+  }
+
+}

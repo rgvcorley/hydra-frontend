@@ -1,0 +1,125 @@
+.documents-sidebar {
+  padding: 20px;
+
+  .desktop {
+    display: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 0;
+
+    .mobile {
+      display: none;
+    }
+
+    .desktop {
+      display: block;
+    }
+  }
+
+  select {
+    font-weight: 300;
+    color: $grey-3;
+  }
+
+  .title {
+    color: $black;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  a {
+    display: block;
+    border-top: 1px solid $grey-5;
+    padding: 14px 20px;
+    background: $white;
+    color: $grey-3;
+    display: flex;
+    align-items: center;
+
+    i {
+      width: 9px;
+      height: 22px;
+      display: block;
+      background: $grey-3;
+      margin-left: auto;
+      @include transition(all 0.2s ease);
+    }
+
+    &:hover, &.active {
+      color: $black;
+      background: $grey-6;
+
+      i {
+        background: $black;
+      }
+    }
+  }
+}
+
+.documents-content {
+  .single {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    border-bottom: 1px solid $grey-5;
+
+    @include media-breakpoint-up(sm) {
+      padding: 0;
+    }
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(sm) {
+      padding: 20px 15px;
+    }
+
+    i {
+      width: 32px;
+      height: 32px;
+      display: block;
+      background: $primary;
+      margin-right: 10px;
+    }
+
+    .name {
+      color: $black;
+      font-weight: 300;
+
+      span {
+        color: $grey-4;
+      }
+    }
+  }
+
+  .download, .view {
+    @include media-breakpoint-up(sm) {
+      height: 70px;
+      flex: 0 0 70px;
+      border-left: 1px solid $grey-5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+    i {
+      width: 24px;
+      height: 24px;
+      display: block;
+      background: $cyan;
+    }
+  }
+
+  .download {
+    margin: 0 10px 0 auto;
+  }
+
+  .view {
+
+  }
+}

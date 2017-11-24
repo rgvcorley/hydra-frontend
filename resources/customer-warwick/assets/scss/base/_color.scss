@@ -1,15 +1,156 @@
-// Overides
+/////////////////////////////////////////////////////////
+// Color                                               //
+/////////////////////////////////////////////////////////
 
-.background-white {background-color: white!important;}
-.background-red {background-color: $primary!important;}
-.background-lightgrey {background-color:#f5f5f5!important;}
-.background-darkgrey {background-color: #e1e1e1!important;}
-.background-grey {background-color: #454348!important;}
-.background-darkestgrey {background-color: #454348!important;}
+// SETUP
+//// Base
 
-.text-white {color: white!important;}
-.text-red {color: $primary!important;}
-.text-lightgrey {color:#f5f5f5!important;}
-.text-darkgrey {color: #e1e1e1!important;}
-.text-grey {color: #454348!important;}
+$black: #000 !default;
+$white: #FFF !default;
+$grey-1: #232429 !default;
+$grey-2: #3D3F49 !default;
+$grey-3: #636777 !default;
+$grey-4: #C1C6D6 !default;
+$grey-5: #D9DDEB !default;
+$grey-6: #F6F7FB !default;
+$grey-7: #3D3F49 !default;
+$grey-8: #878EAC !default;
 
+$primary: #E64131 !default;
+$secondary: $grey-2;
+$dark-green: #549A24 !default;
+$dark-purple: #69229A !default;
+$cyan: #52CDAF !default;
+$cyan-80: rgba(82, 205, 175, 0.8) !default;
+$orange: #F29C2B !default;
+$orange-80: rgba(242, 156, 43, 0.8) !default;
+$purple: #8150C9 !default;
+
+//Chart colours
+$dark-blue: #3667CD !default;
+$blue: #5793F3 !default;
+$yellow: #FEC42C !default;
+$red: #DC3427 !default;
+
+////Type
+$bodycolor: $grey-3;
+$headingcolor: $black;
+$line: $grey-5;
+$lightgrey: $grey-4;
+$darkgrey: $grey-2;
+$highlight: #FCE3E0 !default;
+
+//// States
+$error: #D0021B !default;
+$warning: #F5A623 !default;
+$success: #7ED321 !default;
+$disabled: $grey-5 !default;
+
+//// Social
+$facebook: #3B5998 !default;
+$twitter: #1DA1F2 !default;
+$googleplus: #DD4B39 !default;
+$linkedin: #0077B5 !default;
+$instagram: #E1306C !default;
+$slack: #E9A820 !default;
+$youtube: #CD201F !default;
+$dribbble: #EA4C89 !default;
+
+//// Into an array
+$colors: (
+        black: $black,
+        white: $white,
+        grey-1: $grey-1,
+        grey-2: $grey-2,
+        grey-3: $grey-3,
+        grey-4: $grey-4,
+        grey-5: $grey-5,
+        grey-6: $grey-6,
+        grey-7: $grey-7,
+        grey-8: $grey-8,
+        primary: $primary,
+        secondary: $secondary,
+        dark-green: $dark-green,
+        dark-purple: $dark-purple,
+        cyan: $cyan,
+        cyan-80: $cyan-80,
+        orange: $orange,
+        orange-80: $orange-80,
+        purple: $purple,
+        dark-blue: $dark-blue,
+        blue: $blue,
+        yellow: $yellow,
+        red: $red,
+        error: $error,
+        warning: $warning,
+        success: $success,
+        disabled: $disabled,
+        highlight: $highlight,
+        facebook: $facebook,
+        twitter: $twitter,
+        googleplus: $googleplus,
+        linkedin: $linkedin,
+        instagram: $instagram,
+        slack: $slack,
+        youtube: $youtube,
+        dribbble: $dribbble
+) !default;
+
+// Color Helpers
+//// Links
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &.link-secondary {
+    color: $secondary;
+  }
+
+  a:link a:visited {
+    color: inherit;
+  }
+}
+
+//// Undo link styles for placeholder links/named anchors (without href)
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+//// Text & BG Overides
+//// E.g Font Color: fc-primary or background .bg-black
+@each $name, $color in $colors {
+  .fc-#{$name} {
+    color: #{$color} !important;
+  }
+
+  .bg-#{$name} {
+    background-color: #{$color} !important;
+  }
+
+  .border-#{$name} {
+    border: 1px solid #{$color};
+  }
+}
+
+// Hover States
+@include media-breakpoint-up(md) {
+  a {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    &.link-secondary:hover {
+      color: lighten($secondary, 15%);
+    }
+  }
+}

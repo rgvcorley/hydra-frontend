@@ -1,0 +1,14 @@
+header {
+    box-shadow: 0 2px 8px 0 #D9DDEB;
+    height: 70px;
+    padding: 20px 0;
+
+    @media screen and (min-width: $tabletmq) {
+        height: 100px;
+        padding: 30px 0;
+    }
+
+    span {
+        margin-left: auto;
+    }
+}

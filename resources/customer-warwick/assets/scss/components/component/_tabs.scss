@@ -1,0 +1,106 @@
+/////////////////////////////////////////////////////////
+// Tabs                                                //
+/////////////////////////////////////////////////////////
+
+// Tab Defaults
+$tab-padding: 20px !default;
+$tab-border-thickness: 3px !default;
+$tab-border-style: solid !default;
+$tab-border-color: $line;
+$tab-border-hover-color: darken($line, 10%) !default;
+$tab-border-hover-thickness: 3px !default;
+$tab-border-active-color: $primary !default;
+$tab-hover-bg-color: transparent !default;
+$tab-hover-text-color: $primary !default;
+
+.tabs {
+  //// Fix the inline spacing bug
+  font-size: 0;
+  display: flex;
+  flex-grow: 1;
+
+  li {
+    display: inline-block;
+    width: 100%;
+  }
+
+  a {
+    display: block;
+    padding: $tab-padding 0;
+    font-weight: normal;
+  }
+
+  //// Borders
+  &.tabs-top a {
+    border-style: $tab-border-style;
+    border-width: $tab-border-thickness 0 0 0;
+  }
+
+  &.tabs-bottom a {
+    border-style: $tab-border-style;
+    border-width: 0 0 $tab-border-thickness 0;
+
+    @include media-breakpoint-up(md) {
+      &.active {
+        border-width: 0 0 $tab-border-hover-thickness 0;
+        padding-bottom: $tab-padding - $tab-border-hover-thickness + $tab-border-thickness;
+      }
+    }
+  }
+
+  &.tabs-left a {
+    border-style: $tab-border-style;
+    border-width: 0 0 0 $tab-border-thickness;
+  }
+
+  &.tabs-right a {
+    border-style: $tab-border-style;
+    border-width: 0 $tab-border-thickness 0 0;
+    padding-left: $tab-padding;
+  }
+
+  &.tabs-none a {
+    border-width: 0;
+  }
+
+  //// Border colors
+  a {
+    border-color: $tab-border-color !important;
+
+    @include media-breakpoint-up(md) {
+      &:hover {
+        border-color: $tab-border-hover-color !important;
+        background-color: $tab-hover-bg-color;
+        color: $tab-border-hover-color !important;
+      }
+
+      &.active:hover {
+        cursor: default;
+      }
+    }
+
+    &.active {
+      border-color: $tab-border-active-color !important;
+      background-color: inherit;
+      color: inherit !important;
+    }
+  }
+
+  //// Vertical tabs
+  &.tabs-vertical {
+    li {
+      display: block;
+    }
+  }
+}
+
+.risk-management {
+  .tabs {
+    padding-left: 54px;
+    padding-right: 54px;
+    @include media-breakpoint-up(sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
