@@ -1,6 +1,7 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
 {% block content %}
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Statement', 'link':'/statement'} %}
 
     <div class="container">
         <div class="row">
@@ -21,6 +22,7 @@
         </div>
         <div class="row">
             <div class="col-12">
+
                 <div class="default-box date-filter text-center margin-bottom-30 margin-bottom-lg-25">
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
@@ -76,7 +78,7 @@
                     <div class="row">
                         <div class="col-sm-8 col-12">
                             <div class="overview d-flex align-items-center">
-                                <h2 class="fc-black fw-500 padding-right-5">Aliquam finibus ante a sem convallis dictum.</h2>
+                                <h2 class="fc-black fw-500 padding-right-5">{{ row.description }}</h2>
                                 <span class="icon icon-doc icon-24 bg-cyan"></span>
                             </div>
                         </div>
@@ -101,7 +103,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-2">
                             <div class="ticket-details bg-grey-6 d-flex align-items-center">
-                                <p>00.00.00</p>
+                                <p data-order="{{row.date|date("Ymd")}}">{{ row.date|date("d-m-Y") }}</p>
                             </div>
                         </div>
 

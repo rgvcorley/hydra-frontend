@@ -74,46 +74,46 @@
                     {#{% endif %}#}
                 </div>
 
-                <div class="col span_12">
+                {#<div class="col span_12">#}
 
-                    {% if message is empty %}
-                    {% else %}
-                        <div class="alert alert-{{ messageState }}">{{ message }}</div>
-                    {% endif %}
+                    {#{% if message is empty %}#}
+                    {#{% else %}#}
+                        {#<div class="alert alert-{{ messageState }}">{{ message }}</div>#}
+                    {#{% endif %}#}
 
-                    {% if showPaymentForm %}
-                        <h3>Payment Details</h3>
-                        <form action="/payments" method="post" id="payment-form">
-                            {% if message is empty %}
-                            {% else %}
-                                <div class="alert alert-{{ messageState }}">{{ message }}</div>
-                            {% endif %}
+                    {#{% if showPaymentForm %}#}
+                        {#<h3>Payment Details</h3>#}
+                        {#<form action="/payments" method="post" id="payment-form">#}
+                            {#{% if message is empty %}#}
+                            {#{% else %}#}
+                                {#<div class="alert alert-{{ messageState }}">{{ message }}</div>#}
+                            {#{% endif %}#}
 
-                            {% form_theme paymentForm 'bootstrap_3_layout.html.twig' %}
-                            {{ form_widget(paymentForm) }}
+                            {#{% form_theme paymentForm 'bootstrap_3_layout.html.twig' %}#}
+                            {#{{ form_widget(paymentForm) }}#}
 
-                            <input type="submit" value="Continue" class="btn btn-danger"/>
-                        </form>
-                    {% endif %}
+                            {#<input type="submit" value="Continue" class="btn btn-danger"/>#}
+                        {#</form>#}
+                    {#{% endif %}#}
 
-                    {% if showPaymentProviderForm %}
+                    {#{% if showPaymentProviderForm %}#}
 
-                        <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
+                        {#<script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>#}
 
-                        <form action="/payments/confirmed" method="post" style="text-align:center;">
-                            <input type="hidden" name="paymentAmount" value="{{ confirmedAmount }}"/>
-                            <script
-                                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                    data-key="{{ publishableKey }}"
-                                    data-name="Warwick Estates: Payment"
-                                    data-currency="GBP"
-                                    data-description="Your confirmed amount is £{{ confirmedAmount|number_format(2, '.', ',') }}"
-                                    data-amount="{{ confirmedAmount|number_format(2, '', '') }}">
-                            </script>
-                        </form>
-                    {% endif %}
-                    {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
-                </div>
+                        {#<form action="/payments/confirmed" method="post" style="text-align:center;">#}
+                            {#<input type="hidden" name="paymentAmount" value="{{ confirmedAmount }}"/>#}
+                            {#<script#}
+                                    {#src="https://checkout.stripe.com/checkout.js" class="stripe-button"#}
+                                    {#data-key="{{ publishableKey }}"#}
+                                    {#data-name="Warwick Estates: Payment"#}
+                                    {#data-currency="GBP"#}
+                                    {#data-description="Your confirmed amount is £{{ confirmedAmount|number_format(2, '.', ',') }}"#}
+                                    {#data-amount="{{ confirmedAmount|number_format(2, '', '') }}">#}
+                            {#</script>#}
+                        {#</form>#}
+                    {#{% endif %}#}
+                    {#{% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}#}
+                {#</div>#}
             </div>
 
         </div>
