@@ -4,47 +4,152 @@
 
     <div class="container">
         <div class="row">
-           <div class="col span_12 intro-box">
-                <h1><strong>Your Account</strong></h1>
+            <div class="col-md-10 offset-md-1 text-center">
+                <h1 class="fc-primary">Your Account</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col span_12">
-                <h3>Account Details</h3>
-                <form action="/account/update" method="post">
-                    {% if accountMessage is empty %}
-                    {% else %}
-                        <div class="alert alert-success">{{ accountMessage|raw }}</div>
-                    {% endif %}
-                    {% if verifyMessage is empty %}
-                    {% else %}
-                        <div class="alert alert-danger">{{ verifyMessage|raw }}</div>
-                    {% endif %}
-
-                    {% form_theme accountUpdateForm 'bootstrap_3_layout.html.twig' %}
-                    {{ form_widget(accountUpdateForm) }}
-
-                    <p><small>Please note if you accept to receive correspondence by email we are not ready to go paperless just yet! We are just building up information on our data base for future use. Our paperless system will be ready soon and when it is we will contact you to confirm that your correspondence will be sent by email going forward. All correspondence will therefore still be sent to you by post at this time..</small></p>
-
-                    <input type="submit" value="Save" class="btn btn-danger" />
-                </form>
-            </div>
-            <div class="col span_12">
-                <h3>Change Password</h3>
-                {% if passwordMessage is empty %}
+        <div class="default-box account-details margin-top-35 margin-top-sm-50 margin-bottom-60">
+            <h2 class="fc-primary fw-500 text-center text-md-left padding-bottom-10 padding-bottom-md-15 padding-bottom-lg-20">
+                Account Details
+            </h2>
+            <p class="padding-bottom-20 padding-bottom-md-30 padding-bottom-lg-40 fs-6 text-md-left">Lorem ipsum dolor sit amet, consec tetur adipiscing elitivamus volutpa.</p>
+            <form action="/account/update" method="post" class="text-center text-md-left">
+                {% if accountMessage is empty %}
                 {% else %}
-                    <div class="alert alert-success">{{passwordMessage}}</div>
+                    <div class="alert alert-success">{{ accountMessage|raw }}</div>
                 {% endif %}
-                <form action="/account/password" method="post">
-                    {{ form_widget(passwordForm) }}
+                {% if verifyMessage is empty %}
+                {% else %}
+                    <div class="alert alert-danger">{{ verifyMessage|raw }}</div>
+                {% endif %}
 
-                    <input type="submit" value="Update" class="btn btn-danger" />
-                </form>
-            </div>
+                {#{% form_theme accountUpdateForm 'bootstrap_3_layout.html.twig' %}#}
+                {#{{ form_widget(accountUpdateForm) }}#}
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="input-group">
+                            <label>Profile Name</label>
+                            <input type="text" placeholder="Type here...">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="text" placeholder="Type here...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="input-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Type here...">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="input-group">
+                            <label>Tel No.</label>
+                            <input type="tel" placeholder="Type here...">
+                        </div>
+                    </div>
+                </div>
+                <p class="fc-primary fw-500 text-left margin-bottom-20 margin-bottom-lg-30 margin-top-md-20 margin-top-lg-30">What method of communication would you like us to use for the following?</p>
+                <div class="radio-option-table margin-bottom-30">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p class="fw-700">
+                                Option One
+                            </p>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex align-items-center">
+                            <div class="radio-wrapper d-flex">
+                                <label class="radio fw-500 fs-6">Email
+                                    <input type="radio" name="contract_type" value="email" checked="">
+                                    <div class="radio-indicator"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex align-items-center">
+                            <div class="radio-wrapper d-flex">
+                                <label class="radio fw-500 fs-6">Tel
+                                    <input type="radio" name="contract_type" value="year">
+                                    <div class="radio-indicator"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p class="fw-700">
+                                Option One
+                            </p>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex align-items-center">
+                            <div class="radio-wrapper d-flex">
+                                <label class="radio fw-500 fs-6">Email
+                                    <input type="radio" name="contract_type_2" value="email" checked="">
+                                    <div class="radio-indicator"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex align-items-center">
+                            <div class="radio-wrapper d-flex">
+                                <label class="radio fw-500 fs-6">Tel
+                                    <input type="radio" name="contract_type_2" value="year">
+                                    <div class="radio-indicator"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p class="fw-700">
+                                Option One
+                            </p>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex align-items-center">
+                            <div class="radio-wrapper d-flex">
+                                <label class="radio fw-500 fs-6">Email
+                                    <input type="radio" name="contract_type_3" value="email" checked="">
+                                    <div class="radio-indicator"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex align-items-center">
+                            <div class="radio-wrapper d-flex">
+                                <label class="radio fw-500 fs-6">Tel
+                                    <input type="radio" name="contract_type_3" value="year">
+                                    <div class="radio-indicator"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 d-md-flex">
+                        <a type="submit" href="/pages/dashboard/dashboard-director.html" class="btn btn-cyan">Save</a>
+                    </div>
+                </div>
+                {#<input type="submit" value="Save" class="btn btn-danger"/>#}
+            </form>
+        </div>
+        <div class="col span_12">
+            <h3>Change Password</h3>
+            {% if passwordMessage is empty %}
+            {% else %}
+                <div class="alert alert-success">{{ passwordMessage }}</div>
+            {% endif %}
+            <form action="/account/password" method="post">
+                {{ form_widget(passwordForm) }}
+
+                <input type="submit" value="Update" class="btn btn-danger"/>
+            </form>
         </div>
     </div>
-    
+
 
     {% include 'CustomerAppBundle:Account:confirm-modal.html.twig' %}
-    
+
 {% endblock %}

@@ -2,21 +2,37 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col span_12">
-            <h1>Payment confirmation</h1>
-        </div>
-    </div>
+    <section class="padding-bottom-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="fc-primary padding-bottom-15 padding-bottom-sm-20">Payment confirmation</h1>
+                    <p>Thank you for your payment.</p>
 
-    <div class="row">
-        <div class="col span_12">
-            {% if message is empty %}
-            {% else %}
-            <div class="alert alert-{{messageState}}">{{message}}</div>
-            {% endif %}
-            {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
+                    <div class="default-box make-payment-box confirmation text-center">
+                        <div class="wrap">
+                            <div class="input-group primary">
+                                <label>Reference Number</label>
+                                <input type="text" value="WARREP00001" readonly>
+                            </div>
+
+                            <p class="confirmation">You will receive a confirmation email with an overview of your payment.</p>
+
+                            <button class="btn btn-cyan">Make another payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#<div class="row">#}
+                {#<div class="col span_12">#}
+                    {#{% if message is empty %}#}
+                    {#{% else %}#}
+                        {#<div class="alert alert-{{ messageState }}">{{ message }}</div>#}
+                    {#{% endif %}#}
+                    {#{% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}#}
+                {#</div>#}
+            {#</div>#}
         </div>
-    </div>
-</div>
+    </section>
 {% endblock %}

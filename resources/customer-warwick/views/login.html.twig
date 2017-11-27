@@ -1,8 +1,7 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
 {% block content %}
-    <section
-            class="padding-top-40 padding-top-sm-60 padding-top-md-70 padding-bottom-50 padding-bottom-sm-80 padding-bottom-md-90">
+    <section class="padding-top-40 padding-top-sm-60 padding-top-md-70 padding-bottom-50 padding-bottom-sm-80 padding-bottom-md-90">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
@@ -29,7 +28,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <form action="{{  path('customer_app_login_check') }}" class="log-in text-center">
+                        <form action="{{  path('customer_app_login_check') }}" class="log-in text-center" method="post">
                             <div class="input-group">
                                 <label>Customer Reference</label>
                                 <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="E.G. 12345-0001">
@@ -38,7 +37,7 @@
                                 <label>Password</label>
                                 <input type="password" id="password" name="_password" placeholder="Password">
                             </div>
-                            <a type="submit" class="btn btn-cyan">Log In</a>
+                            <button type="submit" class="btn btn-cyan">Login</button>
                         </form>
                         <a href="<?=customer_url('login/forgotten')?>"
                            class="fw-700 text-underline padding-top-25 padding-top-sm-35 padding-bottom-30 padding-bottom-sm-40 d-block">Forgot

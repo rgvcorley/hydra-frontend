@@ -2,133 +2,286 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col span_12 intro-box">
-            <h1><strong>{{title}}</strong></h1>
+    <div class="container padding-bottom-30 padding-bottom-sm-40">
+        <div class="row">
+            <div class="col-md-9 text-center text-sm-left">
+                <h1 class="fc-primary d-sm-inline">Spend Report</h1>
+                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce
+                    dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+            </div>
         </div>
     </div>
-</div>
-    
-<div class="container table-container">
-    <div class="row">
-        <div class="col span_12">            
-            <form method="get" action="" class="form-inline">
-                <div class="form-group">
-                    <select class="form-control input-sm select-form float-left" name="taxYear">
-                        {% for year in taxYears %}
-                        <option value="{{ year.key }}" {% if year.active%}selected="selected"{% endif %}>{{ year.desc }}</option>
-                        {% endfor %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="default-box date-filter text-center margin-bottom-30 margin-bottom-lg-25">
+                    <div class="row">
+                        <div class="col-12 text-md-left d-md-flex justify-content-start justify-content-lg-center align-items-center padding-top-md-15 padding-bottom-md-15">
+                            <p class="fw-500 padding-top-20 padding-top-md-0 padding-right-md-10">Schedule</p>
+                            <form method="get" action="" class="d-flex d-md-inline-flex">
+                                <select name="taxYear">
+                                    {% for year in taxYears %}
+                                        <option value="{{ year.key }}"
+                                                {% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>
+                                    {% endfor %}
+                                </select>
+                                {#<button type="submit" class="btn btn-default btn-sm">Update</button>#}
+
+                                <p class="fw-500 padding-top-20 padding-top-md-0 padding-right-md-10">Dates</p>
+                                <select>
+                                    <option>Option</option>
+                                    <option>Option Two</option>
+                                    <option>Option Three</option>
+                                </select>
+                                <select>
+                                    <option>Option</option>
+                                    <option>Option Two</option>
+                                    <option>Option Three</option>
+                                </select>
+
+                                <button type="submit" value="Apply"
+                                        class="btn btn-cyan margin-top-15 margin-top-md-5 margin-bottom-25 margin-bottom-md-0 padding-right-45">
+                                    Apply
+                                </button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-4">
+                <div class="default-box d-flex justify-content-center align-items-center text-center primary-border medium-ticket aged-debtors margin-bottom-10 margin-bottom-sm-30">
+                    <div class="detail">
+                        <p class="fw-700 padding-top-20 padding-top-md-25 padding-bottom-md-5">Total Arrears</p>
+                        <span class="fc-black padding-bottom-20 medium-text d-block">£12,098</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-8">
+                <div class="default-box chart debtors-chart primary-border margin-top-20 margin-top-md-0 margin-bottom-10 margin-bottom-sm-30 text-center">
+                    <div class="detail">
+                        <div class="row margin-top-md-30 margin-bottom-5">
+                            <div class="col-12 col-md-6">
+                                <p class="fw-700 padding-top-20 fc-grey-2 d-lg-none d-md-none margin-bottom-20">Budget
+                                    Spent in Current
+                                    Budget Year</p>
+                                <div class="ct-chart budget-year-chart blue"></div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="fw-700 padding-top-20 fc-grey-2 d-none d-md-block d-lg-block padding-right-lg-110">
+                                    Budget Spent in Current Budget Year</p>
+                                <div class="labels padding-top-25 padding-bottom-25 padding-bottom-sm-30 padding-bottom-md-45 ">
+                                    <div class="label d-flex align-items-center margin-bottom-10">
+                                        <span class="circle bg-blue"></span>
+                                        <p>Spent 75%</p>
+                                    </div>
+                                    <div class="label d-flex align-items-center margin-bottom-10">
+                                        <span class="circle bg-grey-5"></span>
+                                        <p>Remaining 25%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row spend-report-filter margin-bottom-md-30">
+            <div class="col-12 d-md-flex align-items-center">
+                <p class="fw-500 margin-bottom-20 margin-bottom-md-0 margin-top-20 margin-top-md-0">Showing <a href="#">Accountancy
+                        Fees Transactions</a></p>
+                <div class="per-page-filter d-flex margin-top-20 margin-top-sm-0 margin-bottom-25 margin-bottom-md-0 justify-content-md-end align-items-center">
+                    <label class="margin-bottom-0">Transactions per page</label>
+                    <select>
+                        <option>8</option>
+                        <option>Option Two</option>
+                        <option>Option Three</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-default btn-sm">Update</button>
-            </form>
-            <table class="display dataTable" id="spend-table">
-                <thead>
-                    <tr>
-                        <th>Cost Centre</th>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Debit</th>
-                        <th>Credit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for row in rows %}
-                    <tr>
-                        <td>{{ row.cost_centre }}</td>
-                        <td data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>
-                        <td>{{ row.description }}</td>
-                        <td data-type="currency" class="text-right">
-                            {% if row.debit is empty %}
-
-                            {% else %}
-                            <span style="float: left;">&pound;</span>{{ row.debit|number_format(2, '.', ',') }}
-                            {% endif %}
-                        </td>
-                        <td data-type="currency" class="text-right">
-
-                            {% if row.credit is empty %}
-
-                            {% else %}
-                            <span style="float: left;">&pound;</span>{{ row.credit|number_format(2, '.', ',') }}
-                            {% endif %}
-
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            </div>
         </div>
+        {% for row in rows %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="default-box spend-report-card margin-bottom-10 margin-bottom-sm-20 margin-bottom-md-30">
+                        <div class="row">
+                            <div class="col-sm-8 col-12">
+                                <div class="overview d-flex align-items-center">
+                                    <h2 class="fc-black fw-500 padding-right-5">{{ row.description }}</h2>
+                                    <span class="icon icon-doc icon-24 bg-cyan"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-6">
+                                <div class="d-flex padding-left-20 align-items-center justify-content-center padding-top-10 padding-bottom-10 statement-details">
+                                    <div>
+                                        <small class="fs-8 fw-500 fc-grey-3">Credit</small>
+                                        <p class="fs-5 fw-500 fc-grey-3" data-type="currency">
+                                            {% if row.credit is empty %}
+
+                                            {% else %}
+                                                &pound;{{ row.credit|number_format(2, '.', ',') }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-6">
+                                <div class="d-flex align-items-center justify-content-center padding-top-10 padding-bottom-10 statement-details">
+                                    <div class="text-center">
+                                        <small class="fs-8 fw-500 fc-black">Debit</small>
+                                        <p class="fs-5 fw-500 fc-black" data-type="currency">
+                                            {% if row.debit is empty %}
+
+                                            {% else %}
+                                                &pound;{{ row.debit|number_format(2, '.', ',') }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="ticket-details bg-grey-6 d-flex align-items-center">
+                                    <p data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="ticket-details bg-grey-6 d-flex align-items-center">
+                                    <p>{{ row.cost_centre }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+
+
+        {#<table class="display dataTable" id="spend-table">#}
+        {#<thead>#}
+        {#<tr>#}
+        {#<th>Cost Centre</th>#}
+        {#<th>Date</th>#}
+        {#<th>Description</th>#}
+        {#<th>Debit</th>#}
+        {#<th>Credit</th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {#<tbody>#}
+        {#{% for row in rows %}#}
+        {#<tr>#}
+        {#<td>{{ row.cost_centre }}</td>#}
+        {#<td data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</td>#}
+        {#<td>{{ row.description }}</td>#}
+        {#<td data-type="currency" class="text-right">#}
+        {#{% if row.debit is empty %}#}
+
+        {#{% else %}#}
+        {#<span style="float: left;">&pound;</span>{{ row.debit|number_format(2, '.', ',') }}#}
+        {#{% endif %}#}
+        {#</td>#}
+        {#<td data-type="currency" class="text-right">#}
+
+        {#{% if row.credit is empty %}#}
+
+        {#{% else %}#}
+        {#<span style="float: left;">&pound;</span>{{ row.credit|number_format(2, '.', ',') }}#}
+        {#{% endif %}#}
+
+        {#</td>#}
+        {#</tr>#}
+        {#{% endfor %}#}
+        {#</tbody>#}
+        {#</table>#}
     </div>
-</div>
 
-<script>
 
-    $(document).ready(function() {
+    <script>
 
-    Number.prototype.formatMoney = function(c, d, t){
-    var n = this,
-        c = isNaN(c = Math.abs(c)) ? 2 : c,
-        d = d == undefined ? "." : d,
-        t = t == undefined ? "," : t,
-        s = n < 0 ? "-" : "",
-        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
-        j = (j = i.length) > 3 ? j % 3 : 0;
-       return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-     };
+        $(document).ready(function () {
 
-    var table = $('#spend-table').DataTable({
-        "columnDefs": [
-            { "visible": false, "targets": 0 }
-        ],
-        "order": [[ 0, 'asc' ]],
-        "paging" : false,
-        "displayLength": 25,
-        "drawCallback": function ( settings ) {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-            var total=0;
-            var row=0;
-            api.column(0, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    if (row) {
-                        $(rows).eq( i ).before(
-                            '<tr class="group"><td colspan="4" style="border-top: 5px double #ddd;border-spacing:5px"><span style="float: right;"><strong>Total:</strong> &nbsp;&pound;'+total.formatMoney()+'</span></td></tr>'
-                        );
-                    }
-                    $(rows).eq( i ).before(
-                        '<tr class="group"><td colspan="4"><strong>'+group+'</strong></td></tr>'
-                    );
+            Number.prototype.formatMoney = function (c, d, t) {
+                var n = this,
+                    c = isNaN(c = Math.abs(c)) ? 2 : c,
+                    d = d == undefined ? "." : d,
+                    t = t == undefined ? "," : t,
+                    s = n < 0 ? "-" : "",
+                    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+                    j = (j = i.length) > 3 ? j % 3 : 0;
+                return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+            };
 
-                    total = 0;
+            var table = $('#spend-table').DataTable({
+                "columnDefs": [
+                    {"visible": false, "targets": 0}
+                ],
+                "order": [[0, 'asc']],
+                "paging": false,
+                "displayLength": 25,
+                "drawCallback": function (settings) {
+                    var api = this.api();
+                    var rows = api.rows({page: 'current'}).nodes();
+                    var last = null;
+                    var total = 0;
+                    var row = 0;
+                    api.column(0, {page: 'current'}).data().each(function (group, i) {
+                        if (last !== group) {
+                            if (row) {
+                                $(rows).eq(i).before(
+                                    '<tr class="group"><td colspan="4" style="border-top: 5px double #ddd;border-spacing:5px"><span style="float: right;"><strong>Total:</strong> &nbsp;&pound;' + total.formatMoney() + '</span></td></tr>'
+                                );
+                            }
+                            $(rows).eq(i).before(
+                                '<tr class="group"><td colspan="4"><strong>' + group + '</strong></td></tr>'
+                            );
 
-                    last = group;
+                            total = 0;
 
+                            last = group;
+
+                        }
+                        var credit = $(rows).eq(i).children().eq(3).text().replace(/£/, '').replace(/,/, '');
+                        var debit = $(rows).eq(i).children().eq(2).text().replace(/£/, '').replace(/,/, '');
+                        console.log(credit);
+                        console.log(debit);
+                        total += debit - credit;
+                        row++;
+                    });
                 }
-                var credit = $(rows).eq( i ).children().eq( 3 ).text().replace(/£/, '').replace(/,/, '');
-                var debit = $(rows).eq( i ).children().eq( 2 ).text().replace(/£/, '').replace(/,/, '');
-                console.log(credit);
-                console.log(debit);
-                total += debit - credit;
-                row++;
-            } );
-        }
-    } );
+            });
 
-    // Order by the grouping
-    $('#spend-table tbody').on( 'click', 'tr.group', function () {
-        var currentOrder = table.order()[0];
-        if ( currentOrder[0] === 0 && currentOrder[1] === 'asc' ) {
-            table.order( [ 0, 'desc' ] ).draw();
-        }
-        else {
-            table.order( [ 0, 'asc' ] ).draw();
-        }
-    } );
-} );
+            // Order by the grouping
+            $('#spend-table tbody').on('click', 'tr.group', function () {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 0 && currentOrder[1] === 'asc') {
+                    table.order([0, 'desc']).draw();
+                }
+                else {
+                    table.order([0, 'asc']).draw();
+                }
+            });
+        });
 
-</script>
+    </script>
+{% endblock %}
+
+{% block pagination %}
+    <div class="container">
+        <ul class="pagination d-flex justify-content-center align-items-center margin-bottom-50 margin-bottom-sm-60 margin-bottom-md-90 margin-top-20">
+            <li><span class="icon icon-divider icon-rotate-180 bg-primary"></span></li>
+            <li class="active">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><span class="icon icon-divider bg-primary"></span></a></li>
+        </ul>
+    </div>
 {% endblock %}
 

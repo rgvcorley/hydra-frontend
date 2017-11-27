@@ -2,73 +2,120 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col span_12 intro-box">
-            <h1><strong>{{title}}</strong></h1>
-            {% if showPaymentForm %}
-                <p>
-                    Our records show the outstanding balance on your account is &pound;{{ confirmedAmount|number_format(2, '.', ',') }}. To see 
-                    how we have arrived at that figure please click on the Statement of Account tab above where you can view a statement of your account.
-                </p>
-                    
-                <p>
-                    To proceed to make a payment enter an amount in the box below and click continue to be taken to the next step.
-                </p>
-                <p>
-                    Please note that payments made via here may take 7 working days to show on your account statement.
-                </p>
-            {% else %}
-                <p>
-                    By continuing you are agreeing to pay &pound;{{ confirmedAmount|number_format(2, '.', ',') }}. This figure has been calculated 
-                    by adding a {{ percentageCharge }}% + {{ standingCharge }}p fee which is charged by Stripe, who provide this payment service. 
-                    If you are happy to continue please click pay with card where you will be asked to enter your card details. Once you have made 
-                    your payment it may take upto 7 working days to show on your account statement.
-                </p>
-            {% endif %}
-        </div>
+    <section class="padding-bottom-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="fc-primary padding-bottom-15 padding-bottom-sm-20">
+                        Make Payment
+                    </h1>
+                    <p>Please select and invoice from the dropdown below.</p>
 
-        <div class="col span_12">
-        
-            {% if message is empty %}
-            {% else %}
-            <div class="alert alert-{{messageState}}">{{message}}</div>
-            {% endif %}
+                    <div class="default-box make-payment-box text-center">
+                        <div class="wrap">
+                            <div class="input-group">
+                                <label>Select Invoice</label>
+                                <select>
+                                    <option value="" disabled selected>Please Select</option>
+                                    <option value="option-1">Option 1</option>
+                                    <option value="option-2">Option 2</option>
+                                    <option value="option-3">Option 3</option>
+                                </select>
+                            </div>
 
-            {% if showPaymentForm %}
-                <h3>Payment Details</h3>
-                <form action="/payments" method="post" id="payment-form">
+                            <div class="input-group">
+                                <label>Select Invoice</label>
+                                <input type="text" value="£500" />
+                            </div>
+
+                            <div class="summary">
+                                <div class="fc-primary fw-700">Total Payable</div>
+                                <div class="fw-700">£{{ confirmedAmount|number_format(2, '.', ',') }}</div>
+                            </div>
+
+                            <button class="btn btn-cyan">Pay</button>
+                        </div>
+
+                        <div class="separator"></div>
+
+                        <div class="wrap">
+                            <div class="lower">
+                                <p class="fs-8 fc-primary fw-700">Please Note</p>
+                                <p class="fs-8">Total figure has been calculated by adding a {{ percentageCharge }}% + {{ standingCharge }}p fee which is charged by Stripe, who provide this payment service.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {#{% if showPaymentForm %}#}
+                        {#<p>#}
+                            {#Our records show the outstanding balance on your account is#}
+                            {#&pound;{{ confirmedAmount|number_format(2, '.', ',') }}. To see#}
+                            {#how we have arrived at that figure please click on the Statement of Account tab above where#}
+                            {#you can view a statement of your account.#}
+                        {#</p>#}
+
+                        {#<p>#}
+                            {#To proceed to make a payment enter an amount in the box below and click continue to be taken#}
+                            {#to the next step.#}
+                        {#</p>#}
+                        {#<p>#}
+                            {#Please note that payments made via here may take 7 working days to show on your account#}
+                            {#statement.#}
+                        {#</p>#}
+                    {#{% else %}#}
+                        {#<p>#}
+                            {#By continuing you are agreeing to pay#}
+                            {#&pound;{{ confirmedAmount|number_format(2, '.', ',') }}. This figure has been calculated#}
+                            {#by adding a {{ percentageCharge }}% + {{ standingCharge }}p fee which is charged by Stripe,#}
+                            {#who provide this payment service.#}
+                            {#If you are happy to continue please click pay with card where you will be asked to enter#}
+                            {#your card details. Once you have made#}
+                            {#your payment it may take upto 7 working days to show on your account statement.#}
+                        {#</p>#}
+                    {#{% endif %}#}
+                </div>
+
+                <div class="col span_12">
+
                     {% if message is empty %}
                     {% else %}
-                    <div class="alert alert-{{messageState}}">{{message}}</div>
+                        <div class="alert alert-{{ messageState }}">{{ message }}</div>
                     {% endif %}
 
-                    {% form_theme paymentForm 'bootstrap_3_layout.html.twig' %}
-                    {{ form_widget(paymentForm) }}
+                    {% if showPaymentForm %}
+                        <h3>Payment Details</h3>
+                        <form action="/payments" method="post" id="payment-form">
+                            {% if message is empty %}
+                            {% else %}
+                                <div class="alert alert-{{ messageState }}">{{ message }}</div>
+                            {% endif %}
 
-                    <input type="submit" value="Continue" class="btn btn-danger" />
-                </form>
-            {% endif %}
+                            {% form_theme paymentForm 'bootstrap_3_layout.html.twig' %}
+                            {{ form_widget(paymentForm) }}
 
-            {% if showPaymentProviderForm %}
+                            <input type="submit" value="Continue" class="btn btn-danger"/>
+                        </form>
+                    {% endif %}
 
-                <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
+                    {% if showPaymentProviderForm %}
 
-                <form action="/payments/confirmed" method="post" style="text-align:center;">
-                    <input type="hidden" name="paymentAmount" value="{{confirmedAmount}}" />
-                    <script
-                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-key="{{ publishableKey }}"
-                            data-name="Warwick Estates: Payment"
-                            data-currency="GBP"
-                            data-description="Your confirmed amount is £{{ confirmedAmount|number_format(2, '.', ',') }}"
-                            data-amount="{{ confirmedAmount|number_format(2, '', '') }}">
-                    </script>
-                </form>
-            {% endif %}
-            {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
+                        <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
+
+                        <form action="/payments/confirmed" method="post" style="text-align:center;">
+                            <input type="hidden" name="paymentAmount" value="{{ confirmedAmount }}"/>
+                            <script
+                                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                    data-key="{{ publishableKey }}"
+                                    data-name="Warwick Estates: Payment"
+                                    data-currency="GBP"
+                                    data-description="Your confirmed amount is £{{ confirmedAmount|number_format(2, '.', ',') }}"
+                                    data-amount="{{ confirmedAmount|number_format(2, '', '') }}">
+                            </script>
+                        </form>
+                    {% endif %}
+                    {% include 'CustomerAppBundle:Pay:cards-image.html.twig' %}
+                </div>
+            </div>
+
         </div>
-    </div>
-
-</div>
+    </section>
 {% endblock %}

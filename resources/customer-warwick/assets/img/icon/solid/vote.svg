@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / Vote</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,14 L2.72727273,14 L2.72727273,5.6 L0,5.6 L0,14 Z M15,6.3 C15,5.53 14.3863636,4.9 13.6363636,4.9 L9.33409091,4.9 L9.98181818,1.701 L10.0022727,1.477 C10.0022727,1.19 9.88636364,0.924 9.70227273,0.735 L8.97954545,0 L4.49318182,4.613 C4.24090909,4.865 4.09090909,5.215 4.09090909,5.6 L4.09090909,12.6 C4.09090909,13.37 4.70454545,14 5.45454545,14 L11.5909091,14 C12.1568182,14 12.6409091,13.65 12.8454545,13.146 L14.9045455,8.211 C14.9659091,8.05 15,7.882 15,7.7 L15,6.363 L14.9931818,6.356 L15,6.3 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Vote" transform="translate(-15.000000, -14.000000)">
+            <g id="Icon-/-Vote">
+                <g transform="translate(10.000000, 10.000000)">
+                    <g id="Icons-/-Vote" transform="translate(5.000000, 4.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Shape" fill-rule="nonzero"></g>
+                        <g id="Colour-/-Red" mask="url(#mask-2)" fill="#E64131">
+                            <g transform="translate(-0.681818, -0.700000)" id="Shape">
+                                <polygon points="0 0 16 0 16 17 0 17"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

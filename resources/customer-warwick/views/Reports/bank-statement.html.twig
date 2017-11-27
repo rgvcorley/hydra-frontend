@@ -30,7 +30,7 @@
             {% for balance in balances %}
             <div class="col span_4 account">
                 <span class="name">{{ balance.accountName }}</span>
-                <span class="balence">&pound;{{ balance.balance|number_format(2, '.', ',') }}</span>
+                <span class="balance">&pound;{{ balance.balance|number_format(2, '.', ',') }}</span>
             </div>
             {% endfor %}
         </div>
