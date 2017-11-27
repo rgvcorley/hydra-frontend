@@ -1,0 +1,37 @@
+{% extends "CustomerAppBundle::layout.html.twig" %}
+
+{% block content %}
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Budget vs Spend','link':'/reports/debtors'} %}
+
+
+    <section class="padding-top-40 padding-top-md-70 padding-bottom-30 padding-bottom-sm-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 text-center text-sm-left">
+                    <h1 class="fc-primary d-sm-inline">Hi Rob.</h1>
+                    <h1 class="fc-grey-7 d-sm-inline">Welcome back.</h1>
+                    <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Fusce dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu
+                        nisi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="padding-bottom-50">
+        <div class="container">
+            <!-- repeat property card -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="default-box d-md-flex align-items-center property-card margin-bottom-10 margin-bottom-sm-20 margin-bottom-md-30">
+                        <h3 class="fc-black fw-500">1 Address Line, Address Line, Town, County, CM20 2BN</h3>
+                        <a href="#" class="btn btn-cyan">View</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /repeat property card -->
+        </div>
+
+
+    </section>
+{% endblock %}
