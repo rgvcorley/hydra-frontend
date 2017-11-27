@@ -91,13 +91,13 @@ $socials:
 //// Uses CSS3 Masks, needs a fallback for IE+Edge
 @each $icon in $icons {
 	.icon-#{$icon} {
-		-webkit-mask:  url(/img/icon/solid/#{$icon}.svg) 100% 100%/100% 100% no-repeat;
-		mask: url(/img/icon/solid/#{$icon}.svg) 100% 100%/100% 100% no-repeat;
+		-webkit-mask:  url(/bundles/customerapp/img/icon/solid/#{$icon}.svg) 100% 100%/100% 100% no-repeat;
+		mask: url(/bundles/customerapp/img/icon/solid/#{$icon}.svg) 100% 100%/100% 100% no-repeat;
 	}
 }
 @each $social in $socials {
 	.icon-#{$social} {
-		-webkit-mask: url(/img/icon/social/#{$social}.svg) 100% 100%/100% 100% no-repeat;
-		mask: url(/img/icon/social/#{$social}.svg) 100% 100%/100% 100% no-repeat;
+		-webkit-mask: url(/bundles/customerapp/assets/img/icon/social/#{$social}.svg) 100% 100%/100% 100% no-repeat;
+		mask: url(/bundles/customerapp/assets/img/icon/social/#{$social}.svg) 100% 100%/100% 100% no-repeat;
 	}
 }
