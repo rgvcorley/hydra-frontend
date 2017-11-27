@@ -1,62 +1,271 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
+
+{% block breadcrumb %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs d-flex align-item-center padding-top-10 padding-bottom-15 padding-top-sm-20 padding-bottom-sm-30 padding-bottom-md-35">
+                    <a href="/" class="icon icon-16 icon-home bg-grey-3"></a>
+                    <span class="icon icon-12 icon-divider bg-grey-4"></span>
+                    <a href="/reports/budget-versus-spend" class="fc-grey-3">Budget vs Spend</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% block content %}
 
-<div class="container">
-
-    <div class="row">
-        <div class="col span_12 intro-box">
-            <h1 class="margin-bottom"><strong>{{title}}</strong></h1>
+    <div class="container">
+        <div class="container padding-bottom-30 padding-bottom-sm-40">
+            <div class="row">
+                <div class="col-md-9 text-center text-sm-left">
+                    <h1 class="fc-primary d-sm-inline">Budget v Actual</h1>
+                    <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Fusce
+                        dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="d-flex invoice-export">
+                        <a href="#" class="btn btn-cyan margin-top-20 margin-top-md-50">Export Report</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col span_12">
-	        <form method="get" action="" class="form-inline form-filter">
-                <div class="form-group">
-                    <select class="form-control select-form float-left" name="taxYear">
-                        {% for year in taxYears %}
-                        <option value="{{ year.key }}" {% if year.active%}selected="selected"{% endif %}>{{ year.desc }}</option>
-                        {% endfor %}
-                    </select>
+
+    <div class="container budget-actual">
+        <div class="row">
+            <form class="col-12">
+                <div class="default-box date-filter text-center margin-bottom-30 margin-bottom-lg-25">
+                    <div class="input-group">
+                        <label>Schedule</label>
+                        <select class="fc-grey-7">
+                            <option>Option</option>
+                            <option>Option Two</option>
+                            <option>Option Three</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Year</label>
+                        <select class="fc-grey-7" name="taxYear">
+                            {% for year in taxYears %}
+                                <option value="{{ year.key }}"
+                                        {% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-cyan">View Invoice</button>
                 </div>
-                <button type="submit" class="btn btn-default btn-sm">Update</button>
             </form>
         </div>
-    </div>
- 
-</div>
-<div class="container table-container">  
-    <div class="row">
-        <div class="col span_12">
-	        
-            <table class="display dataTable">
-	            <thead>
-	                <tr>
-	                    {% for row in headings %}
-	                    <th>{{ row }}</th>
-	                    {% endfor %}
-	                </tr>
-	            </thead>
-	            <tbody>
-	                {% for row, columns in rows %}
-	                <tr>
-	                    {% for col in columns %}
-	                        <td>
-	                            {{col}}
-	                        </td>
-	                    {% endfor %}
-	                </tr>
-	                {% endfor %}
-	            </tbody>
-	        </table>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="default-box info-ticket primary-border d-sm-flex margin-bottom-10 margin-bottom-sm-30 justify-content-center align-items-center text-center">
+                    <p class="fw-700">Available Balance</p>
+                    <span class="fc-grey-7 medium-text">£12,098</span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="default-box info-ticket primary-border d-sm-flex margin-bottom-10 margin-bottom-sm-30 justify-content-center align-items-center text-center">
+                    <p class="fw-700">Reserve Fund Balance</p>
+                    <span class="fc-grey-7 medium-text">£00,000</span>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="col span_12 center-align">
-            <a href="/reports/budget-versus-spend/csv" class="btn red btn-center btn-download">Download as CSV</a>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="default-box chart primary-border margin-bottom-10 margin-bottom-sm-30 text-center">
+                    <div class="detail">
+                        <p class="fw-700 padding-top-30 padding-bottom-25 fc-grey-2">Split of Expenditure</p>
+                        <div class="ct-chart expenditure-chart"></div>
+                        <div class="labels padding-top-25 padding-bottom-25 padding-left-md-10  padding-bottom-sm-30 padding-bottom-md-45 text-left">
+                            <div class="label d-flex justify-content-start padding-left-lg-30 align-items-center margin-bottom-10">
+                                <span class="circle bg-dark-blue"></span>
+                                <p>Element One 25%</p>
+                            </div>
+                            <div class="label d-flex justify-content-start padding-left-lg-30 align-items-center margin-bottom-10">
+                                <span class="circle bg-blue"></span>
+                                <p>Element Two 25%</p>
+                            </div>
+                            <div class="label d-flex justify-content-start padding-left-lg-30 align-items-center margin-bottom-10">
+                                <span class="circle bg-cyan"></span>
+                                <p>Element Three 13%</p>
+                            </div>
+                            <div class="label d-flex justify-content-start padding-left-lg-20 align-items-center margin-bottom-10">
+                                <span class="circle bg-yellow"></span>
+                                <p>Element Four 12%</p>
+                            </div>
+                            <div class="label d-flex justify-content-start padding-left-lg-20 align-items-center margin-bottom-10">
+                                <span class="circle bg-red"></span>
+                                <p>Element Five 12%</p>
+                            </div>
+                            <div class="label d-flex justify-content-start padding-left-lg-20 align-items-center margin-bottom-10">
+                                <span class="circle bg-dark-purple"></span>
+                                <p>Element Six 13%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-button fw-700 d-flex align-items-center justify-content-center padding-top-10 padding-bottom-15 padding-top-md-20 padding-bottom-md-20">
+                        <a href="#" class="fc-cyan">
+                            Budget v Actual
+                        </a>
+                        <div class="icon icon-divider icon-12 bg-cyan"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="default-box chart primary-border margin-bottom-10 margin-bottom-sm-30 text-center">
+                    <div class="detail">
+                        <p class="fw-700 padding-top-30 padding-bottom-25 fc-grey-2">Budget Spent in Current Budget
+                            Year</p>
+                        <div class="ct-chart budget-year-chart"></div>
+                        <div class="labels padding-top-25 padding-bottom-25 padding-bottom-sm-30 padding-bottom-md-125 text-left">
+                            <div class="label d-flex justify-content-start align-items-center margin-bottom-10">
+                                <span class="circle bg-cyan"></span>
+                                <p>Spent 75%</p>
+                            </div>
+                            <div class="label d-flex justify-content-start align-items-center margin-bottom-10">
+                                <span class="circle bg-grey-5"></span>
+                                <p>Remaining 25%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-button fw-700 d-flex align-items-center justify-content-center padding-top-10 padding-bottom-15 padding-top-md-20 padding-bottom-md-20">
+                        <a href="#" class="fc-cyan">
+                            Spend Report
+                        </a>
+                        <div class="icon icon-divider icon-12 bg-cyan"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-12 margin-bottom-25">
+                <div class="form-inline">
+
+                    <p class="fw-500 ">Showing <a href="#">Cost Code Groups Overview</a></p>
+
+                    <label class="difference d-none d-lg-block">Difference in</label>
+                    <select class="form-control d-none d-lg-block">
+                        <option>£1000</option>
+                        <option>£</option>
+                        <option>£</option>
+                    </select>
+
+                    <label class="transactions justify-content-md-end padding-right-10">Transactions per page</label>
+                    <select class="form-control">
+                        <option>8</option>
+                        <option>Option Two</option>
+                        <option>Option Three</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="default-box budget-card margin-bottom-10 margin-bottom-md-30">
+                    <div class="d-lg-flex">
+                        {% for row, columns in rows %}
+
+                            {% for col in columns %}
+
+                                <div class="title d-flex">
+                                    <h2 class="fw-500 d-flex align-items-center"></h2>
+                                    <div class="expand-icon d-flex d-lg-none align-items-center justify-content-center">
+                                        <span class="icon icon-divider icon-16 bg-cyan icon-rotate-270 budget-maintenance"></span>
+                                    </div>
+                                </div>
+                                <div class="overview d-flex align-items-center">
+                                    <div class="budget">
+                                        <small class="fw-500 fc-grey-3">Budget</small>
+                                        <p class="fw-500 fc-grey-3">&pound;</p>
+                                    </div>
+                                    <div class="spend">
+                                        <small class="fw-500 fc-grey-3">Spend</small>
+                                        <p class="fw-500 fc-grey-3">£1,000</p>
+                                    </div>
+                                    <div class="difference">
+                                        <small class="fw-700 fc-black">Diff</small>
+                                        <p class="fw-700 fc-black">+ £2,000</p>
+                                    </div>
+                                    <div class="ytd-budget">
+                                        <small class="fw-500 fc-grey-3">YTD Budget</small>
+                                        <p class="fw-500 fc-grey-3">£600</p>
+                                    </div>
+                                    <div class="ytd-difference">
+                                        <small class="fw-700 fc-black">YTD Diff</small>
+                                        <p class="fw-700 fc-black">+ £200</p>
+                                    </div>
+                                    <div class="expand-icon d-none d-lg-flex d-lg-none align-items-center justify-content-center">
+                                        <span class="icon icon-divider icon-16 bg-cyan icon-rotate-270 budget-maintenance"></span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {#<div class="row">#}
+        {#<div class="col span_12">#}
+        {#<form method="get" action="" class="form-inline form-filter">#}
+        {#<div class="form-group">#}
+        {#<select class="form-control select-form float-left" name="taxYear">#}
+        {#{% for year in taxYears %}#}
+        {#<option value="{{ year.key }}"#}
+        {#{% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>#}
+        {#{% endfor %}#}
+        {#</select>#}
+        {#</div>#}
+        {#<button type="submit" class="btn btn-default btn-sm">Update</button>#}
+        {#</form>#}
+        {#</div>#}
+        {#</div>#}
+
     </div>
-    
-</div>
+    <div class="container table-container">
+        <div class="row">
+            <div class="col span_12">
+                <table class="display dataTable">
+                    <thead>
+
+                    <tr>
+                        {% for row in headings %}
+                            <th>{{ row }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+
+
+
+                    <tbody>
+                    {% for row, columns in rows %}
+
+                        <tr>
+
+                            {% for col in columns %}
+                                <td>
+
+                                    {{ col }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col span_12 center-align">
+                <a href="/reports/budget-versus-spend/csv" class="btn red btn-center btn-download">Download as CSV</a>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
