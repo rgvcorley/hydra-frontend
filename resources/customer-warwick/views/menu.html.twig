@@ -1,18 +1,29 @@
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <header class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center">
+                    <h1><a class="logo" href="/">Warwick Estates</a></h1>
+                    <span class="icon-menu icon icon-24"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <section class="nav">
         <div class="top">
             <div class="close-icon"><span></span></div>
         </div>
         <nav>
             <ul>
-                <li class="{% if activePage == "home" %}active{% endif %}"><a target="_self" href="/"
-                                                                              title="Home">Dashboard</a>
+                <li><a target="_self" href="/"
+                       title="Home">Dashboard</a>
                 </li>
 
                 {% if is_granted('ROLE_CUSTOMER|PAY') %}
-                    <li class="{% if activePage == "payments" %}active{% endif %}"><a target="_self"
-                                                                                      href="/payments"
-                                                                                      title="Make Payment">Make
+                    <li><a target="_self"
+                           href="/payments"
+                           title="Make Payment">Make
                             Payment</a>
                     </li>
                 {% endif %}
@@ -27,35 +38,34 @@
                         <ul>
 
                             {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
-                                <li class="{% if activePage == "statement" %}active{% endif %}" role="presentation">
+                                <li role="presentation">
                                     <a
                                             href="/statement" title="Statement of Account">Statement of Account</a>
                                 </li>
                             {% endif %}
 
                             {% if is_granted('ROLE_CUSTOMER|REPORTS|BANK') %}
-                                <li class="{% if activePage == "bank" %}active{% endif %}" role="presentation"><a
+                                <li role="presentation"><a
                                             href="/reports/bank-statement" title="Bank Statement" class="action ">Bank
                                         Statement</a></li>
                             {% endif %}
 
                             {% if is_granted('ROLE_CUSTOMER|REPORTS|DEBTORS') %}
-                                <li class="{% if activePage == "debtors" %}active{% endif %}" role="presentation"><a
+                                <li role="presentation"><a
                                             href="/reports/debtors" title="Debtors Report" class="action ">Debtors
                                         Report</a>
                                 </li>
                             {% endif %}
 
                             {% if is_granted('ROLE_CUSTOMER|REPORTS|SPEND') %}
-                                <li class="{% if activePage == "spend" %}active{% endif %}" role="presentation"><a
+                                <li role="presentation"><a
                                             href="/reports/spend" title="Spend Report" class="action ">Spend
                                         Report</a>
                                 </li>
                             {% endif %}
 
                             {% if is_granted('ROLE_CUSTOMER|REPORTS|BUDGETSPEND') %}
-                                <li class="{% if activePage == "budgetspend" %}active{% endif %}"
-                                    role="presentation"><a
+                                <li role="presentation"><a
                                             href="/reports/budget-versus-spend" title="Budget vs Spend"
                                             class="action ">Budget
                                         vs Spend</a></li>
@@ -65,103 +75,35 @@
                 {% else %}
 
                     {% if is_granted('ROLE_CUSTOMER|STATEMENT') %}
-                        <li class="{% if activePage == "statement" %}active{% endif %}"><a target="_self"
-                                                                                           href="/statement"
-                                                                                           title="Statement of Account">Statement
+                        <li><a target="_self"
+                               href="/statement"
+                               title="Statement of Account">Statement
                                 of Account</a></li>
                     {% endif %}
 
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|DOCUMENTS') %}
-                    <li class="{% if activePage == "documents" %}active{% endif %}"><a target="_self"
-                                                                                       href="/documents"
-                                                                                       title="Downloads">Documents</a>
+                    <li><a target="_self"
+                           href="/documents"
+                           title="Downloads">Documents</a>
                     </li>
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|ISSUES') %}
-                    <li class="{% if activePage == "issues" %}active{% endif %}"><a target="_self" href="/issues"
-                                                                                    title="Issues">Issues</a></li>
+                    <li><a target="_self" href="/issues"
+                           title="Issues">Issues</a></li>
                 {% endif %}
 
                 {% if is_granted('ROLE_CUSTOMER|ACCOUNT') %}
-                    <li class="{% if activePage == "account" %}active{% endif %}"><a target="_self" href="/account"
-                                                                                     title="Account Details">Account
+                    <li><a target="_self" href="/account"
+                           title="Account Details">Account
                             Details</a>
                     </li>
                 {% endif %}
 
                 <li><a href="/logout">Logout</a></li>
             </ul>
-
-            {#<select class="mobile-sub-nav">#}
-            {#<option {% if activePage == "home" %}selected{% endif %} value="/">Home</option>#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|PAY') %}#}
-            {#<option {% if activePage == "payments" %}selected{% endif %} value="/payments">Make Payment</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|REPORTS') %}#}
-            {#<option>Reports</option>#}
-            {#{% if is_granted('ROLE_CUSTOMER|STATEMENT') %}#}
-            {#<option {% if activePage == "statement" %}selected{% endif %} value="/statement">- Statement of#}
-            {#Account#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|REPORTS|BANK') %}#}
-            {#<option {% if activePage == "bank" %}selected{% endif %} value="/reports/bank-statement">- Bank#}
-            {#Statement#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|REPORTS|DEBTORS') %}#}
-            {#<option {% if activePage == "debtors" %}selected{% endif %} value="/reports/debtors">- Debtors#}
-            {#Report#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|REPORTS|SPEND') %}#}
-            {#<option {% if activePage == "spend" %}selected{% endif %} value="/reports/spend">- Spend Report#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|REPORTS|BUDGETSPEND') %}#}
-            {#<option {% if activePage == "budgetspend" %}selected{% endif %}value="/reports/budget-versus-spend">#}
-            {#- Budget vs Spend#}
-            {#</option>#}
-            {#{% endif %}#}
-            {#{% else %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|STATEMENT') %}#}
-            {#<option {% if activePage == "statement" %}selected{% endif %} value="/statement"#}
-            {#title="Statement of Account">- Statement of Account#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|DOCUMENTS') %}#}
-            {#<option {% if activePage == "documents" %}selected{% endif %} value="/documents" title="Downloads">#}
-            {#Documents#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|ISSUES') %}#}
-            {#<option {% if activePage == "issues" %}selected{% endif %} value="/issues" title="Issues">Issues#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#{% if is_granted('ROLE_CUSTOMER|ACCOUNT') %}#}
-            {#<option {% if activePage == "account" %}selected{% endif %} value="/account">Account Details#}
-            {#</option>#}
-            {#{% endif %}#}
-
-            {#<option value="/logout">Logout</option>#}
-            {#</select>#}
-
-
         </nav>
     </section>
 {% endif %}

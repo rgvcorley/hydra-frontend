@@ -1,5 +1,8 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
+{% block menu %}
+    {% include 'CustomerAppBundle::menu.html.twig' %}
+{% endblock %}
 {% block content %}
     {% include 'CustomerAppBundle:Partials:notification.html.twig' with {'notifications': 3} %}
     {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Dashboard', 'link':'/'} %}

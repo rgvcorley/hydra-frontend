@@ -4917,7 +4917,7 @@ hr {
   background-color: transparent;
   border: 0;
   display: block;
-  background: url(/bundles/customerapp/img/brand/logo/primary.svg) no-repeat center center;
+  background: url(/bundles/customerapp/brand/logo/primary.svg) no-repeat center center;
   background-size: 158px 30px;
   width: 158px;
   height: 30px; }
@@ -4929,9 +4929,9 @@ hr {
   .logo.center {
     margin: 0 auto; }
   .logo.secondary {
-    background: url(/bundles/customerapp/img/brand/logo/secondary.svg) no-repeat center center; }
+    background: url(/bundles/customerapp/brand/logo/secondary.svg) no-repeat center center; }
   .logo.emblem {
-    background: url(/bundles/customerapp/img/brand/logo/emblem.svg) no-repeat center center;
+    background: url(/bundles/customerapp/brand/logo/emblem.svg) no-repeat center center;
     background-size: 50px;
     height: 50px;
     width: 50px; }

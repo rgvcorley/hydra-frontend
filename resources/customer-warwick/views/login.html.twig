@@ -1,11 +1,15 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
+{% block nav %}
+    <header class="bg-white d-flex justify-content-center">
+        <h1><a class="logo" href="/">Warwick Estates</a></h1>
+    </header>
+{% endblock %}
 
 {% block content %}
     <section class="padding-top-40 padding-top-sm-60 padding-top-md-70 padding-bottom-50 padding-bottom-sm-80 padding-bottom-md-90">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
-
                     <h1 class="fc-primary padding-bottom-15 padding-bottom-sm-20">
                         Your Warwick Estates Account
                     </h1>
