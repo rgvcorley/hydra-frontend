@@ -1,5 +1,20 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
+{% block breadcrumb %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs d-flex align-item-center padding-top-10 padding-bottom-15 padding-top-sm-20 padding-bottom-sm-30 padding-bottom-md-35">
+                    <a href="/" class="icon icon-16 icon-home bg-grey-3"></a>
+                    <span class="icon icon-12 icon-divider bg-grey-4"></span>
+                    <a href="/reports/spend" class="fc-grey-3">Spend Report</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% block content %}
 
     <div class="container padding-bottom-30 padding-bottom-sm-40">
