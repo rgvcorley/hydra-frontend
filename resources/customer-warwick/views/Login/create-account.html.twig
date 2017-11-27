@@ -1,5 +1,50 @@
 {% extends "CustomerAppBundle::base-layout.html.twig" %}
 
 {% block content %}
-    {% include 'CustomerAppBundle::login.create-account.html.twig' %}
+    <section class="padding-top-40 padding-top-sm-60 padding-top-md-70 padding-bottom-50 padding-bottom-sm-80 padding-bottom-md-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="fc-primary padding-bottom-15 padding-bottom-sm-20">
+                        Your Warwick Estates Account
+                    </h1>
+                    <p>Please log in or create your account below.</p>
+                    <div class="default-box login-register text-center margin-top-35 margin-top-sm-50">
+                        <ul class="tabs  tabs-primary tabs-bottom margin-bottom-30">
+                            <li class="fs-7 fw-700">
+                                <a href="/" class="fc-grey-5">
+                                    Log In
+                                </a>
+                            </li>
+                            <li class="fs-7 fw-700">
+                                <a href="/login/create-account" class="fc-black active">
+                                    Create Account
+                                </a>
+                            </li>
+                        </ul>
+                        <form action="" class="log-in">
+                            <div class="input-group">
+                                <label>User ID</label>
+                                <input type="text" placeholder="Type here...">
+                            </div>
+                            <div class="input-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Type here...">
+                            </div>
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" placeholder="Type here...">
+                            </div>
+                            <div class="input-group">
+                                <label>Retype Password</label>
+                                <input type="password" placeholder="Type here...">
+                            </div>
+                            <button href="/" type="submit" class="btn btn-cyan">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

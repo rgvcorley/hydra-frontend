@@ -1,11 +1,13 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
 {% block content %}
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Account Details', 'link':'/issues'} %}
 
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1 text-center">
-                <h1 class="fc-primary">Your Account</h1>
+                <h1 class="fc-primary">Your Warwick Estates Account</h1>
+
             </div>
         </div>
         <div class="default-box account-details margin-top-35 margin-top-sm-50 margin-bottom-60">
@@ -14,18 +16,6 @@
             </h2>
             <p class="padding-bottom-20 padding-bottom-md-30 padding-bottom-lg-40 fs-6 text-md-left">Lorem ipsum dolor sit amet, consec tetur adipiscing elitivamus volutpa.</p>
             <form action="/account/update" method="post" class="text-center text-md-left">
-                {% if accountMessage is empty %}
-                {% else %}
-                    <div class="alert alert-success">{{ accountMessage|raw }}</div>
-                {% endif %}
-                {% if verifyMessage is empty %}
-                {% else %}
-                    <div class="alert alert-danger">{{ verifyMessage|raw }}</div>
-                {% endif %}
-
-                {#{% form_theme accountUpdateForm 'bootstrap_3_layout.html.twig' %}#}
-                {#{{ form_widget(accountUpdateForm) }}#}
-
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="input-group">
@@ -108,6 +98,7 @@
                                 Option One
                             </p>
                         </div>
+
                         <div class="col-6 col-md-3 d-flex align-items-center">
                             <div class="radio-wrapper d-flex">
                                 <label class="radio fw-500 fs-6">Email
@@ -129,24 +120,24 @@
 
                 <div class="row">
                     <div class="col-12 d-md-flex">
-                        <a type="submit" href="/pages/dashboard/dashboard-director.html" class="btn btn-cyan">Save</a>
+                        <a type="submit" href="/" class="btn btn-cyan">Save</a>
                     </div>
                 </div>
                 {#<input type="submit" value="Save" class="btn btn-danger"/>#}
             </form>
         </div>
-        <div class="col span_12">
-            <h3>Change Password</h3>
-            {% if passwordMessage is empty %}
-            {% else %}
-                <div class="alert alert-success">{{ passwordMessage }}</div>
-            {% endif %}
-            <form action="/account/password" method="post">
-                {{ form_widget(passwordForm) }}
+        {#<div class="col span_12">#}
+            {#<h3>Change Password</h3>#}
+            {#{% if passwordMessage is empty %}#}
+            {#{% else %}#}
+                {#<div class="alert alert-success">{{ passwordMessage }}</div>#}
+            {#{% endif %}#}
+            {#<form action="/account/password" method="post">#}
+                {#{{ form_widget(passwordForm) }}#}
 
-                <input type="submit" value="Update" class="btn btn-danger"/>
-            </form>
-        </div>
+                {#<input type="submit" value="Update" class="btn btn-danger"/>#}
+            {#</form>#}
+        {#</div>#}
     </div>
 
 

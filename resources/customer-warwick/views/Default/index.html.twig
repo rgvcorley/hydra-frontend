@@ -1,6 +1,7 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
 {% block content %}
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Dashboard', 'link':'/'} %}
 
 	<section id="masthead">
 		<div class="container">
