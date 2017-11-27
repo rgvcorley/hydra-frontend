@@ -1,29 +1,90 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
 {% block content %}
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Documents','link':'/documents'} %}
 
-<div class="container">
-    <div class="row">
-        <div class="col span_12 intro-box">
-            <h1><strong>Documents</strong></h1>
-            <p>Here you can download documents relating to your property.</p>
+    <div class="container margin-bottom-30 margin-bottom-sm-35">
+        <div class="row">
+            <div class="col-md-9 text-center text-sm-left">
+                <h1 class="fc-primary d-sm-inline">Documents</h1>
+                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col span_12">
-            {% if message %}
-                <div class="alert alert-warning">{{ message }}</div>
-            {% endif %}
-            {% for row in rows %}
-                <div class="document background-white">
-                      <h3>{{ row.filename }}</h3>
-                      <p>{{ row.description }}</p>
-                      <small><strong>Size:</strong> {{ row.size }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Date Uploaded:</strong> {{ row.date_uploaded|date("d/m/Y") }}</small>
-                      <a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}" class="btn red btn-download">Download</a>
+    <div class="container margin-bottom-60 margin-bottom-sm-80">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <div class="default-box documents-sidebar margin-bottom-30 margin-bottom-sm-0">
+                    <div class="mobile">
+                        <label>Categories</label>
+                        <select>
+                            <option value="">Please Select</option>
+                        </select>
+                    </div>
+                    <div class="desktop">
+                        <div class="title">Categories</div>
+                        <ul>
+                            <li><a href="#"><span>View All</span> <i class="icon-divider"></i></a></li>
+                            <li><a href="#"><span>Category 1</span> <i class="icon-divider"></i></a></li>
+                            <li><a href="#" class="active"><span>Category 2</span> <i class="icon-divider"></i></a></li>
+                            <li><a href="#"><span>Category 3</span> <i class="icon-divider"></i></a></li>
+                            <li><a href="#"><span>Category 4</span> <i class="icon-divider"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
-            {% endfor %}
+            </div>
+            <div class="col-12 col-sm-8">
+                <div class="default-box documents-content">
+                    {% for row in rows %}
+                        <div class="single">
+                            <div class="details">
+                                <i class="icon-doc"></i>
+                                <div class="name">{{ row.filename }}<span>.pdf</span></div>
+                            </div>
+                            <div class="download">
+                                <a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}">
+                                    <i class="icon-download"></i>
+                                </a>
+                            </div>
+                            <div class="view">
+                                <a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}">
+                                    <i class="icon-view"></i>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
+    </div>
+
+    {#<div class="container">#}
+        {#<div class="row">#}
+            {#<div class="col span_12 intro-box">#}
+                {#<h1><strong>Documents</strong></h1>#}
+                {#<p>Here you can download documents relating to your property.</p>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="row">#}
+            {#<div class="col span_12">#}
+                {#{% if message %}#}
+                    {#<div class="alert alert-warning">{{ message }}</div>#}
+                {#{% endif %}#}
+                {#{% for row in rows %}#}
+                    {#<div class="document background-white">#}
+                        {#<h3>{{ row.filename }}</h3>#}
+                        {#<p>{{ row.description }}</p>#}
+                        {#<small><strong>Size:</strong> {{ row.size }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Date#}
+                                {#Uploaded:</strong> {{ row.date_uploaded|date("d/m/Y") }}</small>#}
+                        {#<a href="{{ path('customer_app_doc_download', {id: row.document_id}) }}"#}
+                           {#class="btn red btn-download">Download</a>#}
+                    {#</div>#}
+                {#{% endfor %}#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {% include 'CustomerAppBundle:Partials:error-report.html.twig' %}
 {% endblock %}

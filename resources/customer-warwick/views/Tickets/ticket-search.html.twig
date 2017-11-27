@@ -1,0 +1,100 @@
+{% extends "CustomerAppBundle::layout.html.twig" %}
+
+{% block content %}
+
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Ticket Search','link':'/tickets/ticket-search'} %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs d-flex align-item-center padding-top-10 padding-bottom-15 padding-top-sm-20 padding-bottom-sm-30 padding-bottom-md-35">
+                    <a href="/pages/dashboard/dashboard-director.html" class="icon icon-16 icon-home bg-grey-3"></a>
+                    <span class="icon icon-12 icon-divider bg-grey-4"></span>
+                    <a href="#" class="fc-grey-3">Tickets</a>
+                    <span class="icon icon-12 icon-divider bg-grey-4"></span>
+                    <a href="#" class="fc-grey-3">Results</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container padding-bottom-30 padding-bottom-sm-40">
+        <div class="row">
+            <div class="col-md-9 text-center text-sm-left">
+                <h1 class="fc-primary d-sm-inline">Tickets: Showing 31 Results</h1>
+                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="searchbar default-box d-lg-flex align-items-center text-center text-md-left margin-bottom-20 margin-bottom-sm-30">
+                    <p class="fw-500">Search all</p>
+                    <div class="d-md-flex search-wrapper">
+                        <input type="text" placeholder="Search keywords...">
+                        <input type="submit" value="Search"
+                               class="search-btn btn btn-cyan margin-top-15 margin-top-md-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="default-box ticket-card margin-bottom-10 margin-bottom-sm-20 margin-bottom-md-30">
+                    <div class="overview d-sm-flex align-items-center">
+                        <h2 class="fc-black padding-bottom-10 padding-bottom-sm-0 fw-500">Cobbles missing on the corner
+                            by 1-6 Braeburn</h2>
+                        <a href="#" class="btn btn-cyan d-none d-md-block">View</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <p class="search-text">
+                                Lorem ipsum dolor sit amet, consectetur <span
+                                        class="search-highlight fc-black bg-highlight">maintenance</span> elit. Vivamus
+                                volutpat arcu quisex posuere, eget <span class="search-highlight fc-black bg-highlight">maintenance</span>
+                                mi commodo. In dapibus est sit amet viverra sollicitudin. Lorem ipsum dolor sit amet,
+                                consectetur <span class="search-highlight fc-black bg-highlight">maintenance</span>
+                                elit. Vivamus volutpat arcu quisex posuere commodo. In dapibus est sit amet viverra
+                                sollicitudin.
+                            </p>
+                            <a href="#" class="btn btn-cyan d-md-none margin-left-20 margin-bottom-20">View</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <div class="ticket-details bg-grey-6">
+                                <div class="ticket-status d-flex align-items-center">
+                                    <span class="icon icon-32 icon-info bg-purple"></span>
+                                    <p class="d-inline fw-500">In Progress</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="ticket-details bg-grey-6 d-flex align-items-center">
+                                <p><span class="search-highlight fc-black bg-highlight">Maintenance</span></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-none d-sm-block">
+                            <div class="ticket-details bg-grey-6">
+                                <p class="d-inline">00.00.00</p>
+                                <span class="fc-grey-5 d-inline">|</span>
+                                <p class="d-inline">Adam Burn 019901-0026</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'CustomerAppBundle:Partials:error-report.html.twig' %}
+{% endblock %}

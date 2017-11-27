@@ -1,55 +1,141 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
 {% block content %}
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Tickets', 'link':'/issues'} %}
 
-<div class="container">
-
-    {% if is_granted('ROLE_FORM_TEXTAREA_CUSTOMER|ISSUES|DESCRIPTION') %}
-    <div class="row">
-        <div class="col-md-12">
-            <form>
-                <textarea></textarea>
-                <input type="submit" value="Submit Issue" />
-            </form>
+    <div class="container padding-bottom-30 padding-bottom-sm-40">
+        <div class="row">
+            <div class="col-md-9 text-center text-sm-left">
+                <h1 class="fc-primary d-sm-inline">Tickets</h1>
+                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+            </div>
         </div>
     </div>
-    {% endif %}
 
-    <div class="row">
-        <div class="col-md-12 intro-box">
-                <h1><strong>{{title}}</strong></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="searchbar default-box d-lg-flex align-items-center text-center text-md-left margin-bottom-20 margin-bottom-sm-30">
+                    <p class="fw-500">Search all</p>
+                    <div class="d-md-flex search-wrapper">
+                        <input type="text" placeholder="Search keywords...">
+                        <input type="submit" value="Search"
+                               class="search-btn btn btn-cyan margin-top-15 margin-top-md-0">
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
-<div class="container table-container">
-    <div class="row">
-        <div class="col span_12">             
-            {% if rows is empty %}
-            <p>There are currently no active issues for your site.</p>
-            {% else %}
-            <table class="display dataTable" id="spend-table">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Status</th>
-                        <th>Date Created</th>
-                        <th>Date Modified</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for row in rows %}
-                    <tr data-row-id="{{row.id}}">
-                        <td>{{ row.description|nl2br }}</td>
-                        <td>{{ row.status }}</td>
-                        <td class="text-right">{{ row.date_created|date('d/m/Y') }}</td>
-                        <td class="text-right">{{ row.date_modified|date('d/m/Y') }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="tabs tabs-primary tabs-bottom margin-bottom-30 ticket-tabs">
+                    <li class="fs-7 fw-700">
+                        <a href="/" class="fc-black active">
+                            My Tickets
+                        </a>
+                    </li>
+                    <li class="fs-7 fw-700">
+                        <a href="/tickets/tickets-search" class="fc-grey-5">
+                            Site Tickets
+                        </a>
+                    </li>
+                    <li class="fs-7 fw-700">
+                        <a href="/tickets/tickets-archive.html" class="fc-grey-5">
+                            Archive
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                {% for row in rows %}
+                    <div class="default-box ticket-card margin-bottom-10 margin-bottom-sm-20 margin-bottom-md-30">
+                        <div class="overview d-sm-flex align-items-center">
+                            <h2 class="fc-black padding-bottom-10 padding-bottom-sm-0 fw-500">{{ row.description|nl2br }}</h2>
+                            <a href="#" class="btn btn-cyan" data-row-id="{{ row.id }}">View</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <div class="ticket-details bg-grey-6">
+                                    <div class="ticket-status d-flex align-items-center height-100">
+                                        <span class="icon icon-32 icon-info bg-purple"></span>
+                                        <p class="d-inline fw-500">{{ row.status }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="ticket-details bg-grey-6 d-flex align-items-center">
+                                    <p>Maintenance</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-none d-sm-block">
+                                <div class="ticket-details bg-grey-6">
+                                    <p class="d-inline">{{ row.date_created|date('d/m/Y') }}</p>
+                                    <span class="fc-grey-5 d-inline vertical-line">|</span>
+                                    <p class="d-inline">Adam Burn 019901-0026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
+
+    {% include 'CustomerAppBundle:Partials:error-report.html.twig' %}
+
+
+    {#<div class="container">#}
+
+    {#{% if is_granted('ROLE_FORM_TEXTAREA_CUSTOMER|ISSUES|DESCRIPTION') %}#}
+    {#<div class="row">#}
+    {#<div class="col-md-12">#}
+    {#<form>#}
+    {#<textarea></textarea>#}
+    {#<input type="submit" value="Submit Issue"/>#}
+    {#</form>#}
+    {#</div>#}
+    {#</div>#}
+    {#{% endif %}#}
+
+    {#<div class="row">#}
+    {#<div class="col-md-12 intro-box">#}
+    {#<h1><strong>{{ title }}</strong></h1>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
+    {#<div class="container table-container">#}
+    {#<div class="row">#}
+    {#<div class="col span_12">#}
+    {#{% if rows is empty %}#}
+    {#<p>There are currently no active issues for your site.</p>#}
+    {#{% else %}#}
+    {#<table class="display dataTable" id="spend-table">#}
+    {#<thead>#}
+    {#<tr>#}
+    {#<th>Description</th>#}
+    {#<th>Status</th>#}
+    {#<th>Date Created</th>#}
+    {#<th>Date Modified</th>#}
+    {#</tr>#}
+    {#</thead>#}
+    {#<tbody>#}
+    {#{% for row in rows %}#}
+    {#<tr data-row-id="{{ row.id }}">#}
+    {#<td>{{ row.description|nl2br }}</td>#}
+    {#<td>{{ row.status }}</td>#}
+    {#<td class="text-right">{{ row.date_created|date('d/m/Y') }}</td>#}
+    {#<td class="text-right">{{ row.date_modified|date('d/m/Y') }}</td>#}
+    {#</tr>#}
+    {#{% endfor %}#}
+    {#</tbody>#}
+    {#</table>#}
+    {#{% endif %}#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
 
 {% endblock %}
