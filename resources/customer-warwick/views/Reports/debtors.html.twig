@@ -1,46 +1,265 @@
 {% extends "CustomerAppBundle::layout.html.twig" %}
 
+{% block breadcrumb %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs d-flex align-item-center padding-top-10 padding-bottom-15 padding-top-sm-20 padding-bottom-sm-30 padding-bottom-md-35">
+                    <a href="/" class="icon icon-16 icon-home bg-grey-3"></a>
+                    <span class="icon icon-12 icon-divider bg-grey-4"></span>
+                    <a href="/reports/debtors" class="fc-grey-3">Report Debtors</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
 
-<div class="container">
-
-    <div class="row">
-        <div class="col span_12 intro-box">
-            <h1><strong>{{title}}</strong></h1>
+    <div class="container padding-bottom-30 padding-bottom-sm-40">
+        <div class="row">
+            <div class="col-md-9 text-center text-sm-left">
+                <h1 class="fc-primary d-sm-inline">Aged Debtors Report</h1>
+                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce
+                    dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="d-flex invoice-export">
+                    <a href="#" class="btn btn-cyan margin-top-20 margin-top-md-50">Export Report</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-    
-<div class="container table-container">
-    <div class="row">
-        <div class="col span_12">            
-            <table class="display dataTable">
-                <thead>
-                    <tr>
-                        <th>Tenant</th>
-                        <th>Name</th>
-                        <th>Current Balance</th>
-                        <th>1 Month Balance</th>
-                        <th>3 Month Balance</th>
-                        <th>Download</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for row in rows %}
-                    <tr>
-                        <td>{{ row.tenant_ref }}</td>
-                        <td>{{ row.tenant_name }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.current_balance|number_format(2, '.', ',') }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.one_month_balance|number_format(2, '.', ',') }}</td>
-                        <td data-type="currency" class="text-right"><span style="float: left;">&pound;</span>{{ row.three_month_balance|number_format(2, '.', ',') }}</td>
-                        <td><a href="{{ path('customer_app_debtors_pdf', {residentNumber: row.resident_number}) }}" target="_blank" class="btn red">PDF</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="default-box date-filter text-center margin-bottom-30 margin-bottom¡¡¡-lg-25">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <p class="fw-500 padding-top-10 d-flex d-lg-inline-flex padding-top-lg-20">Dates</p>
+                            <form class="d-flex d-md-inline-flex justify-content-center">
+                                <select>
+                                    <option>Option</option>
+                                    <option>Option Two</option>
+                                    <option>Option Three</option>
+                                </select>
+                                <select>
+                                    <option>Option</option>
+                                    <option>Option Two</option>
+                                    <option>Option Three</option>
+                                </select>
+                            </form>
+                            <input type="submit" value="Apply"
+                                   class="btn btn-cyan margin-top-15 margin-top-md-5 margin-top-lg-10 margin-bottom-10 margin-bottom-lg-15">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="default-box d-flex justify-content-center align-items-center text-center primary-border medium-ticket aged-debtors margin-bottom-10 margin-bottom-sm-30">
+                    <div class="detail ">
+                        <p class="fw-700 padding-top-20 padding-top-md-25 padding-bottom-md-5">Total Arrears</p>
+                        <span class="fc-black padding-bottom-20 medium-text d-block">£12,098</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <div class="default-box chart debtors-chart primary-border margin-top-20 margin-top-md-0 margin-bottom-10 margin-bottom-sm-30 text-center">
+                    <div class="detail">
+
+                        <div class="row margin-top-md-30 margin-bottom-5">
+                            <div class="col-12 col-md-6">
+                                <p class="fw-700 padding-top-20 fc-grey-2 d-lg-none d-md-none margin-bottom-20">Budget
+                                    Spent in Current
+                                    Budget Year</p>
+                                <div class="ct-chart budget-year-chart"></div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="fw-700 padding-top-20 fc-grey-2 d-none d-md-block d-lg-block padding-right-lg-110">
+                                    Budget Spent in Current Budget Year</p>
+                                <div class="labels padding-top-25 padding-bottom-25 padding-bottom-sm-30 padding-bottom-md-45 ">
+                                    <div class="label d-flex align-items-center margin-bottom-10">
+                                        <span class="circle bg-blue"></span>
+                                        <p>Spent 75%</p>
+                                    </div>
+                                    <div class="label d-flex align-items-center margin-bottom-10">
+                                        <span class="circle bg-grey-5"></span>
+                                        <p>Remaining 25%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="per-page-filter d-flex margin-top-20 margin-top-sm-0 margin-bottom-25 justify-content-end align-items-center">
+                    <label class="margin-bottom-0">Transactions per page</label>
+                    <select>
+                        <option>8</option>
+                        <option>Option Two</option>
+                        <option>Option Three</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="default-box margin-bottom-30 debtors">
+                        <tr>
+                            <th class="fc-black fw-500">
+                                <div class="th-wrap">
+                                    <div class="name">ID</div>
+                                    <div class="icon-wrap">
+                                        <span class="icon icon-14 icon-carat bg-black"></span>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="fc-black fw-500">
+                                <div class="th-wrap">
+                                    <div class="name">Name</div>
+                                    <div class="icon-wrap">
+                                        <span class="icon icon-14 icon-carat bg-black"></span>
+                                    </div>
+                                </div>
+
+                            </th>
+                            <th class="fc-black fw-500">
+                                <div class="th-wrap">
+                                    <div class="name">Current Balance</div>
+                                    <div class="icon-wrap">
+                                        <span class="icon icon-14 icon-carat bg-black"></span>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="fc-black fw-500">
+                                <div class="th-wrap">
+                                    <div class="name">1 Month Balance</div>
+                                    <div class="icon-wrap">
+                                        <span class="icon icon-14 icon-carat bg-black"></span>
+                                    </div>
+                                </div>
+
+                            </th>
+                            <th class="fc-black fw-500">
+                                <div class="th-wrap">
+                                    <div class="name">3 Month Balance</div>
+                                    <div class="icon-wrap">
+                                        <span class="icon icon-14 icon-carat bg-black"></span>
+                                    </div>
+                                </div>
+
+                            </th>
+                            <th class="fc-black fw-500">
+                                <div class="th-wrap">
+                                    <div class="name">3+ Month Balance</div>
+                                    <div class="icon-wrap">
+                                        <span class="icon icon-14 icon-carat bg-black"></span>
+                                    </div>
+                                </div>
+
+                            </th>
+                            <th></th>
+                            <th></th>
+
+                        </tr>
+                        {% for row in rows %}
+                            <tr>
+                                <td>
+                                    {{ row.tenant_ref }}
+                                </td>
+                                <td>
+                                    {{ row.tenant_name }}
+                                </td>
+                                <td>
+                                    {{ row.current_balance|number_format(2, '.', ',') }}
+                                </td>
+                                <td>
+                                    {{ row.one_month_balance|number_format(2, '.', ',') }}
+                                </td>
+                                <td>
+                                    {{ row.three_month_balance|number_format(2, '.', ',') }}
+                                </td>
+                                <td>
+                                    £300
+                                </td>
+                                <td>
+                                    <a href="{{ path('customer_app_debtors_pdf', {residentNumber: row.resident_number}) }}"
+                                       target="_blank">
+                                    <span class="icon icon-24 icon-doc bg-cyan show-modal">
+
+                                    </span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="icon icon-24 icon-chat bg-cyan show-modal"></span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
 
+    {#<div class="container table-container">#}
+        {#<div class="row">#}
+            {#<div class="col span_12">#}
+                {#<table class="display dataTable">#}
+                    {#<thead>#}
+                    {#<tr>#}
+                        {#<th>Tenant</th>#}
+                        {#<th>Name</th>#}
+                        {#<th>Current Balance</th>#}
+                        {#<th>1 Month Balance</th>#}
+                        {#<th>3 Month Balance</th>#}
+                        {#<th>Download</th>#}
+                    {#</tr>#}
+                    {#</thead>#}
+                    {#<tbody>#}
+                    {#{% for row in rows %}#}
+                        {#<tr>#}
+                            {#<td>{{ row.tenant_ref }}</td>#}
+                            {#<td>{{ row.tenant_name }}</td>#}
+                            {#<td data-type="currency" class="text-right"><span#}
+                                        {#style="float: left;">&pound;</span>{{ row.current_balance|number_format(2, '.', ',') }}#}
+                            {#</td>#}
+                            {#<td data-type="currency" class="text-right"><span#}
+                                        {#style="float: left;">&pound;</span>{{ row.one_month_balance|number_format(2, '.', ',') }}#}
+                            {#</td>#}
+                            {#<td data-type="currency" class="text-right"><span#}
+                                        {#style="float: left;">&pound;</span>{{ row.three_month_balance|number_format(2, '.', ',') }}#}
+                            {#</td>#}
+                            {#<td><a href="{{ path('customer_app_debtors_pdf', {residentNumber: row.resident_number}) }}"#}
+                                   {#target="_blank" class="btn red">PDF</a></td>#}
+                        {#</tr>#}
+                    {#{% endfor %}#}
+                    {#</tbody>#}
+                {#</table>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+
+{% endblock %}
+
+{% block pagination %}
+    <div class="container">
+        <ul class="pagination d-flex justify-content-center align-items-center margin-bottom-50 margin-bottom-sm-60 margin-bottom-md-90 margin-top-20">
+            <li><span class="icon icon-divider icon-rotate-180 bg-primary"></span></li>
+            <li class="active">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><span class="icon icon-divider bg-primary"></span></a></li>
+        </ul>
+    </div>
 {% endblock %}
