@@ -153,47 +153,45 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="default-box budget-card margin-bottom-10 margin-bottom-md-30">
-                    <div class="d-lg-flex">
-                        {% for row, columns in rows %}
+                {% for row, columns in rows %}
+                    <div class="default-box budget-card margin-bottom-10 margin-bottom-md-30">
+                        <div class="d-lg-flex">
 
-                            {% for col in columns %}
+                            <div class="title d-flex">
+                                <h2 class="fw-500 d-flex align-items-center">{{ columns.cost_centre }}</h2>
+                                <div class="expand-icon d-flex d-lg-none align-items-center justify-content-center">
+                                    <span class="icon icon-divider icon-16 bg-cyan icon-rotate-270 budget-maintenance"></span>
+                                </div>
+                            </div>
+                            <div class="overview d-flex align-items-center">
+                                <div class="budget">
+                                    <small class="fw-500 fc-grey-3">Budget</small>
+                                    <p class="fw-500 fc-grey-3">&pound;{{  attribute(columns, 'Flats Budget') }}</p>
+                                </div>
+                                <div class="spend">
+                                    <small class="fw-500 fc-grey-3">Spends</small>
+                                    <p class="fw-500 fc-grey-3">&pound;{{  attribute(columns, 'Flats Spend') }}</p>
+                                </div>
+                                <div class="difference">
+                                    <small class="fw-700 fc-black">Diff</small>
+                                    <p class="fw-700 fc-black">+ £2,000</p>
+                                </div>
+                                <div class="ytd-budget">
+                                    <small class="fw-500 fc-grey-3">YTD Budget</small>
+                                    <p class="fw-500 fc-grey-3">£600</p>
+                                </div>
+                                <div class="ytd-difference">
+                                    <small class="fw-700 fc-black">YTD Diff</small>
+                                    <p class="fw-700 fc-black">+ £200</p>
+                                </div>
+                                <div class="expand-icon d-none d-lg-flex d-lg-none align-items-center justify-content-center">
+                                    <span class="icon icon-divider icon-16 bg-cyan icon-rotate-270 budget-maintenance"></span>
+                                </div>
+                            </div>
 
-                                <div class="title d-flex">
-                                    <h2 class="fw-500 d-flex align-items-center"></h2>
-                                    <div class="expand-icon d-flex d-lg-none align-items-center justify-content-center">
-                                        <span class="icon icon-divider icon-16 bg-cyan icon-rotate-270 budget-maintenance"></span>
-                                    </div>
-                                </div>
-                                <div class="overview d-flex align-items-center">
-                                    <div class="budget">
-                                        <small class="fw-500 fc-grey-3">Budget</small>
-                                        <p class="fw-500 fc-grey-3">&pound;</p>
-                                    </div>
-                                    <div class="spend">
-                                        <small class="fw-500 fc-grey-3">Spend</small>
-                                        <p class="fw-500 fc-grey-3">£1,000</p>
-                                    </div>
-                                    <div class="difference">
-                                        <small class="fw-700 fc-black">Diff</small>
-                                        <p class="fw-700 fc-black">+ £2,000</p>
-                                    </div>
-                                    <div class="ytd-budget">
-                                        <small class="fw-500 fc-grey-3">YTD Budget</small>
-                                        <p class="fw-500 fc-grey-3">£600</p>
-                                    </div>
-                                    <div class="ytd-difference">
-                                        <small class="fw-700 fc-black">YTD Diff</small>
-                                        <p class="fw-700 fc-black">+ £200</p>
-                                    </div>
-                                    <div class="expand-icon d-none d-lg-flex d-lg-none align-items-center justify-content-center">
-                                        <span class="icon icon-divider icon-16 bg-cyan icon-rotate-270 budget-maintenance"></span>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        {% endfor %}
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -231,7 +229,6 @@
 
                     <tbody>
                     {% for row, columns in rows %}
-
                         <tr>
 
                             {% for col in columns %}
