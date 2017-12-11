@@ -5,7 +5,7 @@
             <ul class="nav desktop-sub-nav">
                 <li class="{% if activePage == "home" %}active{% endif %}"><a target="_self" href="/" title="Home">Home</a></li>
 
-                {% if is_granted('ROLE_CUSTOMER|PAY') %}
+                {% if is_granted('ROLE_CUSTOMER|PAY') and activeOwner == 1 %}
                 <li class="{% if activePage == "payments" %}active{% endif %}"><a target="_self" href="/payments" title="Make Payment">Make Payment</a></li>
                 {% endif %}
 
