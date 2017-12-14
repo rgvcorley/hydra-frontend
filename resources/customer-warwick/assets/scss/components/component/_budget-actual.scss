@@ -48,6 +48,11 @@
       width: 11%;
     }
   }
+  .form-inline {
+    select{
+      border: 1px solid $grey-5;
+    }
+  }
 }
 
 .group-overview {

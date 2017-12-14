@@ -42,7 +42,7 @@
             <div class="col-12">
                 <div class="default-box date-filter text-center margin-bottom-30 margin-bottom-lg-25">
                     <div class="row">
-                        <div class="col-md-8 offset-md-2">
+                        <div class="col-md-10 offset-md-1">
                             <p class="fw-500 padding-top-10 d-flex d-lg-inline-flex padding-top-lg-20 justify-content-center justify-content-sm-start">
                                 Dates</p>
                             <form method="get" class="d-flex d-md-inline-flex justify-content-center">
@@ -52,15 +52,14 @@
                                                 {% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>
                                     {% endfor %}
                                 </select>
+
                                 <select>
                                     <option>Option</option>
                                     <option>Option Two</option>
                                     <option>Option Three</option>
                                 </select>
-
                                 <input type="submit" value="Apply"
-                                       class="btn btn-cyan margin-top-15 margin-top-md-5 margin-top-lg-10 margin-bottom-10 margin-bottom-lg-15 padding-right-50">
-
+                                       class="btn btn-cyan btn-padding margin-bottom-15 margin-top-4 padding-right-45">
                             </form>
                         </div>
                     </div>

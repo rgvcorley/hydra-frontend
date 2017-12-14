@@ -6815,7 +6815,8 @@ header {
     .invoice-card .overview .btn,
     .statement-card .overview .btn,
     .spend-report-card .overview .btn {
-      margin-left: auto; } }
+      margin-left: auto;
+      min-width: 80px; } }
 
 .ticket-card .col-md-4,
 .ticket-card .col-md-3,
@@ -7393,6 +7394,10 @@ table.debtors tr th:nth-of-type(1), table.debtors tr th:nth-of-type(2) {
   .date-filter .btn {
     margin-left: 0;
     margin-right: 0; }
+  .date-filter input.btn.btn-padding {
+    margin-bottom: 15px;
+    margin-top: 4px;
+    padding-right: 45px; }
 
 .filter {
   margin-left: auto; }
@@ -7474,7 +7479,8 @@ table.debtors tr th:nth-of-type(1), table.debtors tr th:nth-of-type(2) {
   background-color: white;
   margin: 0;
   margin-left: auto;
-  max-width: 35%; }
+  max-width: 35%;
+  border: 1px solid #D9DDEB; }
   @media screen and (min-width: 576px) {
     .per-page-filter select {
       margin-left: 10px;
@@ -7627,6 +7633,9 @@ table.debtors tr th:nth-of-type(1), table.debtors tr th:nth-of-type(2) {
 
 .budget-actual .difference + select {
   width: 11%; }
+
+.budget-actual .form-inline select {
+  border: 1px solid #D9DDEB; }
 
 .group-overview p {
   float: left; }

@@ -13,6 +13,8 @@
     .btn {
       @media screen and (min-width: $tabletmq) {
         margin-left: auto;
+        min-width: 80px;
+
       }
     }
 
