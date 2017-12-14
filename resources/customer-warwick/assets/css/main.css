@@ -5950,7 +5950,12 @@ button[disabled], .btn-disabled {
     margin-right: 6px; }
 
 .table-responsive {
-  overflow-x: auto; }
+  overflow-x: auto;
+  padding: 3px; }
+  @media (min-width: 768px) {
+    .table-responsive {
+      overflow-x: inherit;
+      padding: 0; } }
 
 table {
   width: 100%; }
@@ -5962,6 +5967,8 @@ table {
       padding-left: 0; }
     table th:last-child, table td:last-child {
       padding-right: 0; }
+  table tr:not(:first-child):hover {
+    background-color: #F6F7FB; }
 
 .input-group {
   margin: 0 0 20px 0; }

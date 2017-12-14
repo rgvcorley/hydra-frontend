@@ -3,6 +3,12 @@
 /////////////////////////////////////////////////////////
 .table-responsive{
 	overflow-x: auto;
+	padding: 3px;
+	@include media-breakpoint-up(md) {
+		// desktop
+		overflow-x: inherit;
+		padding: 0;
+	}
 }
 
 table {
@@ -17,5 +23,10 @@ table {
 		&:last-child {
 			padding-right: 0;
 		}	
+	}
+	tr{
+		&:not(:first-child):hover {
+			background-color: $grey-6;
+		}
 	}
 }
