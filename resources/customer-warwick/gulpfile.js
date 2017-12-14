@@ -6,9 +6,17 @@ var watch = require('gulp-watch');
 var pkg = require('./package');
 var browserSync = require('browser-sync');
 var notify = require("gulp-notify");
+var sassInlineSvg = require('gulp-sass-inline-svg');
 var reload = browserSync.reload;
 
-gulp.task('sass', function () {
+gulp.task('inline-svg', function() {
+    return gulp.src("./assets/img/icon/**/*.svg")
+        .pipe(sassInlineSvg({
+            destDir: './assets/scss/base'
+        }));
+});
+
+gulp.task('sass',['inline-svg'], function () {
   return gulp.src('./assets/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./assets/css'));
