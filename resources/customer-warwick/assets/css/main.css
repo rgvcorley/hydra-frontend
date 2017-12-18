@@ -4720,195 +4720,243 @@ hr {
 
 .icon-sort {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/sort.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/sort.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/sort.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("sort"); }
 
 .icon-close {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/close.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/close.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/close.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("close"); }
 
 .icon-carat {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/carat.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/carat.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/carat.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("carat"); }
 
 .icon-loading {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/loading.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/loading.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/loading.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("loading"); }
 
 .icon-date {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/date.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/date.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/date.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("date"); }
 
 .icon-star-active {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/star-active.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/star-active.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/star-active.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("star-active"); }
 
 .icon-divider {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/divider.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/divider.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/divider.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("divider"); }
 
 .icon-select-active {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/select-active.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/select-active.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/select-active.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("select-active"); }
 
 .icon-menu {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/menu.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/menu.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/menu.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("menu"); }
 
 .icon-heart {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/heart.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/heart.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/heart.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("heart"); }
 
 .icon-share {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/share.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/share.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/share.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("share"); }
 
 .icon-tag {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/tag.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/tag.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/tag.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("tag"); }
 
 .icon-warning {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/warning.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/warning.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/warning.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("warning"); }
 
 .icon-search {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/search.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/search.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/search.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("search"); }
 
 .icon-trash {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/trash.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/trash.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/trash.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("trash"); }
 
 .icon-checkmark {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/checkmark.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/checkmark.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/checkmark.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("checkmark"); }
 
 .icon-more-detail {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/more-detail.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/more-detail.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/more-detail.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("more-detail"); }
 
 .icon-info {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/info.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/info.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/info.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("info"); }
 
 .icon-copy {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/copy.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/copy.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/copy.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("copy"); }
 
 .icon-location {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/location.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/location.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/location.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("location"); }
 
 .icon-required {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/required.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/required.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/required.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("required"); }
 
 .icon-heart-solid {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/heart-solid.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/heart-solid.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/heart-solid.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("heart-solid"); }
 
 .icon-error {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/error.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/error.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/error.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("error"); }
 
 .icon-select {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/select.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/select.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/select.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("select"); }
 
 .icon-star-action {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/star-action.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/star-action.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/star-action.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("star-action"); }
 
 .icon-star-inactive {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/star-inactive.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/star-inactive.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/star-inactive.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("star-inactive"); }
 
 .icon-home {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/home.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/home.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/home.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("home"); }
 
 .icon-doc {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/doc.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/doc.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/doc.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("doc"); }
 
 .icon-upload {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/upload.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/upload.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/upload.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("upload"); }
 
 .icon-view {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/view.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/view.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/view.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("view"); }
 
 .icon-vote {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/vote.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/vote.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/vote.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("vote"); }
 
 .icon-chat {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/chat.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/chat.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/chat.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("chat"); }
 
 .icon-download {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/download.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/download.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/download.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("download"); }
 
 .icon-ticket {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/ticket.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/ticket.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/ticket.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("ticket"); }
 
 .icon-flag {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/flag.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/flag.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/flag.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("flag"); }
 
 .icon-file {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/file.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/file.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/file.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("file"); }
 
 .icon-account {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/account.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/account.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/account.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("account"); }
 
 .icon-report {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/report.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/report.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/report.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("report"); }
 
 .icon-risk-management {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/risk-management.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/risk-management.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/risk-management.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("risk-management"); }
 
 .icon-switch {
   -webkit-mask: url(/bundles/customerapp/img/icon/solid/switch.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/img/icon/solid/switch.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/img/icon/solid/switch.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("switch"); }
 
 .icon-instagram {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/instagram.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/instagram.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/instagram.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("instagram"); }
 
 .icon-slack {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/slack.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/slack.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/slack.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("slack"); }
 
 .icon-googleplus {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/googleplus.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/googleplus.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/googleplus.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("googleplus"); }
 
 .icon-youtube {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/youtube.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/youtube.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/youtube.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("youtube"); }
 
 .icon-facebook {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/facebook.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/facebook.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/facebook.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("facebook"); }
 
 .icon-twitter {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/twitter.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/twitter.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/twitter.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("twitter"); }
 
 .icon-linkedin {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/linkedin.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/linkedin.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/linkedin.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("linkedin"); }
 
 .icon-dribbble {
   -webkit-mask: url(/bundles/customerapp/assets/img/icon/social/dribbble.svg) 100% 100%/100% 100% no-repeat;
-  mask: url(/bundles/customerapp/assets/img/icon/social/dribbble.svg) 100% 100%/100% 100% no-repeat; }
+  mask: url(/bundles/customerapp/assets/img/icon/social/dribbble.svg) 100% 100%/100% 100% no-repeat;
+  background-image: inline-svg("dribbble"); }
 
 .logo {
   font: 0/0 a;
@@ -5950,7 +5998,12 @@ button[disabled], .btn-disabled {
     margin-right: 6px; }
 
 .table-responsive {
-  overflow-x: auto; }
+  overflow-x: auto;
+  padding: 3px; }
+  @media (min-width: 768px) {
+    .table-responsive {
+      overflow-x: inherit;
+      padding: 0; } }
 
 table {
   width: 100%; }
@@ -5962,6 +6015,8 @@ table {
       padding-left: 0; }
     table th:last-child, table td:last-child {
       padding-right: 0; }
+  table tr:not(:first-child):hover {
+    background-color: #F6F7FB; }
 
 .input-group {
   margin: 0 0 20px 0; }
@@ -6574,6 +6629,8 @@ header {
       padding: 30px 0; } }
   header span {
     margin-left: auto; }
+  header .icon-menu:hover {
+    cursor: pointer; }
 
 .error-report a {
   font-weight: normal; }
@@ -6758,7 +6815,8 @@ header {
     .invoice-card .overview .btn,
     .statement-card .overview .btn,
     .spend-report-card .overview .btn {
-      margin-left: auto; } }
+      margin-left: auto;
+      min-width: 80px; } }
 
 .ticket-card .col-md-4,
 .ticket-card .col-md-3,
@@ -7336,6 +7394,10 @@ table.debtors tr th:nth-of-type(1), table.debtors tr th:nth-of-type(2) {
   .date-filter .btn {
     margin-left: 0;
     margin-right: 0; }
+  .date-filter input.btn.btn-padding {
+    margin-bottom: 15px;
+    margin-top: 4px;
+    padding-right: 45px; }
 
 .filter {
   margin-left: auto; }
@@ -7417,7 +7479,8 @@ table.debtors tr th:nth-of-type(1), table.debtors tr th:nth-of-type(2) {
   background-color: white;
   margin: 0;
   margin-left: auto;
-  max-width: 35%; }
+  max-width: 35%;
+  border: 1px solid #D9DDEB; }
   @media screen and (min-width: 576px) {
     .per-page-filter select {
       margin-left: 10px;
@@ -7570,6 +7633,9 @@ table.debtors tr th:nth-of-type(1), table.debtors tr th:nth-of-type(2) {
 
 .budget-actual .difference + select {
   width: 11%; }
+
+.budget-actual .form-inline select {
+  border: 1px solid #D9DDEB; }
 
 .group-overview p {
   float: left; }
