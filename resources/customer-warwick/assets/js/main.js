@@ -37,7 +37,7 @@ $(function () {
     });
 
     new Chartist.Pie('.budget-year-chart', {
-        series: [75, 25]
+        series: [86, 14]
     }, {
         donut: true,
         donutWidth: 30,
@@ -130,4 +130,7 @@ $(function () {
             modal.style.display = "none";
         }
     }
+
+
+    //$('.icon-menu').click();setTimeout(function() {$('.icon-report').click()}, 300);
 });

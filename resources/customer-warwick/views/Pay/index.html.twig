@@ -2,6 +2,8 @@
 
 {% block content %}
 
+    {% include 'CustomerAppBundle:Partials:breadcrumb.html.twig' with {'crumblink':'Make Payment', 'link':'/payments'} %}
+
     <section class="padding-bottom-60">
         <div class="container">
             <div class="row">
@@ -17,20 +19,20 @@
                                 <label>Select Invoice</label>
                                 <select>
                                     <option value="" disabled selected>Please Select</option>
-                                    <option value="option-1">Option 1</option>
-                                    <option value="option-2">Option 2</option>
-                                    <option value="option-3">Option 3</option>
+                                    <option value="option-1">Service Charge Demand 01/01/2015 - 30-06-2015</option>
+                                    <option value="option-1">Service Charge Demand 01/07/2015 - 31-12-2015</option>
                                 </select>
                             </div>
 
                             <div class="input-group">
-                                <label>Select Invoice</label>
+                                <label>Amount</label>
                                 <input type="text" value="£500" />
                             </div>
 
                             <div class="summary">
                                 <div class="fc-primary fw-700">Total Payable</div>
-                                <div class="fw-700">£{{ confirmedAmount|number_format(2, '.', ',') }}</div>
+                                {#<div class="fw-700">£{{ confirmedAmount|number_format(2, '.', ',') }}</div>#}
+                                <div class="fw-700">£512.50</div>
                             </div>
 
                             <button class="btn btn-cyan">Pay</button>

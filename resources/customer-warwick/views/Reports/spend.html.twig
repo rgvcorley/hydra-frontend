@@ -7,52 +7,52 @@
         <div class="row">
             <div class="col-md-9 text-center text-sm-left">
                 <h1 class="fc-primary d-sm-inline">Spend Report</h1>
-                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce
-                    dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
+                {#<p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.#}
+                    {#Fusce#}
+                    {#dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>#}
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="default-box date-filter text-center margin-bottom-30 margin-bottom-lg-25">
-                    <div class="row">
-                        <div class="col-12 text-md-left d-md-flex justify-content-start justify-content-lg-center align-items-center padding-top-md-15 padding-bottom-md-15">
-                            <p class="fw-500 padding-top-20 padding-top-md-0 padding-right-md-10">Schedule</p>
-                            <form method="get" action="" class="d-flex d-md-inline-flex">
-                                <select name="taxYear">
-                                    {% for year in taxYears %}
-                                        <option value="{{ year.key }}"
-                                                {% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>
-                                    {% endfor %}
-                                </select>
+        {#<div class="row">#}
+            {#<div class="col-12">#}
+                {#<div class="default-box date-filter text-center margin-bottom-30 margin-bottom-lg-25">#}
+                    {#<div class="row">#}
+                        {#<div class="col-12 text-md-left d-md-flex justify-content-start justify-content-lg-center align-items-center padding-top-md-15 padding-bottom-md-15">#}
+                            {#<p class="fw-500 padding-top-20 padding-top-md-0 padding-right-md-10">Schedule</p>#}
+                            {#<form method="get" action="" class="d-flex d-md-inline-flex">#}
+                                {#<select name="taxYear">#}
+                                    {#{% for year in taxYears %}#}
+                                        {#<option value="{{ year.key }}"#}
+                                                {#{% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>#}
+                                    {#{% endfor %}#}
+                                {#</select>#}
                                 {#<button type="submit" class="btn btn-default btn-sm">Update</button>#}
 
-                                <p class="fw-500 padding-top-20 padding-top-md-0 padding-right-md-10">Dates</p>
-                                <select>
-                                    <option>Option</option>
-                                    <option>Option Two</option>
-                                    <option>Option Three</option>
-                                </select>
-                                <select>
-                                    <option>Option</option>
-                                    <option>Option Two</option>
-                                    <option>Option Three</option>
-                                </select>
+                                {#<p class="fw-500 padding-top-20 padding-top-md-0 padding-right-md-10">Dates</p>#}
+                                {#<select>#}
+                                    {#<option>Option</option>#}
+                                    {#<option>Option Two</option>#}
+                                    {#<option>Option Three</option>#}
+                                {#</select>#}
+                                {#<select>#}
+                                    {#<option>Option</option>#}
+                                    {#<option>Option Two</option>#}
+                                    {#<option>Option Three</option>#}
+                                {#</select>#}
 
-                                <button type="submit" value="Apply"
-                                        class="spend-btn btn btn-cyan margin-top-15 margin-top-md-5 margin-bottom-25 margin-bottom-md-0">
-                                    Apply
-                                </button>
+                                {#<button type="submit" value="Apply"#}
+                                        {#class="spend-btn btn btn-cyan margin-top-15 margin-top-md-5 margin-bottom-25 margin-bottom-md-0">#}
+                                    {#Apply#}
+                                {#</button>#}
 
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            {#</form>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
         <div class="row">
             <div class="col-sm-12 col-lg-4">
                 <div class="default-box d-flex justify-content-center align-items-center text-center primary-border medium-ticket aged-debtors margin-bottom-10 margin-bottom-sm-30">
@@ -78,11 +78,11 @@
                                 <div class="labels padding-top-25 padding-bottom-25 padding-bottom-sm-30 padding-bottom-md-45 ">
                                     <div class="label d-flex align-items-center margin-bottom-10">
                                         <span class="circle bg-blue"></span>
-                                        <p>Spent 75%</p>
+                                        <p>Spent 86%</p>
                                     </div>
                                     <div class="label d-flex align-items-center margin-bottom-10">
                                         <span class="circle bg-grey-5"></span>
-                                        <p>Remaining 25%</p>
+                                        <p>Remaining 14%</p>
                                     </div>
                                 </div>
                             </div>
@@ -94,8 +94,7 @@
         </div>
         <div class="row spend-report-filter margin-bottom-md-30">
             <div class="col-12 d-md-flex align-items-center">
-                <p class="fw-500 margin-bottom-20 margin-bottom-md-0 margin-top-20 margin-top-md-0">Showing <a href="#">Accountancy
-                        Fees Transactions</a></p>
+                <p class="fw-500 margin-bottom-20 margin-bottom-md-0 margin-top-20 margin-top-md-0">Showing Expenses for All Schedules</p>
                 <div class="per-page-filter d-flex margin-top-20 margin-top-sm-0 margin-bottom-25 margin-bottom-md-0 justify-content-md-end align-items-center">
                     <label class="margin-bottom-0">Transactions per page</label>
                     <select>
@@ -114,11 +113,10 @@
                             <div class="col-sm-8 col-12">
                                 <div class="overview d-flex align-items-center">
                                     <h2 class="fc-black fw-500 padding-right-5">{{ row.description }}</h2>
-                                    <span class="icon icon-doc icon-24 bg-cyan"></span>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-6">
-                                <div class="d-flex padding-left-20 align-items-center justify-content-center padding-top-10 padding-bottom-10 statement-details">
+                                <div class="d-flex padding-left-20 align-items-top justify-content-center padding-top-10 padding-bottom-10 statement-details">
                                     <div>
                                         <small class="fs-8 fw-500 fc-grey-3">Credit</small>
                                         <p class="fs-5 fw-500 fc-grey-3" data-type="currency">
@@ -150,7 +148,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="ticket-details bg-grey-6 d-flex align-items-center">
-                                    <p data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</p>
+                                    <p data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d/m/Y") }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">

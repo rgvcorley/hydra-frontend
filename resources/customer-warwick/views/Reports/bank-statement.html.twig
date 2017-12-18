@@ -9,14 +9,12 @@
         <div class="row">
             <div class="col-md-9 text-center text-sm-left">
                 <h1 class="fc-primary d-sm-inline">Bank Statement</h1>
-                <p class="padding-top-15 padding-top-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce dignissim vehicula facilisis. Nunc enim velit, tempor in pellentesque in, porta eu nisi.</p>
             </div>
-            <div class="col-md-3 text-center">
-                <div class="d-flex invoice-export margin-top-lg-30">
-                    <a href="#" class="btn btn-cyan margin-top-20 margin-top-md-0">Export Report</a>
-                </div>
-            </div>
+            {#<div class="col-md-3 text-center">#}
+                {#<div class="d-flex invoice-export margin-top-lg-30">#}
+                    {#<a href="#" class="btn btn-cyan margin-top-20 margin-top-md-0">Export Report</a>#}
+                {#</div>#}
+            {#</div>#}
         </div>
     </div>
 
@@ -44,7 +42,7 @@
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                             <p class="fw-500 padding-top-10 d-flex d-lg-inline-flex padding-top-lg-20 justify-content-center justify-content-sm-start">
-                                Dates</p>
+                                Date Range</p>
                             <form method="get" class="d-flex d-md-inline-flex justify-content-center">
                                 <select name="taxYear">
                                     {% for year in taxYears %}
@@ -52,14 +50,8 @@
                                                 {% if year.active %}selected="selected"{% endif %}>{{ year.desc }}</option>
                                     {% endfor %}
                                 </select>
-                                <select>
-                                    <option>Option</option>
-                                    <option>Option Two</option>
-                                    <option>Option Three</option>
-                                </select>
 
-                                <input type="submit" value="Apply"
-                                       class="btn btn-cyan margin-top-15 margin-top-md-5 margin-top-lg-10 margin-bottom-10 margin-bottom-lg-15 padding-right-50">
+                                <input type="submit" value="Apply" style="padding-left:20px;padding-right:32px;" class="btn btn-cyan margin-top-15 margin-top-md-5 padding-right-50 margin-bottom-10">
 
                             </form>
                         </div>
@@ -88,18 +80,14 @@
 
             <div class="col-sm-6">
                 <div class="default-box info-ticket primary-border d-sm-flex margin-bottom-10 margin-bottom-sm-30 justify-content-center align-items-center text-center">
-                    {% for balance in balances %}
-                        <p class="fw-700">Budget Total</p>
-                        <span class="fc-grey-7 medium-text">&pound;{{ balance.accountName }}</span>
-                    {% endfor %}
+                        <p class="fw-700">Account Balance</p>
+                        <span class="fc-grey-7 medium-text">&pound;{{ accountBalance.balance|number_format(2, '.', ',') }}</span>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="default-box info-ticket primary-border d-sm-flex margin-bottom-10 margin-bottom-sm-30 justify-content-center align-items-center text-center">
-                    {% for balance in balances %}
-                        <p class="fw-700">Total Spend CBY</p>
-                        <span class="fc-grey-7 medium-text">&pound;{{ balance.balance|number_format(2, '.', ',') }}</span>
-                    {% endfor %}
+                    <p class="fw-700">Total Spend <abbr title="Current Budget Year">CBY</abbr></p>
+                    <span class="fc-grey-7 medium-text">&pound;{{ totalSpend|number_format(2, '.', ',') }}</span>
                 </div>
             </div>
 
@@ -124,9 +112,10 @@
                 <div class="per-page-filter d-flex margin-top-20 margin-top-sm-0 margin-bottom-25 justify-content-end align-items-center">
                     <label class="margin-bottom-0">Transactions per page</label>
                     <select>
-                        <option>8</option>
-                        <option>Option Two</option>
-                        <option>Option Three</option>
+                        <option>100</option>
+                        <option>50</option>
+                        <option>10</option>
+                        <option>Some other</option>
                     </select>
                 </div>
             </div>
@@ -141,15 +130,15 @@
                             <div class="col-sm-8 col-12">
                                 <div class="overview d-flex align-items-center">
                                     <h2 class="fc-black fw-500 padding-right-5">{{ row.label }}</h2>
-                                    <span class="icon icon-doc icon-24 bg-cyan"></span>
+                                    {#<span class="icon icon-doc icon-24 bg-cyan"></span>#}
                                 </div>
                             </div>
                             <div class="col-sm-2 col-6">
                                 <div class="d-flex justify-content-center text-center align-items-center padding-top-10 padding-bottom-10 statement-details">
                                     <div>
                                         <small class="fs-8 fw-500 fc-grey-3">Amount</small>
-                                        <p class="fs-5 fw-500 fc-grey-3" data-type="currency">+
-                                            &pound;{{ row.amount|number_format(2, '.', ',') }}</p>
+                                        <p class="fs-5 fw-500 fc-grey-3" data-type="currency">
+                                            {% if row.amount > 0 %}+{% else %}-{% endif %} &pound;{{ row.amount|abs|number_format(2, '.', ',') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,20 +156,15 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-2">
                                 <div class="ticket-details bg-grey-6 d-flex align-items-center">
-                                    <p data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d-m-Y") }}</p>
+                                    <p data-sort="{{ row.date|date("Ymd") }}">{{ row.date|date("d/m/Y") }}</p>
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-8 col-md-4">
                                 <div class="ticket-details bg-grey-6">
-                                    <p class="d-inline">Robert Corley</p>
+                                    <p class="d-inline">{{ accountDescription }}</p>
                                     <span class="fc-grey-5 d-inline">|</span>
                                     <p class="d-inline">{{ row.account_number }}</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="ticket-details bg-grey-6 d-flex align-items-center">
-                                    <p>Property Title</p>
                                 </div>
                             </div>
                         </div>
