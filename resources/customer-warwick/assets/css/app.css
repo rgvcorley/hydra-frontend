@@ -439,6 +439,7 @@ form {
     padding: 10px 0;
     margin: 0; }
   form input[type="submit"],
+  .button,
   form button {
     color: white;
     background: #e4361d;
@@ -452,6 +453,7 @@ form {
     -webkit-appearance: none;
     border-radius: 0; }
     form input[type="submit"]:focus,
+    .button:focus,
     form button:focus {
       outline: none;
       opacity: 0.5; }
