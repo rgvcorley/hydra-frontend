@@ -1,0 +1,86 @@
+{% extends 'SupplierAppBundle::layout.html.twig' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col span_8 intro-box">
+
+                <h1><strong>{{ title }}</strong></h1>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row gutters">
+            <div class="col span_8">
+
+                {% if errors %}
+                    <div class="alert alert-danger">
+                    {% for error in errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form action="{{ path('broker_invoice_upload') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="supplier_id">Supplier Id</label>
+                        {{ form_widget(form.supplierId, { 'attr': {'class': 'form-control selectpicker select-form select-full', 'data-live-search': 'true'} }) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="site_id">Site Id</label>
+                        {{ form_widget(form.siteId, { 'attr': {'class': 'form-control selectpicker select-form select-full', 'data-live-search': 'true'} }) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="invoice_number">Invoice Number</label>
+                        {{ form_widget(form.invoiceNumber, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="invoice_date">Invoice Date</label>
+{#                         {{ form_widget(form.invoiceDate, { 'attr': {'class': 'form-control datepicker', 'data-date-start-date': '01/01/2015', 'data-date-format': 'dd/mm/yyyy'} }) }} #}
+                        {{ form_widget(form.invoiceDate, { 'attr': {'class': 'form-control datepicker', 'autocomplete': 'off'} }) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="invoice_amount">Invoice Amount (inc. VAT)</label>
+                        {{ form_widget(form.invoiceAmount, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_row(form.file) }}
+                    </div>
+
+                    {{ form_widget(form._token) }}
+
+                    <button type="submit" class="btn btn-danger">Upload</button>
+                </form>
+            </div>
+
+            <div class="col span_4">
+                <h3>Invoices</h3>
+                <p>This service will allow you to provide your latest invoices quickly, easily and without having to print and post a paper copy.</p>
+                <p>Please make sure you enter all the information accurately.</p>
+
+                <h3>Allowed Files</h3>
+                <ul class="no-style">
+                	<li><strong>PDF</strong> - PDF files no larger than 3MB are allowed.</li>
+                    <li><strong>PNG</strong> - PNG files no larger than 1MB are allowed.</li>
+                    <li><strong>JPG</strong> - JPG/JPEG files no larger than 1MB are allowed.</li>
+                    <li><strong>Word Document</strong> - DOC/DOCX files no larger than 3MB are allowed.</li>
+                    <li><strong>Rich Text Format</strong> - RTF files no larger than 3MB are allowed.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
