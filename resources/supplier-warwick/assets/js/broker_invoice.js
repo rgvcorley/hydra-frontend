@@ -7,12 +7,24 @@ let meterNumberGroup = document.getElementById('meter_number_group');
 let meterLocationGroup = document.getElementById('meter_location_group');
 let telephoneNumberGroup = document.getElementById('telephone_number_group');
 
+let meterNumberField = document.getElementById('form_meterNumber');
+let meterLocationField = document.getElementById('form_meterLocation');
+let telephoneNumberField = document.getElementById('form_telephoneNumber');
+
 if (telephoneCostCentres.indexOf(costCentreId) != -1) {
   meterNumberGroup.hidden = true;
   meterLocationGroup.hidden = true;
   telephoneNumberGroup.hidden = false;
+
+  meterNumberField.required = false;
+  meterLocationField.required = false;
+  telephoneNumberField.required = true;
 } else if (nonTelephoneCostCentres.indexOf(costCentreId) != -1) {
   meterNumberGroup.hidden = false;
   meterLocationGroup.hidden = false;
   telephoneNumberGroup.hidden = true;
+
+  meterNumberField.required = true;
+  meterLocationField.required = true;
+  telephoneNumberField.required = false;
 }
