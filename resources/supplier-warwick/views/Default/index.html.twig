@@ -25,45 +25,45 @@
 </div>
 
 <div class="background-darkestgrey bank-statements">
-	 <div class="container">          
+	 <div class="container">
         <div class="row gutters">
-            
+
             <div class="col span_3 account">
             	<a href="#worksorders">
 	                <span class="balence">{{ outstanding_works_orders }}</span>
 	                <span class="name">Outstanding Works Order{% if outstanding_works_orders != 1 %}s{% endif %}</span>
             	</a>
             </div>
-            
+
             <div class="col span_3 account">
             	<a href="/my-invoices">
 	                <span class="balence">{{ awaiting_approval.count }}</span>
 	                <span class="name">Invoice{% if awaiting_approval.count != 1 %}s{% endif %} awaiting approval{% if awaiting_approval.count != 0 %}, Totalling &pound;{{ awaiting_approval.total|number_format(2) }}{% endif %}</span>
             	</a>
             </div>
-            
+
             <div class="col span_3 account">
             	<a href="/my-invoices">
 	                <span class="balence">{{ pending_payment.count }}</span>
 	                <span class="name">Invoice{% if pending_payment.count != 1 %}s{% endif %} Pending Payment{% if pending_payment.count != 0 %}, totalling &pound;{{ pending_payment.total|number_format(2) }}{% endif %}</span>
             	</a>
             </div>
-            
+
             <div class="col span_3 account">
             	<a href="/my-invoices">
 	                <span class="balence">{{ invoices_paid.count }}</span>
 	                <span class="name">Invoice{% if invoices_paid.count != 1 %}s{% endif %} Paid{% if invoices_paid.count != 0 %}, Totalling &pound;{{ invoices_paid.total|number_format(2) }}{% endif %}</span>
             	</a>
             </div>
-            
+
         </div>
 	</div>
 </div>
-                
-                
+
+
 <div class="container">
-    <div class="row">                
-    	<div class="col span_12" id="worksorders">            
+    <div class="row">
+    	<div class="col span_12" id="worksorders">
 
             <h2>Outstanding Works Orders</h2>
 
@@ -141,7 +141,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            
+
         </div>
     </div>
 </div>
