@@ -1,5 +1,10 @@
+// The javascript in this file is for hiding/showing fields depending on
+// which cost centre is chosen by the Broker, and making the visible fields required
+// This javascript is used by the BrokerUploadController in the Supplier App
+
 let costCentreId = parseInt(document.getElementById('form_costCentreId').value);
-// the following invalid javascript is necessary to interpolate the required strings in the php file in which it is used
+// the following invalid javascript is necessary to interpolate the required strings
+// in the php file in which it is used
 let telephoneCostCentres = [%s];
 let nonTelephoneCostCentres = [%s];
 
