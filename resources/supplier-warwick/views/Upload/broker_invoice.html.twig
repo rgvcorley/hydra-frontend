@@ -13,9 +13,9 @@
                         {{ success_message }}
                     </div>
                 {% endif %}
-                {% if error_message %}
+                {% if errors %}
                     <div class="alert alert-danger">
-                        {{ error_message }}
+                        {{ errors }}
                     </div>
                 {% endif %}
                 <h1><strong>{{ title }}</strong></h1>
@@ -26,10 +26,10 @@
         <div class="row gutters">
             <div class="col span_8">
 
-                {% if errors %}
+                {% if form_errors %}
                     <div class="alert alert-danger">
-                        {% for error in errors %}
-                            <p>{{ error }}</p>
+                        {% for form_error in form_errors %}
+                            <p>{{ form_error }}</p>
                         {% endfor %}
                     </div>
                 {% endif %}
