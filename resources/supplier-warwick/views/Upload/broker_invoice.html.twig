@@ -121,4 +121,45 @@
             </div>
         </div>
     </div>
+
+    {% block javascripts %}
+        <script>
+          document.getElementById('form_costCentreId').onchange = toggleFormFieldsBasedOnCostCentre;
+
+          // This javascript is for hiding/showing fields depending on
+          // which cost centre is chosen by the Broker, and making the visible fields required
+          function toggleFormFieldsBasedOnCostCentre() {
+            let meterNumberGroup = document.getElementById('meter_number_group');
+            let meterLocationGroup = document.getElementById('meter_location_group');
+            let telephoneNumberGroup = document.getElementById('telephone_number_group');
+
+            let meterNumberField = document.getElementById('form_meterNumber');
+            let meterLocationField = document.getElementById('form_meterLocation');
+            let telephoneNumberField = document.getElementById('form_telephoneNumber');
+
+            let telephoneCostCentres = JSON.parse('{{ telephone_cost_centres|json_encode|raw }}');
+            let costCentreId = parseInt(document.getElementById('form_costCentreId').value);
+            if (telephoneCostCentres.hasOwnProperty(costCentreId)) {
+              meterNumberGroup.hidden = true;
+              meterLocationGroup.hidden = true;
+              telephoneNumberGroup.hidden = false;
+
+              meterNumberField.required = false;
+              meterLocationField.required = false;
+              telephoneNumberField.required = true;
+            }
+
+            let nonTelephoneCostCentres = JSON.parse('{{ non_telephone_cost_centres|json_encode|raw }}');
+            if (nonTelephoneCostCentres.hasOwnProperty(costCentreId)) {
+              meterNumberGroup.hidden = false;
+              meterLocationGroup.hidden = false;
+              telephoneNumberGroup.hidden = true;
+
+              meterNumberField.required = true;
+              meterLocationField.required = true;
+              telephoneNumberField.required = false;
+            }
+          }
+        </script>
+    {% endblock %}
 {% endblock %}
