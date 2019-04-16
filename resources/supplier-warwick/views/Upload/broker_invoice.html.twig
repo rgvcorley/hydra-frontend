@@ -161,5 +161,37 @@
             }
           }
         </script>
+
+        <script>
+            document.getElementById('form_siteId').onchange = displayCostCentresForSiteId;
+
+            function displayCostCentresForSiteId() {
+              let costCentreSelectElement = document.getElementById('form_costCentreId');
+
+              clearSelection(costCentreSelectElement);
+
+              let siteId = document.getElementById('form_siteId').value;
+              let allCostCentresBySiteId = JSON.parse('{{ brokered_cost_centres_by_site_id|json_encode|raw }}');
+              let costCentresFilteredBySiteId = allCostCentresBySiteId[siteId];
+
+              for (let costCentreId in costCentresFilteredBySiteId) {
+                let option = document.createElement('option');
+                option.text = costCentresFilteredBySiteId[costCentreId];
+                option.value = costCentreId;
+                costCentreSelectElement.appendChild(option);
+              }
+            }
+
+
+            function clearSelection(costCentreSelectElement) {
+              while (costCentreSelectElement.firstChild) {
+                costCentreSelectElement.removeChild(costCentreSelectElement.firstChild);
+              }
+              let option = document.createElement('option');
+              option.text = 'Choose an option';
+              option.setAttribute('selected', 'selected');
+              costCentreSelectElement.appendChild(option);
+            }
+        </script>
     {% endblock %}
 {% endblock %}

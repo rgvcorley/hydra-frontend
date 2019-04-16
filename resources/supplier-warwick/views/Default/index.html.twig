@@ -87,7 +87,11 @@
                         <tr class="table-danger">
                             <td class="table-danger">{{ row.wo_num_display }}</td>
                             <td>{{ row.site }}</td>
+                            {% if row.assistant is defined %}
                             <td>{{ row.property_manager_email }}<br><br>Assistant: {{ row.assistant_email }}</td>
+                            {% else %}
+                            <td>{{ row.property_manager_email }}<br></td>
+                            {% endif %}
                             <td nowrap="nowrap">
                                 {% if row.cost_centre_type is defined %}
                                     {{ row.cost_centre_type }}
