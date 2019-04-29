@@ -15,7 +15,7 @@
                 <li><a href="/faq">Help/FAQ</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
-            
+
             <select class="mobile-sub-nav">
                 <option {% if app.request.attributes.get('_route') == "supplier_homepage" %}selected{% endif %} value="{{ path('supplier_homepage') }}">Home</option>
                 <option {% if app.request.attributes.get('_route') == "supplier_account" %}selected{% endif %} value="{{ path('supplier_account') }}">Account</option>
@@ -25,9 +25,9 @@
                 <option value="/faq">Help/FAQ</option>
                 <option value="/logout">Logout</option>
 			</select>
-			
+
         </div>
-        
+
 	</div>
 </div>
 
