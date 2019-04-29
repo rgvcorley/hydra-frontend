@@ -1,7 +1,7 @@
 $.noConflict();
 
 jQuery(document).ready(function($) {
-	
+
 	// call jRespond and add breakpoints
 	var jRes = jRespond([
 	    {
@@ -14,13 +14,13 @@ jQuery(document).ready(function($) {
 	        exit: 10000
 	    }
 	]);
-	
+
 	$('.mobile-sub-nav').change(function() {
         window.location = $(this).find("option:selected").val();
       });
-	
+
 	// register enter and exit functions for a single breakpoint
-	
+
 	jRes.addFunc({
 	    breakpoint: 'handheld',
 	    enter: function() {
@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 				speed:100,
 				downArrow:'<i class="fa fa-caret-down fa-2x"></a>'
 			});
-			
+
 
 	    },
 	    exit: function() {
@@ -37,11 +37,11 @@ jQuery(document).ready(function($) {
 	        $('.hamburger a.burger').remove();
 	        $('.hamburger span.dropper').remove();
 	        $('.hamburger').removeClass('hamburger open');
-	        
-	        
+
+
 	    }
 	});
-	
+
 	// 	$('#blocks .row').equalize();
 
     if ($('table.dataTable')) {
@@ -57,9 +57,9 @@ jQuery(document).ready(function($) {
     		}]
 		});
     }
-    
+
     // Enable email comms
-	$('form[action="/account/update"] input[type="submit"]').on('click', function(e) {
+	$('form[action="/supplier-account/update"] input[type="submit"]').on('click', function(e) {
 		if($('input[name="form[consent]"]:checked').val() == 0) {
 			e.preventDefault();
 			$('#consentModal').addClass('active');
@@ -67,14 +67,14 @@ jQuery(document).ready(function($) {
 	});
 	$('#consentModal #sure').on('click', function(e) {
 		e.preventDefault();
-		$('form[action="/account/update"]').submit();
+		$('form[action="/supplier-account/update"]').submit();
 	});
 	$('#consentModal #enable-consent').on('click', function(e) {
 		e.preventDefault();
 		$('#form_consent_1').prop('checked', false);
 		$('#form_consent_0').prop('checked', true);
 		$('#consentModal').removeClass('active');
-		$('form[action="/account/update"]').submit();
+		$('form[action="/supplier-account/update"]').submit();
 	});
 	$('#consentModal #close').on('click', function(e) {
 		e.preventDefault();
