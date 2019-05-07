@@ -1,0 +1,25 @@
+{% extends "SupplierAppBundle::base-layout.html.twig" %}
+
+{% block menu %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+<div class="background-white">
+	<div class="container sub-nav-container">
+        <div class="row">
+            <ul class="nav desktop-sub-nav">
+                <li class="{% if app.request.attributes.get('_route') == "broker_invoice_upload" %}active{% endif %}"><a target="_self" href="{{ path('broker_invoice_upload') }}" title="Upload Invoice">Upload Invoice</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+
+            <select class="mobile-sub-nav">
+                <option {% if app.request.attributes.get('_route') == "broker_invoice_upload" %}selected{% endif %} value="{{ path('broker_invoice_upload') }}">Upload Invoice</option>
+                <option value="/logout">Logout</option>
+			</select>
+
+        </div>
+
+	</div>
+</div>
+
+{% endif %}
+{% endblock %}

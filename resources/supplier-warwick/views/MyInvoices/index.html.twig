@@ -1,4 +1,4 @@
-{% extends 'SupplierAppBundle::layout.html.twig' %}
+{% extends 'SupplierAppBundle::supplier_layout.html.twig' %}
 
 {% block content %}
 
@@ -10,11 +10,11 @@
 	        </div>
 	    </div>
 	</div>
-	   
+
 	<div class="container table-container">
-	    <div class="row">                
+	    <div class="row">
 	    	<div class="col span_12" id="invoices">
-	
+
 	            <table class="display dataTable">
                     <thead>
                         <tr>
@@ -74,13 +74,13 @@
                         {% endfor %}
                     </tbody>
                 </table>
-                
+
 	    	</div>
 	    </div>
 	</div>
 
     {% else %}
-    
+
 	<div class="container">
 	    <div class="row">
 	        <div class="col span_12 intro-box">
