@@ -59,9 +59,9 @@
                         {{ form_widget(form.meterNumber, { 'attr': {'class': 'form-control'} }) }}
                     </div>
 
-                    <div class="form-group" id="meter_location_group" hidden>
-                        <label for="meter_location">Meter Location</label>
-                        {{ form_widget(form.meterLocation, { 'attr': {'class': 'form-control'} }) }}
+                    <div class="form-group" id="supply_address_group" hidden>
+                        <label for="supply_address">Supply Address</label>
+                        {{ form_widget(form.supplyAddress, { 'attr': {'class': 'form-control'} }) }}
                     </div>
 
                     <div class="form-group" id="telephone_number_group" hidden>
@@ -126,7 +126,7 @@
           // which cost centre is chosen by the Broker, and making the visible fields required
           function displayFieldsBasedOnCostCentre() {
             let meterNumberGroup = document.getElementById('meter_number_group');
-            let meterLocationGroup = document.getElementById('meter_location_group');
+            let meterLocationGroup = document.getElementById('supply_address_group');
             let telephoneNumberGroup = document.getElementById('telephone_number_group');
 
             let meterNumberField = document.getElementById('form_meterNumber');
